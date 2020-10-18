@@ -77,7 +77,7 @@ int main()
 			totalTime -= 0.1;
 			animationFrame++;
 		}
-
+		 
 		if (animationFrame >= 9) {
 			animationFrame = 0;
 		}
