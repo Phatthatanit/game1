@@ -9,7 +9,7 @@ int main()
 
 	////// Circle
 	sf::CircleShape collision(40.f);
-	collision.setPosition({ 300.f, 400.f });
+	collision.setPosition({ 500.f, 20.f });
 	collision.setFillColor(sf::Color::Green);
 
 	////// Texture
@@ -19,6 +19,7 @@ int main()
 		std::cout << "Load failed" << std::endl;
 	}
 
+	
 	////// Sprite
 	/*sf::Sprite shapeSprite;
 	shapeSprite.setTexture(playerTexture);
