@@ -1,16 +1,16 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-
+#include <windows.h>
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1475, 600), "Game from scratch!");
 
 	////// Circle
-	/*sf::CircleShape collision(100.f);
-	collision.setPosition({ 200.f, 200.f });
-	collision.setFillColor(sf::Color::Red);*/
+	sf::CircleShape collision(40.f);
+	collision.setPosition({ 300.f, 400.f });
+	collision.setFillColor(sf::Color::Green);
 
 	////// Texture
 	sf::Texture playerTexture;
@@ -31,6 +31,9 @@ int main()
 	int spriteSizeY = playerTexture.getSize().y / 1;
 	shapeSprite.setTextureRect(sf::IntRect(0, 0, spriteSizeX, spriteSizeY));
 
+	sf::Vector2f spawnPoint = { 0.f, 0.f };
+	shapeSprite.setPosition(spawnPoint);
+
 	int animationFrame = 0;
 	float totalTime = 0;
 	float deltaTime = 0.0f;
@@ -41,7 +44,7 @@ int main()
 	{
 		deltaTime = clock.restart().asSeconds();
 		window.draw(shapeSprite);
-		//window.draw(collision);
+		window.draw(collision);
 		window.display();
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
@@ -66,7 +69,12 @@ int main()
 			shapeSprite.move(0.f*speed, speed * deltaTime);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
 		}
-
+		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			Beep(329, 100);
+			Beep(493, 100);
+			shapeSprite.setPosition(spawnPoint);
+			
+		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 		{
 			window.close();
