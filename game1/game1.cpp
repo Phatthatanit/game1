@@ -34,22 +34,38 @@ int main()
 	scoreCurrent.setCharacterSize(30);
 	scoreCurrent.setPosition(1200, 0);
 	
+	//soundstart
+	
+		sf::SoundBuffer buffer;
+		if (!buffer.loadFromFile("pic/s3.ogg"))
+		{
+			std::cout << "Load failed" << std::endl;
+		}
 
-	sf::SoundBuffer buffer;
-	if (!buffer.loadFromFile("pic/s3.ogg"))
-	{
-		std::cout << "Load failed" << std::endl;
-	}
+		sf::Sound sound;
+		sound.setLoop(true);
+		sound.setBuffer(buffer);
+		sound.play();
+	
 
-	sf::Sound sound;
-	sound.setLoop(true);
-	sound.setBuffer(buffer);
-	sound.play();
+	//soundend
+	/*
+		sf::SoundBuffer buffer1;
+		if (!buffer1.loadFromFile("pic/s4.ogg"))
+		{
+			std::cout << "Load failed" << std::endl;
+		}
+		sf::Sound sound1;
+		sound1.setBuffer(buffer1);
+		sound1.play();
+	*/
+	
+
 
 
 	////// Circle
 	sf::CircleShape collision(40.f);
-	collision.setPosition({ 500.f, 20.f });
+	collision.setPosition({ 1800.f, 210.f });
 	collision.setFillColor(sf::Color::Green);
 
 	////// Texture
@@ -86,6 +102,14 @@ int main()
 	sf::RectangleShape pause1(sf:: Vector2f(1575, 420));
 	pause1.setFillColor(pauseColor);
 
+	////// gameover
+	sf::Texture gameTexture;
+	sf::RectangleShape game(sf::Vector2f(500.0f, 300.0f));
+	gameTexture.loadFromFile("pic/gameov1.png");
+	game.setTexture(&gameTexture);
+
+
+
 
 	////// score
 	sf::Color scoreColor(0, 0, 0, 1000);
@@ -106,6 +130,7 @@ int main()
 		score1.setPosition(shapeSprite.getPosition().x - 250, 5.0f);
 		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60  , 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
+		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 
 		deltaTime = clock.restart().asSeconds();
 		window.setView(view);
@@ -115,15 +140,17 @@ int main()
 		window.draw(collision);
 		window.draw(score1);
 		window.draw(scoreCurrent);
-
+		
 		if (p == 1) {
 			window.draw(pause);
 			window.draw(pause1);
 		}
-
-		std::stringstream scoreShow;
-		scoreShow << currentScore;
-		//scoreCurrent.setString(scoreShow.str().c_str());
+		if (p == 2) {
+			window.draw(pause1);
+			window.draw(game);
+		}
+		
+		
 	
 		window.display();
 	
@@ -151,8 +178,7 @@ int main()
 		}
 		
 		
-
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)|| sf::Mouse::isButtonPressed(sf::Mouse::Right))
 		{
 			if (p == 0) {
 				p = 1;
@@ -167,16 +193,17 @@ int main()
 
 			}
 		}
-
-		
-		
+		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+			p = 0;
+			printf("%d",p);
+		}*/
 
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			Beep(329, 100);
-			Beep(493, 100);
-			shapeSprite.setPosition(spawnPoint);
-
+			p = 2;
+			sound.stop();
+			
 		}
+	
 
 		totalTime += deltaTime;
 		if (totalTime >= 0.1)
