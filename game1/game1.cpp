@@ -54,7 +54,7 @@ int main()
 
 	////// Texture
 	sf::Texture playerTexture;
-	if (!playerTexture.loadFromFile("pic/walk04.png"))
+	if (!playerTexture.loadFromFile("pic/bbwalk.png"))
 	{
 		std::cout << "Load failed" << std::endl;
 	}
@@ -66,10 +66,10 @@ int main()
 
 	shapeSprite.setOrigin(120.0f / 2.0f, 125.0f / 2.0f);
 
-	////// bg01
+	////// bg2
 	sf::Texture bgTexture;
 	sf::RectangleShape bg(sf::Vector2f(10000.0f, 420.0f));
-	bgTexture.loadFromFile("pic/1bg.png");
+	bgTexture.loadFromFile("pic/bg2.png");
 	bg.setTexture(&bgTexture);
 
 	sf::Vector2f spawnPoint = { 1200.f, 210.f };
@@ -133,14 +133,14 @@ int main()
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			if (shapeSprite.getPosition().y > 90 && p == 0) {
+			if (shapeSprite.getPosition().y > 130 && p == 0) {
 				shapeSprite.move(0.f * speed, -speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
 			}
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-			if (shapeSprite.getPosition().y < 380 && p==0) {
+			if (shapeSprite.getPosition().y < 336 && p==0) {
 				shapeSprite.move(0.f * speed, speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
 			}
