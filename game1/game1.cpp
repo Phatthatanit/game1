@@ -5,12 +5,35 @@
 #include <windows.h>
 #include<stdio.h>
 #include<conio.h>
+#include <sstream> 
 int p = 0;
 int main()
 {
 
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game from scratch!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
+
+	int currentScore = 0;
+
+	sf::Font myFont;
+	if (!myFont.loadFromFile("pic/score.ttf")) {}
+
+	sf::Text score1;
+	score1.setFont(myFont);
+	score1.setFillColor(sf::Color::Yellow);
+	score1.setStyle(sf::Text::Regular);
+	score1.setString("S c o r e : ");
+	score1.setCharacterSize(30);
+	score1.setPosition(800, 100);
+
+	sf::Text scoreCurrent;
+	scoreCurrent.setFont(myFont);
+	scoreCurrent.setFillColor(sf::Color::Yellow);
+	scoreCurrent.setStyle(sf::Text::Regular);
+	scoreCurrent.setString(" 0 ");
+	scoreCurrent.setCharacterSize(30);
+	scoreCurrent.setPosition(1200, 0);
+	
 
 	sf::SoundBuffer buffer;
 	if (!buffer.loadFromFile("pic/s3.ogg"))
@@ -45,11 +68,6 @@ int main()
 
 	////// bg01
 	sf::Texture bgTexture;
-	if (!bgTexture.loadFromFile("pic/bg01.png"))
-	{
-		std::cout << "Load failed" << std::endl;
-	}
-
 	sf::RectangleShape bg(sf::Vector2f(10000.0f, 420.0f));
 	bgTexture.loadFromFile("pic/1bg.png");
 	bg.setTexture(&bgTexture);
@@ -57,6 +75,22 @@ int main()
 	sf::Vector2f spawnPoint = { 1200.f, 210.f };
 	shapeSprite.setPosition(spawnPoint);
 
+	////// pause
+	sf::Texture pauseTexture;
+	sf::RectangleShape pause(sf::Vector2f(100.0f, 100.0f));
+	pauseTexture.loadFromFile("pic/pause1.png");
+	pause.setTexture(&pauseTexture);
+
+	////// pause1
+	sf::Color pauseColor(0, 0, 0, 100);
+	sf::RectangleShape pause1(sf:: Vector2f(1575, 420));
+	pause1.setFillColor(pauseColor);
+
+
+	////// score
+	sf::Color scoreColor(0, 0, 0, 1000);
+	sf::RectangleShape score(sf::Vector2f(2000, 50));
+	score.setFillColor(scoreColor);
 
 	int animationFrame = 0;
 	float totalTime = 0;
@@ -66,13 +100,31 @@ int main()
 
 	while (window.isOpen())
 	{
+		pause.setPosition(shapeSprite.getPosition().x -450 , 160.0f);
+		pause1.setPosition(shapeSprite.getPosition().x - 1200.0f, 0.0f);
+		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
+		score1.setPosition(shapeSprite.getPosition().x - 250, 5.0f);
+		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60  , 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 
 		deltaTime = clock.restart().asSeconds();
 		window.setView(view);
 		window.draw(bg);
+		window.draw(score);
 		window.draw(shapeSprite);
 		window.draw(collision);
+		window.draw(score1);
+		window.draw(scoreCurrent);
+
+		if (p == 1) {
+			window.draw(pause);
+			window.draw(pause1);
+		}
+
+		std::stringstream scoreShow;
+		scoreShow << currentScore;
+		//scoreCurrent.setString(scoreShow.str().c_str());
+	
 		window.display();
 	
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
@@ -81,7 +133,7 @@ int main()
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			if (shapeSprite.getPosition().y > 40 && p == 0) {
+			if (shapeSprite.getPosition().y > 90 && p == 0) {
 				shapeSprite.move(0.f * speed, -speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
 			}
@@ -97,6 +149,8 @@ int main()
 		{
 			window.close();
 		}
+		
+		
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
 		{
@@ -104,6 +158,7 @@ int main()
 				p = 1;
 				printf("%d", p);
 				Sleep(200);
+
 			}
 			else {
 				p = 0;
