@@ -6,7 +6,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include <sstream> 
-int p = 0;
+int p = 0,s =0;
 int main()
 {
 
@@ -33,23 +33,23 @@ int main()
 	scoreCurrent.setString(" 0 ");
 	scoreCurrent.setCharacterSize(30);
 	scoreCurrent.setPosition(1200, 0);
-	
-	//soundstart
-	
-		sf::SoundBuffer buffer;
-		if (!buffer.loadFromFile("pic/s3.ogg"))
-		{
-			std::cout << "Load failed" << std::endl;
-		}
 
-		sf::Sound sound;
-		sound.setLoop(true);
-		sound.setBuffer(buffer);
-		sound.play();
-	
+	//soundstart
+
+	sf::SoundBuffer buffer;
+	if (!buffer.loadFromFile("pic/s3.ogg"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+
+	sf::Sound sound;
+	sound.setLoop(true);
+	sound.setBuffer(buffer);
+	sound.play();
+
 
 	//soundend
-	/*
+	
 		sf::SoundBuffer buffer1;
 		if (!buffer1.loadFromFile("pic/s4.ogg"))
 		{
@@ -57,9 +57,9 @@ int main()
 		}
 		sf::Sound sound1;
 		sound1.setBuffer(buffer1);
-		sound1.play();
-	*/
+		
 	
+
 
 
 
@@ -99,7 +99,7 @@ int main()
 
 	////// pause1
 	sf::Color pauseColor(0, 0, 0, 100);
-	sf::RectangleShape pause1(sf:: Vector2f(1575, 420));
+	sf::RectangleShape pause1(sf::Vector2f(1575, 420));
 	pause1.setFillColor(pauseColor);
 
 	////// gameover
@@ -124,11 +124,11 @@ int main()
 
 	while (window.isOpen())
 	{
-		pause.setPosition(shapeSprite.getPosition().x -450 , 160.0f);
+		pause.setPosition(shapeSprite.getPosition().x - 450, 160.0f);
 		pause1.setPosition(shapeSprite.getPosition().x - 1200.0f, 0.0f);
 		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
 		score1.setPosition(shapeSprite.getPosition().x - 250, 5.0f);
-		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60  , 5.0f);
+		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60, 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 
@@ -140,7 +140,7 @@ int main()
 		window.draw(collision);
 		window.draw(score1);
 		window.draw(scoreCurrent);
-		
+
 		if (p == 1) {
 			window.draw(pause);
 			window.draw(pause1);
@@ -148,15 +148,14 @@ int main()
 		if (p == 2) {
 			window.draw(pause1);
 			window.draw(game);
+			
 		}
-		
-		
-	
+
 		window.display();
-	
+
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
-		shapeSprite.move(speed* deltaTime, 0.f * speed);
-		shapeSprite.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 120, 125));
+			shapeSprite.move(speed * deltaTime, 0.f * speed);
+			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
@@ -167,7 +166,7 @@ int main()
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-			if (shapeSprite.getPosition().y < 336 && p==0) {
+			if (shapeSprite.getPosition().y < 336 && p == 0) {
 				shapeSprite.move(0.f * speed, speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
 			}
@@ -176,9 +175,9 @@ int main()
 		{
 			window.close();
 		}
-		
-		
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)|| sf::Mouse::isButtonPressed(sf::Mouse::Right))
+
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Mouse::isButtonPressed(sf::Mouse::Right))
 		{
 			if (p == 0) {
 				p = 1;
@@ -199,11 +198,17 @@ int main()
 		}*/
 
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			p = 2;
-			sound.stop();
+			if (p == 0) {
+				p = 2;
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+				
+			}
 			
+
 		}
-	
+
 
 		totalTime += deltaTime;
 		if (totalTime >= 0.1)
