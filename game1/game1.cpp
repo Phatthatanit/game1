@@ -68,9 +68,14 @@ int main()
 	collision.setPosition({ 1800.f, 210.f });
 	collision.setFillColor(sf::Color::Green);
 
+	///// line
+
+	sf::RectangleShape line(sf::Vector2f(10, 260));
+	line.setFillColor(sf::Color::Red);
+
 	////// Texture
 	sf::Texture playerTexture;
-	if (!playerTexture.loadFromFile("pic/bbwalk.png"))
+	if (!playerTexture.loadFromFile("pic/walk.png"))
 	{
 		std::cout << "Load failed" << std::endl;
 	}
@@ -81,6 +86,20 @@ int main()
 	shapeSprite.setTextureRect(sf::IntRect(0, 0, spriteSizeX, spriteSizeY));
 
 	shapeSprite.setOrigin(120.0f / 2.0f, 125.0f / 2.0f);
+
+	/*////// m1
+	sf::Texture m1;
+	if (!m1.loadFromFile("pic/a.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem1;
+	shapem1.setTexture(m1);
+	int spriteSizeX1 = m1.getSize().x / 10;
+	int spriteSizeY1 = m1.getSize().y / 1;
+	shapem1.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+	shapem1.setOrigin(120.0f / 2.0f, 125.0f / 2.0f);
+	*/
 
 	////// bg2
 	sf::Texture bgTexture;
@@ -124,6 +143,7 @@ int main()
 
 	while (window.isOpen())
 	{
+		line.setPosition(shapeSprite.getPosition().x - 120, 139.0f);
 		pause.setPosition(shapeSprite.getPosition().x - 450, 160.0f);
 		pause1.setPosition(shapeSprite.getPosition().x - 1200.0f, 0.0f);
 		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
@@ -137,6 +157,7 @@ int main()
 		window.draw(bg);
 		window.draw(score);
 		window.draw(shapeSprite);
+		window.draw(line);
 		window.draw(collision);
 		window.draw(score1);
 		window.draw(scoreCurrent);
@@ -155,20 +176,20 @@ int main()
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
-			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
+			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			if (shapeSprite.getPosition().y > 130 && p == 0) {
 				shapeSprite.move(0.f * speed, -speed * deltaTime);
-				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
+				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
 			}
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 			if (shapeSprite.getPosition().y < 336 && p == 0) {
 				shapeSprite.move(0.f * speed, speed * deltaTime);
-				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 125));
+				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
 			}
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -182,13 +203,13 @@ int main()
 			if (p == 0) {
 				p = 1;
 				printf("%d", p);
-				Sleep(200);
+				Sleep(300);
 
 			}
 			else {
 				p = 0;
 				printf("%d", p);
-				Sleep(200);
+				Sleep(300);
 
 			}
 		}
@@ -198,6 +219,7 @@ int main()
 		}*/
 
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			
 			if (p == 0) {
 				p = 2;
 				printf("%d", p);
