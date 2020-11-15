@@ -11,7 +11,7 @@ int p = 3,s =0;
 int main()
 {
 
-	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game from scratch!");
+	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
 
 	Menu menu(window.getSize().x, window.getSize().y);
@@ -132,6 +132,12 @@ int main()
 	gameTexture.loadFromFile("pic/gameov1.png");
 	game.setTexture(&gameTexture);
 
+	////// howto
+	sf::Texture howtoTexture;
+	sf::RectangleShape howto1(sf::Vector2f(1475.0f, 420.0f));
+	howtoTexture.loadFromFile("pic/howto.png");
+	howto1.setTexture(&howtoTexture);
+
 
 
 
@@ -170,6 +176,8 @@ int main()
 							break;
 						case 1:
 							std::cout << "How to has been pressd" << std::endl;
+							p = 4;
+							
 							break;
 						case 2:
 							window.close();
@@ -196,10 +204,19 @@ int main()
 		
 
 		if (p == 1) {
+			window.draw(bg);
+			window.draw(shapeSprite);
+			window.draw(line);
+			window.draw(score);
+			window.draw(score1);
+			window.draw(scoreCurrent);
+			window.draw(collision);
+			window.setView(view);
 			window.draw(pause);
 			window.draw(pause1);
 		}
 		if (p == 2) {
+			
 			window.draw(pause1);
 			window.draw(game);
 			
@@ -217,7 +234,9 @@ int main()
 			window.draw(collision);
 			window.setView(view);
 		}
-	
+		if (p == 4) {
+			window.draw(howto1);
+		}
 		window.display();
 		
 	
@@ -248,7 +267,7 @@ int main()
 		}
 
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Mouse::isButtonPressed(sf::Mouse::Right))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Mouse::isButtonPressed(sf::Mouse::Right))
 		{
 			if (p == 0) {
 				p = 1;
