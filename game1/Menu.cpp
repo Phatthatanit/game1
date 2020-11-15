@@ -7,19 +7,19 @@ Menu::Menu(float width, float height) {
 		menu[0].setFillColor(sf::Color::Yellow);
 		menu[0].setString("Play");
 		menu[0].setOrigin(menu[0].getLocalBounds().width / 2, menu[0].getLocalBounds().height / 2);
-		menu[0].setPosition(sf::Vector2f(800, 100));
+		menu[0].setPosition(sf::Vector2f(750, 100));
 
 		menu[1].setFont(font);
 		menu[1].setFillColor(sf::Color::White);
 		menu[1].setString("How to");
 		menu[1].setOrigin(menu[1].getLocalBounds().width / 2, menu[1].getLocalBounds().height / 2);
-		menu[1].setPosition(sf::Vector2f(800, 200));
+		menu[1].setPosition(sf::Vector2f(750, 200));
 
 		menu[2].setFont(font);
 		menu[2].setFillColor(sf::Color::White);
 		menu[2].setString("Exit");
 		menu[2].setOrigin(menu[2].getLocalBounds().width / 2, menu[2].getLocalBounds().height / 2);
-		menu[2].setPosition(sf::Vector2f(800,300));
+		menu[2].setPosition(sf::Vector2f(750,300));
 
 }
 Menu::~Menu() {

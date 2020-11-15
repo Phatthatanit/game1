@@ -7,10 +7,11 @@
 #include<conio.h>
 #include <sstream> 
 #include "Menu.h"
-int p = 3,s =0;
+#include <sstream> 
+int p = 3,s =0,sc=0;
 int main()
 {
-	 
+	srand(time(NULL));
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
 
@@ -27,15 +28,14 @@ int main()
 	score1.setStyle(sf::Text::Regular);
 	score1.setString("S c o r e : ");
 	score1.setCharacterSize(30);
-	score1.setPosition(800, 100);
+	//score1.setPosition(700, 100);
 
 	sf::Text scoreCurrent;
 	scoreCurrent.setFont(myFont);
 	scoreCurrent.setFillColor(sf::Color::Yellow);
 	scoreCurrent.setStyle(sf::Text::Regular);
-	scoreCurrent.setString(" 0 ");
 	scoreCurrent.setCharacterSize(30);
-	scoreCurrent.setPosition(1200, 0);
+	//scoreCurrent.setPosition(1300, 0);
 
 	//soundstart
 
@@ -160,11 +160,11 @@ int main()
 			switch (event.type) {
 			case sf::Event::KeyReleased:
 				switch (event.key.code) {
-				case sf::Keyboard::Up:
+				case sf::Keyboard::W:
 						menu.MoveUp();
 						break;
 
-				case sf::Keyboard::Down:
+				case sf::Keyboard::S:
 					menu.MoveDown();
 					break;
 
@@ -177,8 +177,8 @@ int main()
 						case 1:
 							std::cout << "How to has been pressd" << std::endl;
 							p = 4;
-							
 							break;
+					
 						case 2:
 							window.close();
 							break;
@@ -195,7 +195,7 @@ int main()
 		pause.setPosition(shapeSprite.getPosition().x - 450, 160.0f);
 		pause1.setPosition(shapeSprite.getPosition().x - 1200.0f, 0.0f);
 		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
-		score1.setPosition(shapeSprite.getPosition().x - 250, 5.0f);
+		score1.setPosition(shapeSprite.getPosition().x - 300, 5.0f);
 		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60, 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
@@ -217,8 +217,11 @@ int main()
 		}
 		if (p == 2) {
 			
-			window.draw(pause1);
+			window.draw(score);
+			window.draw(score1);
+			window.draw(scoreCurrent);
 			window.draw(game);
+			
 			
 		}
 		if (p == 3) {
@@ -240,12 +243,23 @@ int main()
 		window.display();
 		
 	
-			
+		int xOp = rand() % 500;
+		int yOp = rand() % 500;
+
+
+		std::stringstream scoreShow;
+		scoreShow << currentScore;
+		scoreCurrent.setString(scoreShow.str().c_str());
+		
 		
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
+			if (p == 0) {
+				currentScore += 1;
+				Sleep(20);
+			}
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
@@ -283,9 +297,9 @@ int main()
 			}
 		}
 		
-
+		
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			
+			collision.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
 				printf("%d", p);
