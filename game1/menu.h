@@ -1,18 +1,19 @@
-/*#pragma once
-#define _CRT_SECURE_NO_WARNINGS
-#define MAX_NUMBER_OF_ITEMS 3
+#pragma once
 #include <SFML/Graphics.hpp>
-
-class menu
+#define Max_ITEMS 3
+class Menu
 {
-	public
-		Menu(float width, float height);
-	void MoverUp();
-	void MoveDown();
-	private
-		int selectedItemIndex;
-	sf::Font font;
-	sf::Text text[MAX_NUMBER_OF_ITEMS];
+public:
+	Menu(float width,float height);
+	~Menu();
 
-};*/
+	void draw(sf::RenderWindow& window);
+	void MoveUp();
+	void MoveDown();
+	int GetPressedItem() { return selectedItem;  }
+private:
+	int selectedItem=0;
+	sf::Font font;
+	sf::Text menu[Max_ITEMS];
+};
 

@@ -6,12 +6,15 @@
 #include<stdio.h>
 #include<conio.h>
 #include <sstream> 
-int p = 0,s =0;
+#include "Menu.h"
+int p = 3,s =0;
 int main()
 {
 
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game from scratch!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
+
+	Menu menu(window.getSize().x, window.getSize().y);
 
 	int currentScore = 0;
 
@@ -43,9 +46,11 @@ int main()
 	}
 
 	sf::Sound sound;
+	
 	sound.setLoop(true);
 	sound.setBuffer(buffer);
 	sound.play();
+	
 
 
 	//soundend
@@ -141,8 +146,43 @@ int main()
 	float speed = 100.0f;
 	sf::Clock clock;
 
+
 	while (window.isOpen())
 	{
+		sf::Event event;
+		while (window.pollEvent(event)) {
+			switch (event.type) {
+			case sf::Event::KeyReleased:
+				switch (event.key.code) {
+				case sf::Keyboard::Up:
+						menu.MoveUp();
+						break;
+
+				case sf::Keyboard::Down:
+					menu.MoveDown();
+					break;
+
+					case sf::Keyboard::Return:
+						switch (menu.GetPressedItem()) {
+						case 0:
+							std::cout << "Play has been pressd" << std::endl;
+							p = 0;
+							break;
+						case 1:
+							std::cout << "How to has been pressd" << std::endl;
+							break;
+						case 2:
+							window.close();
+							break;
+						}
+				}
+				break;
+
+			case sf::Event::Closed:
+				window.close();
+				break;
+			}
+		}
 		line.setPosition(shapeSprite.getPosition().x - 120, 139.0f);
 		pause.setPosition(shapeSprite.getPosition().x - 450, 160.0f);
 		pause1.setPosition(shapeSprite.getPosition().x - 1200.0f, 0.0f);
@@ -153,14 +193,7 @@ int main()
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 
 		deltaTime = clock.restart().asSeconds();
-		window.setView(view);
-		window.draw(bg);
-		window.draw(score);
-		window.draw(shapeSprite);
-		window.draw(line);
-		window.draw(collision);
-		window.draw(score1);
-		window.draw(scoreCurrent);
+		
 
 		if (p == 1) {
 			window.draw(pause);
@@ -171,8 +204,27 @@ int main()
 			window.draw(game);
 			
 		}
-
+		if (p == 3) {
+			menu.draw(window);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+				p = 0;
+			}
+		}
+		if (p == 0) {
+			
+		}
+	
 		window.display();
+		window.setView(view);
+		window.draw(bg);
+		window.draw(score);
+		window.draw(shapeSprite);
+		window.draw(line);
+		window.draw(collision);
+		window.draw(score1);
+		window.draw(scoreCurrent);
+			
+		
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
@@ -213,10 +265,7 @@ int main()
 
 			}
 		}
-		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-			p = 0;
-			printf("%d",p);
-		}*/
+		
 
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 			
@@ -242,6 +291,7 @@ int main()
 		if (animationFrame >= 9) {
 			animationFrame = 0;
 		}
+	
 		window.clear();
 	}
 	return 0;
