@@ -206,23 +206,21 @@ int main()
 		}
 		if (p == 3) {
 			menu.draw(window);
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-				p = 0;
-			}
 		}
 		if (p == 0) {
-			
+			window.draw(bg);
+			window.draw(shapeSprite);
+			window.draw(line);
+			window.draw(score);
+			window.draw(score1);
+			window.draw(scoreCurrent);
+			window.draw(collision);
+			window.setView(view);
 		}
 	
 		window.display();
-		window.setView(view);
-		window.draw(bg);
-		window.draw(score);
-		window.draw(shapeSprite);
-		window.draw(line);
-		window.draw(collision);
-		window.draw(score1);
-		window.draw(scoreCurrent);
+		
+	
 			
 		
 
@@ -232,14 +230,14 @@ int main()
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			if (shapeSprite.getPosition().y > 130 && p == 0) {
+			if (shapeSprite.getPosition().y > 140 && p == 0) {
 				shapeSprite.move(0.f * speed, -speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
 			}
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-			if (shapeSprite.getPosition().y < 336 && p == 0) {
+			if (shapeSprite.getPosition().y < 356 && p == 0) {
 				shapeSprite.move(0.f * speed, speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
 			}
