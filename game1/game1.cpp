@@ -10,7 +10,7 @@
 int p = 3,s =0;
 int main()
 {
-
+	 
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
 
