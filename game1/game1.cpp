@@ -4,14 +4,31 @@
 #include <iostream>
 #include <windows.h>
 #include<stdio.h>
+#include <stdlib.h>
 #include<conio.h>
 #include <sstream> 
 #include "Menu.h"
 #include <sstream> 
 int p = 3,s =0,sc=0;
+
+int c, n,num=1;
+/*void mon() {
+	if ( num == 0) {
+
+		for (c = 1; c <= 1; c++) {
+			n = rand() % 26 + 1;
+			printf("%d\n", n);
+			
+			Sleep(20);
+
+		}
+	}
+
+}*/
 int main()
 {
-	srand(time(NULL));
+	
+	//srand(time(NULL));
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
 
@@ -28,14 +45,14 @@ int main()
 	score1.setStyle(sf::Text::Regular);
 	score1.setString("S c o r e : ");
 	score1.setCharacterSize(30);
-	//score1.setPosition(700, 100);
+	
 
 	sf::Text scoreCurrent;
 	scoreCurrent.setFont(myFont);
 	scoreCurrent.setFillColor(sf::Color::Yellow);
 	scoreCurrent.setStyle(sf::Text::Regular);
 	scoreCurrent.setCharacterSize(30);
-	//scoreCurrent.setPosition(1300, 0);
+	
 
 	//soundstart
 
@@ -92,7 +109,7 @@ int main()
 
 	shapeSprite.setOrigin(120.0f / 2.0f, 125.0f / 2.0f);
 
-	/*////// m1
+	////// m1
 	sf::Texture m1;
 	if (!m1.loadFromFile("pic/a.png"))
 	{
@@ -103,14 +120,75 @@ int main()
 	int spriteSizeX1 = m1.getSize().x / 10;
 	int spriteSizeY1 = m1.getSize().y / 1;
 	shapem1.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
-	shapem1.setOrigin(120.0f / 2.0f, 125.0f / 2.0f);
-	*/
+	
+	////// m2
+	sf::Texture m2;
+	if (!m2.loadFromFile("pic/b.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem2;
+	shapem2.setTexture(m2);
+	int spriteSizeX1 = m2.getSize().x / 10;
+	int spriteSizeY1 = m2.getSize().y / 1;
+	shapem2.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+	
+	////// m3
+	sf::Texture m3;
+	if (!m3.loadFromFile("pic/c.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem3;
+	shapem3.setTexture(m3);
+	int spriteSizeX1 = m3.getSize().x / 10;
+	int spriteSizeY1 = m3.getSize().y / 1;
+	shapem3.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+
+
+	////// m4
+	sf::Texture m4;
+	if (!m4.loadFromFile("pic/d.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem4;
+	shapem4.setTexture(m4);
+	int spriteSizeX1 = m4.getSize().x / 10;
+	int spriteSizeY1 = m4.getSize().y / 1;
+	shapem4.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+
+
+	////// m5
+	sf::Texture m5;
+	if (!m5.loadFromFile("pic/e.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem5;
+	shapem5.setTexture(m5);
+	int spriteSizeX1 = m5.getSize().x / 10;
+	int spriteSizeY1 = m5.getSize().y / 1;
+	shapem5.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+
+	///// m6
+	sf::Texture m6;
+	if (!m6.loadFromFile("pic/e.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem6;
+	shapem6.setTexture(m6);
+	int spriteSizeX1 = m6.getSize().x / 10;
+	int spriteSizeY1 = m6.getSize().y / 1;
+	shapem6.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
 
 	////// bg2
 	sf::Texture bgTexture;
 	sf::RectangleShape bg(sf::Vector2f(10000.0f, 420.0f));
 	bgTexture.loadFromFile("pic/bg2.png");
 	bg.setTexture(&bgTexture);
+	
 
 	sf::Vector2f spawnPoint = { 1200.f, 210.f };
 	shapeSprite.setPosition(spawnPoint);
@@ -173,6 +251,8 @@ int main()
 						case 0:
 							std::cout << "Play has been pressd" << std::endl;
 							p = 0;
+							num = 0;
+							printf("num = %d", num);
 							break;
 						case 1:
 							std::cout << "How to has been pressd" << std::endl;
@@ -182,6 +262,8 @@ int main()
 						case 2:
 							window.close();
 							break;
+						
+							
 						}
 				}
 				break;
@@ -199,6 +281,7 @@ int main()
 		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60, 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
+		shapem1.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 
 		deltaTime = clock.restart().asSeconds();
 		
@@ -206,11 +289,11 @@ int main()
 		if (p == 1) {
 			window.draw(bg);
 			window.draw(shapeSprite);
-			window.draw(line);
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
 			window.draw(collision);
+			window.draw(line);
 			window.setView(view);
 			window.draw(pause);
 			window.draw(pause1);
@@ -230,19 +313,26 @@ int main()
 		if (p == 0) {
 			window.draw(bg);
 			window.draw(shapeSprite);
-			window.draw(line);
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
 			window.draw(collision);
+			window.draw(line);
 			window.setView(view);
+			//window.draw(shapem1);
+			//mon();
+			
+			
+			
 		}
 		if (p == 4) {
 			window.draw(howto1);
+			
+			
 		}
+		
 		window.display();
 		
-	
 		int xOp = rand() % 500;
 		int yOp = rand() % 500;
 
@@ -255,24 +345,29 @@ int main()
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
-			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
+			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
+			shapem1.move(speed* deltaTime, 0.f * speed);
+			shapem1.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 			if (p == 0) {
 				currentScore += 1;
 				Sleep(20);
 			}
+			
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			if (shapeSprite.getPosition().y > 140 && p == 0) {
 				shapeSprite.move(0.f * speed, -speed * deltaTime);
-				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
+				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
+				
 			}
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 			if (shapeSprite.getPosition().y < 356 && p == 0) {
 				shapeSprite.move(0.f * speed, speed * deltaTime);
-				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 120, 91));
+				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
+				
 			}
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -296,6 +391,8 @@ int main()
 
 			}
 		}
+
+		
 		
 		
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
@@ -319,6 +416,7 @@ int main()
 			animationFrame++;
 		}
 
+
 		if (animationFrame >= 9) {
 			animationFrame = 0;
 		}
@@ -327,3 +425,4 @@ int main()
 	}
 	return 0;
 }
+
