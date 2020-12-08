@@ -9,9 +9,9 @@
 #include <sstream> 
 #include "Menu.h"
 #include <sstream> 
-int p = 3,s =0,sc=0;
+int p = 3,s =0,sc=0,rs=0;
 
-int c, n,num=1;
+ int c, n,num=1;
 /*void mon() {
 	if ( num == 0) {
 
@@ -27,7 +27,7 @@ int c, n,num=1;
 }*/
 int main()
 {
-	
+
 	//srand(time(NULL));
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
@@ -45,14 +45,14 @@ int main()
 	score1.setStyle(sf::Text::Regular);
 	score1.setString("S c o r e : ");
 	score1.setCharacterSize(30);
-	
+
 
 	sf::Text scoreCurrent;
 	scoreCurrent.setFont(myFont);
 	scoreCurrent.setFillColor(sf::Color::Yellow);
 	scoreCurrent.setStyle(sf::Text::Regular);
 	scoreCurrent.setCharacterSize(30);
-	
+
 
 	//soundstart
 
@@ -63,24 +63,24 @@ int main()
 	}
 
 	sf::Sound sound;
-	
+
 	sound.setLoop(true);
 	sound.setBuffer(buffer);
 	sound.play();
-	
+
 
 
 	//soundend
-	
-		sf::SoundBuffer buffer1;
-		if (!buffer1.loadFromFile("pic/s4.ogg"))
-		{
-			std::cout << "Load failed" << std::endl;
-		}
-		sf::Sound sound1;
-		sound1.setBuffer(buffer1);
-		
-	
+
+	sf::SoundBuffer buffer1;
+	if (!buffer1.loadFromFile("pic/s4.ogg"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sound sound1;
+	sound1.setBuffer(buffer1);
+
+
 
 
 
@@ -120,6 +120,7 @@ int main()
 	int spriteSizeX1 = m1.getSize().x / 10;
 	int spriteSizeY1 = m1.getSize().y / 1;
 	shapem1.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+
 	
 	////// m2
 	sf::Texture m2;
@@ -129,10 +130,11 @@ int main()
 	}
 	sf::Sprite shapem2;
 	shapem2.setTexture(m2);
-	int spriteSizeX1 = m2.getSize().x / 10;
-	int spriteSizeY1 = m2.getSize().y / 1;
-	shapem2.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
-	
+	int spriteSizeX2 = m2.getSize().x / 10;
+	int spriteSizeY2 = m2.getSize().y / 1;
+	shapem2.setTextureRect(sf::IntRect(0, 0, spriteSizeX2, spriteSizeY2));
+
+
 	////// m3
 	sf::Texture m3;
 	if (!m3.loadFromFile("pic/c.png"))
@@ -141,10 +143,9 @@ int main()
 	}
 	sf::Sprite shapem3;
 	shapem3.setTexture(m3);
-	int spriteSizeX1 = m3.getSize().x / 10;
-	int spriteSizeY1 = m3.getSize().y / 1;
-	shapem3.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
-
+	int spriteSizeX3 = m3.getSize().x / 10;
+	int spriteSizeY3 = m3.getSize().y / 1;
+	shapem3.setTextureRect(sf::IntRect(0, 0, spriteSizeX3, spriteSizeY3));
 
 	////// m4
 	sf::Texture m4;
@@ -154,10 +155,9 @@ int main()
 	}
 	sf::Sprite shapem4;
 	shapem4.setTexture(m4);
-	int spriteSizeX1 = m4.getSize().x / 10;
-	int spriteSizeY1 = m4.getSize().y / 1;
-	shapem4.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
-
+	int spriteSizeX4 = m4.getSize().x / 10;
+	int spriteSizeY4 = m4.getSize().y / 1;
+	shapem4.setTextureRect(sf::IntRect(0, 0, spriteSizeX4, spriteSizeY4));
 
 	////// m5
 	sf::Texture m5;
@@ -167,21 +167,264 @@ int main()
 	}
 	sf::Sprite shapem5;
 	shapem5.setTexture(m5);
-	int spriteSizeX1 = m5.getSize().x / 10;
-	int spriteSizeY1 = m5.getSize().y / 1;
-	shapem5.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+	int spriteSizeX5 = m5.getSize().x / 10;
+	int spriteSizeY5 = m5.getSize().y / 1;
+	shapem5.setTextureRect(sf::IntRect(0, 0, spriteSizeX5, spriteSizeY5));
+	
 
-	///// m6
+	////// m6
 	sf::Texture m6;
-	if (!m6.loadFromFile("pic/e.png"))
+	if (!m6.loadFromFile("pic/f.png"))
 	{
 		std::cout << "Load failed" << std::endl;
 	}
 	sf::Sprite shapem6;
 	shapem6.setTexture(m6);
-	int spriteSizeX1 = m6.getSize().x / 10;
-	int spriteSizeY1 = m6.getSize().y / 1;
-	shapem6.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+	int spriteSizeX6 = m6.getSize().x / 10;
+	int spriteSizeY6 = m6.getSize().y / 1;
+	shapem6.setTextureRect(sf::IntRect(0, 0, spriteSizeX6, spriteSizeY6));
+
+	////// m7
+	sf::Texture m7;
+	if (!m7.loadFromFile("pic/g.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem7;
+	shapem7.setTexture(m7);
+	int spriteSizeX7 = m7.getSize().x / 10;
+	int spriteSizeY7 = m7.getSize().y / 1;
+	shapem7.setTextureRect(sf::IntRect(0, 0, spriteSizeX7, spriteSizeY7));
+
+	////// m8
+	sf::Texture m8;
+	if (!m8.loadFromFile("pic/h.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem8;
+	shapem8.setTexture(m8);
+	int spriteSizeX8 = m8.getSize().x / 10;
+	int spriteSizeY8 = m8.getSize().y / 1;
+	shapem8.setTextureRect(sf::IntRect(0, 0, spriteSizeX8, spriteSizeY8));
+
+	////// m9
+	sf::Texture m9;
+	if (!m9.loadFromFile("pic/i.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem9;
+	shapem9.setTexture(m9);
+	int spriteSizeX9 = m9.getSize().x / 10;
+	int spriteSizeY9 = m9.getSize().y / 1;
+	shapem9.setTextureRect(sf::IntRect(0, 0, spriteSizeX9, spriteSizeY9));
+
+	////// m10
+	sf::Texture m10;
+	if (!m10.loadFromFile("pic/j.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem10;
+	shapem10.setTexture(m10);
+	int spriteSizeX10 = m10.getSize().x / 10;
+	int spriteSizeY10 = m10.getSize().y / 1;
+	shapem10.setTextureRect(sf::IntRect(0, 0, spriteSizeX10, spriteSizeY10));
+
+	////// m11
+	sf::Texture m11;
+	if (!m11.loadFromFile("pic/k.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem11;
+	shapem11.setTexture(m11);
+	int spriteSizeX11 = m11.getSize().x / 10;
+	int spriteSizeY11 = m11.getSize().y / 1;
+	shapem11.setTextureRect(sf::IntRect(0, 0, spriteSizeX11, spriteSizeY11));
+
+	////// m12
+	sf::Texture m12;
+	if (!m12.loadFromFile("pic/k.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem12;
+	shapem12.setTexture(m12);
+	int spriteSizeX12 = m12.getSize().x / 10;
+	int spriteSizeY12 = m12.getSize().y / 1;
+	shapem12.setTextureRect(sf::IntRect(0, 0, spriteSizeX12, spriteSizeY12));
+
+	////// m13
+	sf::Texture m13;
+	if (!m13.loadFromFile("pic/l.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem13;
+	shapem13.setTexture(m13);
+	int spriteSizeX13 = m13.getSize().x / 10;
+	int spriteSizeY13 = m13.getSize().y / 1;
+	shapem13.setTextureRect(sf::IntRect(0, 0, spriteSizeX13, spriteSizeY13));
+
+
+	////// m14
+	sf::Texture m14;
+	if (!m14.loadFromFile("pic/m.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem14;
+	shapem14.setTexture(m14);
+	int spriteSizeX14 = m14.getSize().x / 10;
+	int spriteSizeY14 = m14.getSize().y / 1;
+	shapem14.setTextureRect(sf::IntRect(0, 0, spriteSizeX14, spriteSizeY14));
+
+	////// m15
+	sf::Texture m15;
+	if (!m15.loadFromFile("pic/n.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem15;
+	shapem15.setTexture(m15);
+	int spriteSizeX15 = m15.getSize().x / 10;
+	int spriteSizeY15 = m15.getSize().y / 1;
+	shapem15.setTextureRect(sf::IntRect(0, 0, spriteSizeX15, spriteSizeY15));
+
+	////// m16
+		sf::Texture m16;
+	if (!m16.loadFromFile("pic/o.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem16;
+	shapem16.setTexture(m16);
+	int spriteSizeX16 = m16.getSize().x / 10;
+	int spriteSizeY16 = m16.getSize().y / 1;
+	shapem16.setTextureRect(sf::IntRect(0, 0, spriteSizeX16, spriteSizeY16));
+
+	////// m17
+	sf::Texture m17;
+	if (!m17.loadFromFile("pic/p.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem17;
+	shapem17.setTexture(m17);
+	int spriteSizeX17 = m17.getSize().x / 10;
+	int spriteSizeY17 = m17.getSize().y / 1;
+	shapem17.setTextureRect(sf::IntRect(0, 0, spriteSizeX17, spriteSizeY17));
+
+	////// m18
+	sf::Texture m18;
+	if (!m18.loadFromFile("pic/q.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem18;
+	shapem18.setTexture(m18);
+	int spriteSizeX18 = m18.getSize().x / 10;
+	int spriteSizeY18 = m18.getSize().y / 1;
+	shapem18.setTextureRect(sf::IntRect(0, 0, spriteSizeX18, spriteSizeY18));
+
+	////// m19
+	sf::Texture m19;
+	if (!m19.loadFromFile("pic/r.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem19;
+	shapem19.setTexture(m19);
+	int spriteSizeX19 = m19.getSize().x / 10;
+	int spriteSizeY19 = m19.getSize().y / 1;
+	shapem19.setTextureRect(sf::IntRect(0, 0, spriteSizeX19, spriteSizeY19));
+
+	////// m20
+	sf::Texture m20;
+	if (!m20.loadFromFile("pic/s.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem20;
+	shapem20.setTexture(m20);
+	int spriteSizeX20 = m20.getSize().x / 10;
+	int spriteSizeY20 = m20.getSize().y / 1;
+	shapem20.setTextureRect(sf::IntRect(0, 0, spriteSizeX20, spriteSizeY20));
+
+	////// m21
+	sf::Texture m21;
+	if (!m21.loadFromFile("pic/t.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem21;
+	shapem21.setTexture(m21);
+	int spriteSizeX21 = m21.getSize().x / 10;
+	int spriteSizeY21 = m21.getSize().y / 1;
+	shapem21.setTextureRect(sf::IntRect(0, 0, spriteSizeX21, spriteSizeY21));
+
+	////// m22
+	sf::Texture m22;
+	if (!m22.loadFromFile("pic/u.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem22;
+	shapem22.setTexture(m22);
+	int spriteSizeX22 = m22.getSize().x / 10;
+	int spriteSizeY22 = m22.getSize().y / 1;
+	shapem22.setTextureRect(sf::IntRect(0, 0, spriteSizeX22, spriteSizeY22));
+
+	////// m23
+	sf::Texture m23;
+	if (!m23.loadFromFile("pic/v.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem23;
+	shapem23.setTexture(m23);
+	int spriteSizeX23 = m23.getSize().x / 10;
+	int spriteSizeY23 = m23.getSize().y / 1;
+	shapem23.setTextureRect(sf::IntRect(0, 0, spriteSizeX23, spriteSizeY23));
+
+	////// m24
+	sf::Texture m24;
+	if (!m24.loadFromFile("pic/x.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem24;
+	shapem24.setTexture(m24);
+	int spriteSizeX24 = m24.getSize().x / 10;
+	int spriteSizeY24 = m24.getSize().y / 1;
+	shapem24.setTextureRect(sf::IntRect(0, 0, spriteSizeX24, spriteSizeY24));
+
+	////// m25
+	sf::Texture m25;
+	if (!m25.loadFromFile("pic/y.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem25;
+	shapem25.setTexture(m25);
+	int spriteSizeX25 = m25.getSize().x / 10;
+	int spriteSizeY25 = m25.getSize().y / 1;
+	shapem25.setTextureRect(sf::IntRect(0, 0, spriteSizeX25, spriteSizeY25));
+
+	////// m26
+	sf::Texture m26;
+	if (!m25.loadFromFile("pic/z.png"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sprite shapem26;
+	shapem26.setTexture(m26);
+	int spriteSizeX26 = m26.getSize().x / 10;
+	int spriteSizeY26 = m26.getSize().y / 1;
+	shapem26.setTextureRect(sf::IntRect(0, 0, spriteSizeX26, spriteSizeY26));
+
 
 	////// bg2
 	sf::Texture bgTexture;
@@ -213,7 +456,7 @@ int main()
 	////// howto
 	sf::Texture howtoTexture;
 	sf::RectangleShape howto1(sf::Vector2f(1475.0f, 420.0f));
-	howtoTexture.loadFromFile("pic/howto.png");
+	howtoTexture.loadFromFile("pic/howto1.png");
 	howto1.setTexture(&howtoTexture);
 
 
@@ -282,7 +525,31 @@ int main()
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 		shapem1.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-
+		shapem2.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem3.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem4.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem5.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem6.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem7.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem8.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem9.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem10.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem11.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem12.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem13.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem14.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem15.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem16.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem17.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem18.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem19.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem20.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem21.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem22.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem23.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem24.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem25.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		shapem26.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		deltaTime = clock.restart().asSeconds();
 		
 
@@ -300,13 +567,22 @@ int main()
 		}
 		if (p == 2) {
 			
-			window.draw(score);
-			window.draw(score1);
-			window.draw(scoreCurrent);
-			window.draw(game);
+
+				
+				for (int nub = 0; nub <= 120000; nub++) {
+					window.draw(game);
+					window.draw(score);
+					window.draw(score1);
+					window.draw(scoreCurrent);
+
+				}
+		
+			window.close();
+			
 			
 			
 		}
+
 		if (p == 3) {
 			menu.draw(window);
 		}
@@ -319,7 +595,7 @@ int main()
 			window.draw(collision);
 			window.draw(line);
 			window.setView(view);
-			//window.draw(shapem1);
+			//window.draw(shapem8);
 			//mon();
 			
 			
@@ -348,6 +624,59 @@ int main()
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
 			shapem1.move(speed* deltaTime, 0.f * speed);
 			shapem1.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			shapem2.move(speed* deltaTime, 0.f * speed);
+			shapem2.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			shapem3.move(speed * deltaTime, 0.f * speed);
+			shapem3.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem4.move(speed * deltaTime, 0.f * speed);
+			shapem4.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem5.move(speed * deltaTime, 0.f * speed);
+			shapem5.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem6.move(speed * deltaTime, 0.f * speed);
+			shapem6.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem7.move(speed * deltaTime, 0.f * speed);
+			shapem7.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem8.move(speed * deltaTime, 0.f * speed);
+			shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem9.move(speed * deltaTime, 0.f * speed);
+			shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem10.move(speed * deltaTime, 0.f * speed);
+			shapem10.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem11.move(speed * deltaTime, 0.f * speed);
+			shapem11.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem12.move(speed * deltaTime, 0.f * speed);
+			shapem12.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem13.move(speed * deltaTime, 0.f * speed);
+			shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem14.move(speed * deltaTime, 0.f * speed);
+			shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem15.move(speed * deltaTime, 0.f * speed);
+			shapem15.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem16.move(speed * deltaTime, 0.f * speed);
+			shapem16.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem17.move(speed * deltaTime, 0.f * speed);
+			shapem17.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem18.move(speed * deltaTime, 0.f * speed);
+			shapem18.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem19.move(speed * deltaTime, 0.f * speed);
+			shapem19.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem20.move(speed * deltaTime, 0.f * speed);
+			shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem21.move(speed * deltaTime, 0.f * speed);
+			shapem21.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem22.move(speed* deltaTime, 0.f * speed);
+			shapem22.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			shapem23.move(speed* deltaTime, 0.f * speed);
+			shapem23.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			shapem24.move(speed* deltaTime, 0.f * speed);
+			shapem24.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			shapem25.move(speed* deltaTime, 0.f * speed);
+			shapem25.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			shapem26.move(speed* deltaTime, 0.f * speed);
+			shapem26.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+
+
+
 			if (p == 0) {
 				currentScore += 1;
 				Sleep(20);
