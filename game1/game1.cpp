@@ -521,33 +521,6 @@ int main()
 		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60, 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
-		/*shapem1.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem2.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem3.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem4.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem5.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem6.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem7.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem8.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem9.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem10.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem11.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem12.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem13.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem14.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem15.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem16.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem17.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem18.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem19.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem20.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem21.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem22.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem23.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem24.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem25.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		shapem26.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
-		*/
 		deltaTime = clock.restart().asSeconds();
 
 
@@ -822,6 +795,337 @@ int main()
 
 
 		}
+
+		if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+
+		if (line.getGlobalBounds().intersects(shapem3.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+
+		if (line.getGlobalBounds().intersects(shapem4.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem5.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem6.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem7.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem8.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem9.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem10.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem11.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem12.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem13.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem14.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem15.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem16.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem17.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem18.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem19.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem20.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem21.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+
+		if (line.getGlobalBounds().intersects(shapem22.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+
+		if (line.getGlobalBounds().intersects(shapem23.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem24.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem25.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+		if (line.getGlobalBounds().intersects(shapem26.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
+			if (p == 0) {
+				p = 2;
+
+
+				printf("%d", p);
+				sound.stop();
+				sound1.play();
+			}
+
+
+		}
+
 
 
 		totalTime += deltaTime;
