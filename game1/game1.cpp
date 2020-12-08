@@ -9,16 +9,17 @@
 #include <sstream> 
 #include "Menu.h"
 #include <sstream> 
-int p = 3, s = 0, sc = 0,rs=0;
+int p = 3, s = 0, sc = 0, rs = 0;
 
- int num=1,mon;
+int num = 1, mon=1;
 
- void mons()
- {	 srand(time(NULL));
-	 mon = rand() % 26 + 1;
-	 printf("%d", mon);
-	 for(int nub = 0;nub<=100000;nub++){}
- }
+void mons()
+{
+	srand(time(NULL));
+	mon = rand() % 26 + 1;
+	printf("%d", mon);
+	for (int nub = 0; nub <= 100000; nub++) {}
+}
 
 int main()
 {
@@ -116,7 +117,7 @@ int main()
 	int spriteSizeY1 = m1.getSize().y / 1;
 	shapem1.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
 
-	
+
 	////// m2
 	sf::Texture m2;
 	if (!m2.loadFromFile("pic/b.png"))
@@ -165,7 +166,7 @@ int main()
 	int spriteSizeX5 = m5.getSize().x / 10;
 	int spriteSizeY5 = m5.getSize().y / 1;
 	shapem5.setTextureRect(sf::IntRect(0, 0, spriteSizeX5, spriteSizeY5));
-	
+
 
 	////// m6
 	sf::Texture m6;
@@ -289,7 +290,7 @@ int main()
 	shapem15.setTextureRect(sf::IntRect(0, 0, spriteSizeX15, spriteSizeY15));
 
 	////// m16
-		sf::Texture m16;
+	sf::Texture m16;
 	if (!m16.loadFromFile("pic/o.png"))
 	{
 		std::cout << "Load failed" << std::endl;
@@ -426,7 +427,7 @@ int main()
 	sf::RectangleShape bg(sf::Vector2f(10000.0f, 420.0f));
 	bgTexture.loadFromFile("pic/bg2.png");
 	bg.setTexture(&bgTexture);
-	
+
 
 	sf::Vector2f spawnPoint = { 1200.f, 210.f };
 	shapeSprite.setPosition(spawnPoint);
@@ -519,7 +520,7 @@ int main()
 		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60, 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
-		shapem1.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		/*shapem1.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		shapem2.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		shapem3.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		shapem4.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
@@ -545,6 +546,7 @@ int main()
 		shapem24.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		shapem25.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		shapem26.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
+		*/
 		deltaTime = clock.restart().asSeconds();
 
 
@@ -561,17 +563,17 @@ int main()
 			window.draw(pause1);
 		}
 		if (p == 2) {
-				
-					window.draw(game);
-					window.draw(score);
-					window.draw(score1);
-					window.draw(scoreCurrent);
-				
+
+			window.draw(game);
+			window.draw(score);
+			window.draw(score1);
+			window.draw(scoreCurrent);
+
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 		{
-			if (p == 2&&rs==0) {
+			if (p == 2 && rs == 0) {
 				rs = 1;
 				printf("%d", rs);
 				Sleep(300);
@@ -584,7 +586,7 @@ int main()
 
 			}
 		}
-		if (rs==1) {
+		if (rs == 1) {
 			window.close();
 
 		}
@@ -601,8 +603,8 @@ int main()
 			window.draw(collision);
 			window.draw(line);
 			window.setView(view);
-			
-				
+
+
 		}
 		if (p == 0 && mon == 1) {
 			window.draw(shapem1);
@@ -685,12 +687,12 @@ int main()
 
 		if (p == 4) {
 			window.draw(howto1);
-			
-			
+
+
 		}
-		
+
 		window.display();
-		
+
 		int xOp = rand() % 500;
 		int yOp = rand() % 500;
 
@@ -698,64 +700,64 @@ int main()
 		std::stringstream scoreShow;
 		scoreShow << currentScore;
 		scoreCurrent.setString(scoreShow.str().c_str());
-		
-		
+
+
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
-			shapem1.move(speed* deltaTime, 0.f * speed);
-			shapem1.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
-			shapem2.move(speed* deltaTime, 0.f * speed);
-			shapem2.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
-			shapem3.move(speed * deltaTime, 0.f * speed);
+			shapem1.move(speed * 0.05f, 0.f * speed);
+			shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem2.move(speed * 0.05f, 0.f * speed);
+			shapem2.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem3.move(speed * 0.05f, 0.f * speed);
 			shapem3.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem4.move(speed * deltaTime, 0.f * speed);
+			shapem4.move(speed * 0.05f, 0.f * speed);
 			shapem4.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem5.move(speed * deltaTime, 0.f * speed);
+			shapem5.move(speed * 0.05f, 0.f * speed);
 			shapem5.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem6.move(speed * deltaTime, 0.f * speed);
+			shapem6.move(speed * 0.05f, 0.f * speed);
 			shapem6.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem7.move(speed * deltaTime, 0.f * speed);
+			shapem7.move(speed * 0.05f, 0.f * speed);
 			shapem7.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem8.move(speed * deltaTime, 0.f * speed);
+			shapem8.move(speed * 0.05f, 0.f * speed);
 			shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem9.move(speed * deltaTime, 0.f * speed);
+			shapem9.move(speed * 0.05f, 0.f * speed);
 			shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem10.move(speed * deltaTime, 0.f * speed);
+			shapem10.move(speed * 0.05f, 0.f * speed);
 			shapem10.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem11.move(speed * deltaTime, 0.f * speed);
+			shapem11.move(speed * 0.05f, 0.f * speed);
 			shapem11.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem12.move(speed * deltaTime, 0.f * speed);
+			shapem12.move(speed * 0.05f, 0.f * speed);
 			shapem12.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem13.move(speed * deltaTime, 0.f * speed);
+			shapem13.move(speed * 0.05f, 0.f * speed);
 			shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem14.move(speed * deltaTime, 0.f * speed);
+			shapem14.move(speed * 0.05f, 0.f * speed);
 			shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem15.move(speed * deltaTime, 0.f * speed);
+			shapem15.move(speed * 0.05f, 0.f * speed);
 			shapem15.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem16.move(speed * deltaTime, 0.f * speed);
+			shapem16.move(speed * 0.05f, 0.f * speed);
 			shapem16.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem17.move(speed * deltaTime, 0.f * speed);
+			shapem17.move(speed * 0.05f, 0.f * speed);
 			shapem17.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem18.move(speed * deltaTime, 0.f * speed);
+			shapem18.move(speed * 0.05f, 0.f * speed);
 			shapem18.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem19.move(speed * deltaTime, 0.f * speed);
+			shapem19.move(speed * 0.05f, 0.f * speed);
 			shapem19.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem20.move(speed * deltaTime, 0.f * speed);
+			shapem20.move(speed * 0.05f, 0.f * speed);
 			shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem21.move(speed * deltaTime, 0.f * speed);
+			shapem21.move(speed * 0.05f, 0.f * speed);
 			shapem21.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem22.move(speed* deltaTime, 0.f * speed);
-			shapem22.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
-			shapem23.move(speed* deltaTime, 0.f * speed);
-			shapem23.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
-			shapem24.move(speed* deltaTime, 0.f * speed);
-			shapem24.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
-			shapem25.move(speed* deltaTime, 0.f * speed);
-			shapem25.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
-			shapem26.move(speed* deltaTime, 0.f * speed);
-			shapem26.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			shapem22.move(speed * 0.05f, 0.f * speed);
+			shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem23.move(speed * 0.05f, 0.f * speed);
+			shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem24.move(speed * 0.05f, 0.f * speed);
+			shapem24.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem25.move(speed * 0.05f, 0.f * speed);
+			shapem25.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+			shapem26.move(speed * 0.05f, 0.f * speed);
+			shapem26.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 
 
 
@@ -763,14 +765,14 @@ int main()
 				currentScore += 1;
 				Sleep(20);
 			}
-			
+
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			if (shapeSprite.getPosition().y > 140 && p == 0) {
 				shapeSprite.move(0.f * speed, -speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
-				
+
 			}
 		}
 
@@ -778,7 +780,7 @@ int main()
 			if (shapeSprite.getPosition().y < 356 && p == 0) {
 				shapeSprite.move(0.f * speed, speed * deltaTime);
 				shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
-				
+
 			}
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -803,20 +805,20 @@ int main()
 			}
 		}
 
-		
-		
-		
+
+
+
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 			collision.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
-				
+
 
 				printf("%d", p);
 				sound.stop();
 				sound1.play();
 			}
-			
+
 
 		}
 
@@ -832,9 +834,8 @@ int main()
 		if (animationFrame >= 9) {
 			animationFrame = 0;
 		}
-	
+
 		window.clear();
 	}
 	return 0;
 }
-
