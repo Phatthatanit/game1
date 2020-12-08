@@ -451,7 +451,7 @@ int main()
 	////// howto
 	sf::Texture howtoTexture;
 	sf::RectangleShape howto1(sf::Vector2f(1475.0f, 420.0f));
-	howtoTexture.loadFromFile("pic/howto1.png");
+	howtoTexture.loadFromFile("pic/howto.png");
 	howto1.setTexture(&howtoTexture);
 
 
