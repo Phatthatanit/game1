@@ -13,6 +13,7 @@ int p = 3, s = 0, sc = 0, rs = 0;
 
 int num = 1, mon=1;
 
+
 void mons()
 {
 	srand(time(NULL));
@@ -91,7 +92,7 @@ int main()
 	sf::RectangleShape line(sf::Vector2f(10, 260));
 	line.setFillColor(sf::Color::Red);
 
-	////// Texture
+	////// player
 	sf::Texture playerTexture;
 	if (!playerTexture.loadFromFile("pic/walk.png"))
 	{
@@ -115,8 +116,8 @@ int main()
 	shapem1.setTexture(m1);
 	int spriteSizeX1 = m1.getSize().x / 10;
 	int spriteSizeY1 = m1.getSize().y / 1;
-	shapem1.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
-
+	shapem1.setTextureRect(sf::IntRect(0,0, spriteSizeX1, spriteSizeY1));
+	shapem1.setOrigin(0.0f, -270.0f );
 
 	////// m2
 	sf::Texture m2;
@@ -129,7 +130,7 @@ int main()
 	int spriteSizeX2 = m2.getSize().x / 10;
 	int spriteSizeY2 = m2.getSize().y / 1;
 	shapem2.setTextureRect(sf::IntRect(0, 0, spriteSizeX2, spriteSizeY2));
-
+	shapem2.setOrigin(0.0f, -100.0f);
 
 	////// m3
 	sf::Texture m3;
@@ -142,7 +143,7 @@ int main()
 	int spriteSizeX3 = m3.getSize().x / 10;
 	int spriteSizeY3 = m3.getSize().y / 1;
 	shapem3.setTextureRect(sf::IntRect(0, 0, spriteSizeX3, spriteSizeY3));
-
+	shapem3.setOrigin(0.0f, -70.0f);
 	////// m4
 	sf::Texture m4;
 	if (!m4.loadFromFile("pic/d.png"))
@@ -154,7 +155,7 @@ int main()
 	int spriteSizeX4 = m4.getSize().x / 10;
 	int spriteSizeY4 = m4.getSize().y / 1;
 	shapem4.setTextureRect(sf::IntRect(0, 0, spriteSizeX4, spriteSizeY4));
-
+	shapem4.setOrigin(0.0f, -90.0f);
 	////// m5
 	sf::Texture m5;
 	if (!m5.loadFromFile("pic/e.png"))
@@ -166,7 +167,7 @@ int main()
 	int spriteSizeX5 = m5.getSize().x / 10;
 	int spriteSizeY5 = m5.getSize().y / 1;
 	shapem5.setTextureRect(sf::IntRect(0, 0, spriteSizeX5, spriteSizeY5));
-
+	shapem5.setOrigin(0.0f, -130.0f);
 
 	////// m6
 	sf::Texture m6;
@@ -179,7 +180,7 @@ int main()
 	int spriteSizeX6 = m6.getSize().x / 10;
 	int spriteSizeY6 = m6.getSize().y / 1;
 	shapem6.setTextureRect(sf::IntRect(0, 0, spriteSizeX6, spriteSizeY6));
-
+	shapem6.setOrigin(0.0f, -200.0f);
 	////// m7
 	sf::Texture m7;
 	if (!m7.loadFromFile("pic/g.png"))
@@ -191,7 +192,7 @@ int main()
 	int spriteSizeX7 = m7.getSize().x / 10;
 	int spriteSizeY7 = m7.getSize().y / 1;
 	shapem7.setTextureRect(sf::IntRect(0, 0, spriteSizeX7, spriteSizeY7));
-
+	shapem7.setOrigin(0.0f, -70.0f);
 	////// m8
 	sf::Texture m8;
 	if (!m8.loadFromFile("pic/h.png"))
@@ -203,7 +204,7 @@ int main()
 	int spriteSizeX8 = m8.getSize().x / 10;
 	int spriteSizeY8 = m8.getSize().y / 1;
 	shapem8.setTextureRect(sf::IntRect(0, 0, spriteSizeX8, spriteSizeY8));
-
+	shapem8.setOrigin(0.0f, -190.0f);
 	////// m9
 	sf::Texture m9;
 	if (!m9.loadFromFile("pic/i.png"))
@@ -215,7 +216,7 @@ int main()
 	int spriteSizeX9 = m9.getSize().x / 10;
 	int spriteSizeY9 = m9.getSize().y / 1;
 	shapem9.setTextureRect(sf::IntRect(0, 0, spriteSizeX9, spriteSizeY9));
-
+	shapem9.setOrigin(0.0f, -200.0f);
 	////// m10
 	sf::Texture m10;
 	if (!m10.loadFromFile("pic/j.png"))
@@ -227,7 +228,7 @@ int main()
 	int spriteSizeX10 = m10.getSize().x / 10;
 	int spriteSizeY10 = m10.getSize().y / 1;
 	shapem10.setTextureRect(sf::IntRect(0, 0, spriteSizeX10, spriteSizeY10));
-
+	shapem10.setOrigin(0.0f, -260.0f);
 	////// m11
 	sf::Texture m11;
 	if (!m11.loadFromFile("pic/k.png"))
@@ -239,7 +240,7 @@ int main()
 	int spriteSizeX11 = m11.getSize().x / 10;
 	int spriteSizeY11 = m11.getSize().y / 1;
 	shapem11.setTextureRect(sf::IntRect(0, 0, spriteSizeX11, spriteSizeY11));
-
+	shapem11.setOrigin(0.0f, -190.0f);
 	////// m12
 	sf::Texture m12;
 	if (!m12.loadFromFile("pic/k.png"))
@@ -251,7 +252,7 @@ int main()
 	int spriteSizeX12 = m12.getSize().x / 10;
 	int spriteSizeY12 = m12.getSize().y / 1;
 	shapem12.setTextureRect(sf::IntRect(0, 0, spriteSizeX12, spriteSizeY12));
-
+	shapem12.setOrigin(0.0f, -80.0f);
 	////// m13
 	sf::Texture m13;
 	if (!m13.loadFromFile("pic/l.png"))
@@ -263,7 +264,7 @@ int main()
 	int spriteSizeX13 = m13.getSize().x / 10;
 	int spriteSizeY13 = m13.getSize().y / 1;
 	shapem13.setTextureRect(sf::IntRect(0, 0, spriteSizeX13, spriteSizeY13));
-
+	shapem13.setOrigin(0.0f, -200.0f);
 
 	////// m14
 	sf::Texture m14;
@@ -276,7 +277,7 @@ int main()
 	int spriteSizeX14 = m14.getSize().x / 10;
 	int spriteSizeY14 = m14.getSize().y / 1;
 	shapem14.setTextureRect(sf::IntRect(0, 0, spriteSizeX14, spriteSizeY14));
-
+	shapem14.setOrigin(0.0f, -150.0f);
 	////// m15
 	sf::Texture m15;
 	if (!m15.loadFromFile("pic/n.png"))
@@ -288,7 +289,7 @@ int main()
 	int spriteSizeX15 = m15.getSize().x / 10;
 	int spriteSizeY15 = m15.getSize().y / 1;
 	shapem15.setTextureRect(sf::IntRect(0, 0, spriteSizeX15, spriteSizeY15));
-
+	shapem15.setOrigin(0.0f, -240.0f);
 	////// m16
 	sf::Texture m16;
 	if (!m16.loadFromFile("pic/o.png"))
@@ -300,7 +301,7 @@ int main()
 	int spriteSizeX16 = m16.getSize().x / 10;
 	int spriteSizeY16 = m16.getSize().y / 1;
 	shapem16.setTextureRect(sf::IntRect(0, 0, spriteSizeX16, spriteSizeY16));
-
+	shapem16.setOrigin(0.0f, -170.0f);
 	////// m17
 	sf::Texture m17;
 	if (!m17.loadFromFile("pic/p.png"))
@@ -312,7 +313,7 @@ int main()
 	int spriteSizeX17 = m17.getSize().x / 10;
 	int spriteSizeY17 = m17.getSize().y / 1;
 	shapem17.setTextureRect(sf::IntRect(0, 0, spriteSizeX17, spriteSizeY17));
-
+	shapem17.setOrigin(0.0f, -220.0f);
 	////// m18
 	sf::Texture m18;
 	if (!m18.loadFromFile("pic/q.png"))
@@ -324,7 +325,7 @@ int main()
 	int spriteSizeX18 = m18.getSize().x / 10;
 	int spriteSizeY18 = m18.getSize().y / 1;
 	shapem18.setTextureRect(sf::IntRect(0, 0, spriteSizeX18, spriteSizeY18));
-
+	shapem18.setOrigin(0.0f, -110.0f);
 	////// m19
 	sf::Texture m19;
 	if (!m19.loadFromFile("pic/r.png"))
@@ -336,7 +337,7 @@ int main()
 	int spriteSizeX19 = m19.getSize().x / 10;
 	int spriteSizeY19 = m19.getSize().y / 1;
 	shapem19.setTextureRect(sf::IntRect(0, 0, spriteSizeX19, spriteSizeY19));
-
+	shapem19.setOrigin(0.0f, -240.0f);
 	////// m20
 	sf::Texture m20;
 	if (!m20.loadFromFile("pic/s.png"))
@@ -348,7 +349,7 @@ int main()
 	int spriteSizeX20 = m20.getSize().x / 10;
 	int spriteSizeY20 = m20.getSize().y / 1;
 	shapem20.setTextureRect(sf::IntRect(0, 0, spriteSizeX20, spriteSizeY20));
-
+	shapem20.setOrigin(0.0f, -140.0f);
 	////// m21
 	sf::Texture m21;
 	if (!m21.loadFromFile("pic/t.png"))
@@ -360,7 +361,7 @@ int main()
 	int spriteSizeX21 = m21.getSize().x / 10;
 	int spriteSizeY21 = m21.getSize().y / 1;
 	shapem21.setTextureRect(sf::IntRect(0, 0, spriteSizeX21, spriteSizeY21));
-
+	shapem21.setOrigin(0.0f, -70.0f);
 	////// m22
 	sf::Texture m22;
 	if (!m22.loadFromFile("pic/u.png"))
@@ -372,7 +373,7 @@ int main()
 	int spriteSizeX22 = m22.getSize().x / 10;
 	int spriteSizeY22 = m22.getSize().y / 1;
 	shapem22.setTextureRect(sf::IntRect(0, 0, spriteSizeX22, spriteSizeY22));
-
+	shapem22.setOrigin(0.0f, -180.0f);
 	////// m23
 	sf::Texture m23;
 	if (!m23.loadFromFile("pic/v.png"))
@@ -384,7 +385,7 @@ int main()
 	int spriteSizeX23 = m23.getSize().x / 10;
 	int spriteSizeY23 = m23.getSize().y / 1;
 	shapem23.setTextureRect(sf::IntRect(0, 0, spriteSizeX23, spriteSizeY23));
-
+	shapem23.setOrigin(0.0f, -80.0f);
 	////// m24
 	sf::Texture m24;
 	if (!m24.loadFromFile("pic/x.png"))
@@ -396,7 +397,7 @@ int main()
 	int spriteSizeX24 = m24.getSize().x / 10;
 	int spriteSizeY24 = m24.getSize().y / 1;
 	shapem24.setTextureRect(sf::IntRect(0, 0, spriteSizeX24, spriteSizeY24));
-
+	shapem24.setOrigin(0.0f, -280.0f);
 	////// m25
 	sf::Texture m25;
 	if (!m25.loadFromFile("pic/y.png"))
@@ -408,7 +409,7 @@ int main()
 	int spriteSizeX25 = m25.getSize().x / 10;
 	int spriteSizeY25 = m25.getSize().y / 1;
 	shapem25.setTextureRect(sf::IntRect(0, 0, spriteSizeX25, spriteSizeY25));
-
+	shapem25.setOrigin(0.0f, -100.0f);
 	////// m26
 	sf::Texture m26;
 	if (!m26.loadFromFile("pic/z.png"))
@@ -420,7 +421,7 @@ int main()
 	int spriteSizeX26 = m26.getSize().x / 10;
 	int spriteSizeY26 = m26.getSize().y / 1;
 	shapem26.setTextureRect(sf::IntRect(0, 0, spriteSizeX26, spriteSizeY26));
-
+	shapem26.setOrigin(0.0f, -90.0f);
 
 	////// bg2
 	sf::Texture bgTexture;
@@ -808,8 +809,8 @@ int main()
 
 
 
-		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			collision.setPosition(sf::Vector2f(xOp, yOp));
+		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
+			line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
 
