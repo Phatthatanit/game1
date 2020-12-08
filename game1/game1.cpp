@@ -9,7 +9,7 @@
 #include <sstream> 
 #include "Menu.h"
 #include <sstream> 
-int p = 3,s =0,sc=0,rs=0;
+int p = 3, s = 0, sc = 0,rs=0;
 
  int c, n,num=1;
 /*void mon() {
@@ -481,33 +481,33 @@ int main()
 			switch (event.type) {
 			case sf::Event::KeyReleased:
 				switch (event.key.code) {
-				case sf::Keyboard::W:
-						menu.MoveUp();
-						break;
+				case sf::Keyboard::Up:
+					menu.MoveUp();
+					break;
 
-				case sf::Keyboard::S:
+				case sf::Keyboard::Down:
 					menu.MoveDown();
 					break;
 
-					case sf::Keyboard::Return:
-						switch (menu.GetPressedItem()) {
-						case 0:
-							std::cout << "Play has been pressd" << std::endl;
-							p = 0;
-							num = 0;
-							printf("num = %d", num);
-							break;
-						case 1:
-							std::cout << "How to has been pressd" << std::endl;
-							p = 4;
-							break;
-					
-						case 2:
-							window.close();
-							break;
-						
-							
-						}
+				case sf::Keyboard::Return:
+					switch (menu.GetPressedItem()) {
+					case 0:
+						std::cout << "Play has been pressd" << std::endl;
+						p = 0;
+						num = 0;
+						printf("num = %d", num);
+						break;
+					case 1:
+						std::cout << "How to has been pressd" << std::endl;
+						p = 4;
+						break;
+
+					case 2:
+						window.close();
+						break;
+
+
+					}
 				}
 				break;
 
@@ -551,7 +551,7 @@ int main()
 		shapem25.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		shapem26.setPosition(shapeSprite.getPosition().x - 1150, 160.0f);
 		deltaTime = clock.restart().asSeconds();
-		
+
 
 		if (p == 1) {
 			window.draw(bg);
@@ -566,21 +566,32 @@ int main()
 			window.draw(pause1);
 		}
 		if (p == 2) {
-			
-
 				
-				for (int nub = 0; nub <= 120000; nub++) {
 					window.draw(game);
 					window.draw(score);
 					window.draw(score1);
 					window.draw(scoreCurrent);
+				
+		}
 
-				}
-		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+		{
+			if (p == 2&&rs==0) {
+				rs = 1;
+				printf("%d", rs);
+				Sleep(300);
+
+			}
+			else {
+				p = 2;
+				printf("%d", p);
+				Sleep(300);
+
+			}
+		}
+		if (rs==1) {
 			window.close();
-			
-			
-			
+
 		}
 
 		if (p == 3) {
@@ -728,10 +739,11 @@ int main()
 			collision.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
+				
+
 				printf("%d", p);
 				sound.stop();
 				sound1.play();
-				
 			}
 			
 
