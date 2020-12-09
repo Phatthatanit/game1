@@ -11,7 +11,7 @@
 #include <sstream> 
 int p = 3, s = 0, sc = 0, rs = 0;
 
-int num = 1, mon1;
+int num = 1, mon1,mon2,mon3,mon4,mon5;
 
 
 void mons1()
@@ -21,6 +21,18 @@ void mons1()
 	printf("%d", mon1);
 	for (int nub = 0; nub <= 100000; nub++) {}
 	//Sleep(1000);
+	mon2 = rand() % 26 + 1;
+	printf("%d", mon2);
+	for (int nub = 0; nub <= 100000; nub++) {}
+	mon3 = rand() % 26 + 1;
+	printf("%d", mon3);
+	for (int nub = 0; nub <= 100000; nub++) {}
+	mon4 = rand() % 26 + 1;
+	printf("%d", mon4);
+	for (int nub = 0; nub <= 100000; nub++) {}
+	mon5 = rand() % 26 + 1;
+	printf("%d", mon5);
+	for (int nub = 0; nub <= 100000; nub++) {}
 }
 
 
@@ -592,87 +604,474 @@ int main()
 			window.setView(view);
 			mons1();
 			
+			
 
 		}
 		if (p == 0 && mon1 == 1 ) {
 			window.draw(shapem1);
 		}
+		if (p == 0 && mon2 == 1) {
+			window.draw(shapem1);
+		}
+		if (p == 0 && mon3 == 1) {
+			window.draw(shapem1);
+		}
+		if (p == 0 && mon4 == 1) {
+			window.draw(shapem1);
+		}
+		if (p == 0 && mon5 == 1) {
+			window.draw(shapem1);
+		}
+
+
+
 		if (p == 0 && mon1 == 2 ) {
 			window.draw(shapem2);
 		}
+		if (p == 0 && mon2 == 2) {
+			window.draw(shapem2);
+		}
+		if (p == 0 && mon3 == 2) {
+			window.draw(shapem2);
+		}
+		if (p == 0 && mon4 == 2) {
+			window.draw(shapem2);
+		}
+		if (p == 0 && mon5 == 2) {
+			window.draw(shapem2);
+		}
+
+
 		if (p == 0 && mon1 == 3 ) {
 			window.draw(shapem3);
 		}
+		if (p == 0 && mon2 == 3) {
+			window.draw(shapem3);
+		}
+		if (p == 0 && mon3 == 3) {
+			window.draw(shapem3);
+		}
+		if (p == 0 && mon4 == 3) {
+			window.draw(shapem3);
+		}
+
+		if (p == 0 && mon5 == 3) {
+			window.draw(shapem3);
+		}
+
+
+
 		if (p == 0 && mon1 == 4 ) {
 			window.draw(shapem4);
 		}
+		if (p == 0 && mon2 == 4) {
+			window.draw(shapem4);
+		}
+		if (p == 0 && mon3 == 4) {
+			window.draw(shapem4);
+		}
+		if (p == 0 && mon4 == 4) {
+			window.draw(shapem4);
+		}
+		if (p == 0 && mon5 == 4) {
+			window.draw(shapem4);
+		}
+
+
 		if (p == 0 && mon1 == 5) {
 			window.draw(shapem5);
 		}
+		if (p == 0 && mon2 == 5) {
+			window.draw(shapem5);
+		}
+		if (p == 0 && mon3 == 5) {
+			window.draw(shapem5);
+		}
+		if (p == 0 && mon4 == 5) {
+			window.draw(shapem5);
+		}
+		if (p == 0 && mon5 == 5) {
+			window.draw(shapem5);
+		}
+
 		if (p == 0 && mon1 == 6) {
 			window.draw(shapem6);
 		}
+		if (p == 0 && mon2 == 6) {
+			window.draw(shapem6);
+		}
+		if (p == 0 && mon3 == 6) {
+			window.draw(shapem6);
+		}
+		if (p == 0 && mon4 == 6) {
+			window.draw(shapem6);
+		}
+		if (p == 0 && mon5 == 6) {
+			window.draw(shapem6);
+		}
+
+
 		if (p == 0 && mon1 == 7 ) {
 			window.draw(shapem7);
 		}
+		if (p == 0 && mon2 == 7) {
+			window.draw(shapem7);
+		}
+		if (p == 0 && mon3 == 7) {
+			window.draw(shapem7);
+		}
+		if (p == 0 && mon4 == 7) {
+			window.draw(shapem7);
+		}
+
+		if (p == 0 && mon5 == 7) {
+			window.draw(shapem7);
+		}
+
+
 		if (p == 0 && mon1 == 8 ) {
 			window.draw(shapem8);
 		}
+		if (p == 0 && mon2 == 8) {
+			window.draw(shapem8);
+		}
+		if (p == 0 && mon3 == 8) {
+			window.draw(shapem8);
+		}
+
+		if (p == 0 && mon4 == 8) {
+			window.draw(shapem8);
+		}
+
+		if (p == 0 && mon5 == 8) {
+			window.draw(shapem8);
+		}
+
+
+
 		if (p == 0 && mon1 == 9 ) {
 			window.draw(shapem9);
 		}
+		if (p == 0 && mon2 == 9) {
+			window.draw(shapem9);
+		}
+		if (p == 0 && mon3 == 9) {
+			window.draw(shapem9);
+		}
+		if (p == 0 && mon4 == 9) {
+			window.draw(shapem9);
+		}
+		if (p == 0 && mon5 == 9) {
+			window.draw(shapem9);
+		}
+
+
 		if (p == 0 && mon1 == 10 ) {
 			window.draw(shapem10);
 		}
+		if (p == 0 && mon2 == 10) {
+			window.draw(shapem10);
+		}
+		if (p == 0 && mon3 == 11) {
+			window.draw(shapem11);
+		}
+
+		if (p == 0 && mon4 == 11) {
+			window.draw(shapem11);
+		}
+
+		if (p == 0 && mon5 == 11) {
+			window.draw(shapem11);
+		}
+
+
+
 		if (p == 0 && mon1 == 11 ) {
 			window.draw(shapem11);
 		}
+		if (p == 0 && mon2 == 11) {
+			window.draw(shapem11);
+		}
+		if (p == 0 && mon3 == 11) {
+			window.draw(shapem11);
+		}
+
+		if (p == 0 && mon4 == 11) {
+			window.draw(shapem11);
+		}
+
+		if (p == 0 && mon5 == 11) {
+			window.draw(shapem11);
+		}
+
+
+
 		if (p == 0 && mon1 == 12 ) {
 			window.draw(shapem12);
 		}
+		if (p == 0 && mon2 == 12) {
+			window.draw(shapem12);
+		}
+		if (p == 0 && mon3 == 12) {
+			window.draw(shapem12);
+		}
+
+		if (p == 0 && mon4 == 12) {
+			window.draw(shapem12);
+		}
+
+		if (p == 0 && mon5 == 12) {
+			window.draw(shapem12);
+		}
+
+
 		if (p == 0 && mon1 == 13) {
 			window.draw(shapem13 );
 		}
+		if (p == 0 && mon2 == 13) {
+			window.draw(shapem13);
+		}
+		if (p == 0 && mon3 == 13) {
+			window.draw(shapem13);
+		}
+		if (p == 0 && mon4 == 13) {
+			window.draw(shapem13);
+		}
+		if (p == 0 && mon5 == 13) {
+			window.draw(shapem13);
+		}
+
+
 		if (p == 0 && mon1 == 14 ) {
 			window.draw(shapem14);
 		}
+		if (p == 0 && mon2 == 14) {
+			window.draw(shapem14);
+		}
+		if (p == 0 && mon3 == 14) {
+			window.draw(shapem14);
+		}
+		if (p == 0 && mon4 == 14) {
+			window.draw(shapem14);
+		}
+		if (p == 0 && mon5 == 14) {
+			window.draw(shapem14);
+		}
+
+
+
 		if (p == 0 && mon1 == 15 ) {
 			window.draw(shapem15);
 		}
+		if (p == 0 && mon2 == 15) {
+			window.draw(shapem15);
+		}
+		if (p == 0 && mon3 == 15) {
+			window.draw(shapem15);
+		}
+		if (p == 0 && mon4 == 15) {
+			window.draw(shapem15);
+		}
+		if (p == 0 && mon5 == 15) {
+			window.draw(shapem15);
+		}
+
+
 		if (p == 0 && mon1 == 16 ) {
 			window.draw(shapem16);
 		}
+		if (p == 0 && mon2 == 16) {
+			window.draw(shapem16);
+		}
+		if (p == 0 && mon3 == 16) {
+			window.draw(shapem16);
+		}
+		if (p == 0 && mon4 == 16) {
+			window.draw(shapem16);
+		}
+		if (p == 0 && mon5 == 16) {
+			window.draw(shapem16);
+		}
+
 		if (p == 0 && mon1 == 17 ) {
 			window.draw(shapem17);
 		}
+		if (p == 0 && mon2 == 17) {
+			window.draw(shapem17);
+		}
+		if (p == 0 && mon3 == 17) {
+			window.draw(shapem17);
+		}
+		if (p == 0 && mon4 == 17) {
+			window.draw(shapem17);
+		}
+
+		if (p == 0 && mon5 == 17) {
+			window.draw(shapem17);
+		}
+
+
+
+
 		if (p == 0 && mon1 == 18 ) {
 			window.draw(shapem18);
 		}
+		if (p == 0 && mon2 == 18) {
+			window.draw(shapem18);
+		}
+		if (p == 0 && mon3 == 18) {
+			window.draw(shapem18);
+		}
+		if (p == 0 && mon4 == 18) {
+			window.draw(shapem18);
+		}
+		if (p == 0 && mon5 == 18) {
+			window.draw(shapem18);
+		}
+
+
+
 		if (p == 0 && mon1 == 19 ) {
 			window.draw(shapem19);
 		}
+		if (p == 0 && mon2 == 19) {
+			window.draw(shapem19);
+		}
+		if (p == 0 && mon3 == 19) {
+			window.draw(shapem19);
+		}
+		if (p == 0 && mon4 == 19) {
+			window.draw(shapem19);
+		}
+		if (p == 0 && mon5 == 19) {
+			window.draw(shapem19);
+		}
+
+
 		if (p == 0 && mon1 == 20 ) {
 			window.draw(shapem20);
 		}
+		if (p == 0 && mon2 == 20) {
+			window.draw(shapem20);
+		}
+		if (p == 0 && mon3 == 20) {
+			window.draw(shapem20);
+		}
+		if (p == 0 && mon4 == 20) {
+			window.draw(shapem20);
+		}
+		if (p == 0 && mon5 == 20) {
+			window.draw(shapem20);
+		}
+
+
+
 		if (p == 0 && mon1 == 21 ) {
 			window.draw(shapem21);
 		}
+		if (p == 0 && mon2 == 21) {
+			window.draw(shapem21);
+		}
+		if (p == 0 && mon3 == 21) {
+			window.draw(shapem21);
+		}
+		if (p == 0 && mon4 == 21) {
+			window.draw(shapem21);
+		}
+		if (p == 0 && mon5 == 21) {
+			window.draw(shapem21);
+		}
+
+
+
 		if (p == 0 && mon1 == 22 ) {
 			window.draw(shapem22);
 		}
+		if (p == 0 && mon2 == 22) {
+			window.draw(shapem22);
+		}
+		if (p == 0 && mon3 == 22) {
+			window.draw(shapem22);
+		}
+		if (p == 0 && mon4 == 22) {
+			window.draw(shapem22);
+		}
+		if (p == 0 && mon5 == 22) {
+			window.draw(shapem22);
+		}
+
+
+
 		if (p == 0 && mon1 == 23 ) {
 			window.draw(shapem23);
 		}
+		if (p == 0 && mon2 == 23) {
+			window.draw(shapem23);
+		}
+		if (p == 0 && mon3 == 23) {
+			window.draw(shapem23);
+		}
+		if (p == 0 && mon4 == 23) {
+			window.draw(shapem23);
+		}
+		if (p == 0 && mon5 == 23) {
+			window.draw(shapem23);
+		}
+
+
 		if (p == 0 && mon1 == 24 ) {
 			window.draw(shapem24);
 		}
+		if (p == 0 && mon2 == 24) {
+			window.draw(shapem24);
+		}
+		if (p == 0 && mon3 == 24) {
+			window.draw(shapem24);
+		}
+		if (p == 0 && mon4 == 24) {
+			window.draw(shapem24);
+		}
+		if (p == 0 && mon5 == 24) {
+			window.draw(shapem24);
+		}
+
+
+
+
 		if (p == 0 && mon1 == 25 ) {
 			window.draw(shapem25);
 		}
+		if (p == 0 && mon2 == 25) {
+			window.draw(shapem25);
+		}
+		if (p == 0 && mon3 == 25) {
+			window.draw(shapem25);
+		}
+		if (p == 0 && mon4 == 25) {
+			window.draw(shapem25);
+		}
+		if (p == 0 && mon5 == 25) {
+			window.draw(shapem25);
+		}
+
+
+
+
 		if (p == 0 && mon1 == 26 ) {
 			window.draw(shapem26);
 		}
-
+		if (p == 0 && mon2 == 26) {
+			window.draw(shapem26);
+		}
+		if (p == 0 && mon3 == 26) {
+			window.draw(shapem26);
+		}
+		if (p == 0 && mon4 == 26) {
+			window.draw(shapem26);
+		}
+		if (p == 0 && mon5 == 26) {
+			window.draw(shapem26);
+		}
 		if (p == 4) {
 			window.draw(howto1);
 
@@ -694,57 +1093,57 @@ int main()
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
-			shapem1.move(speed * 0.05f, 0.f * speed);
+			shapem1.move(speed * 0.07f, 0.f * speed);
 			shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem2.move(speed * 0.05f, 0.f * speed);
+			shapem2.move(speed * 0.07f, 0.f * speed);
 			shapem2.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem3.move(speed * 0.05f, 0.f * speed);
+			shapem3.move(speed * 0.07f, 0.f * speed);
 			shapem3.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem4.move(speed * 0.05f, 0.f * speed);
+			shapem4.move(speed * 0.07f, 0.f * speed);
 			shapem4.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem5.move(speed * 0.05f, 0.f * speed);
+			shapem5.move(speed * 0.07f, 0.f * speed);
 			shapem5.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem6.move(speed * 0.05f, 0.f * speed);
+			shapem6.move(speed * 0.07f, 0.f * speed);
 			shapem6.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem7.move(speed * 0.05f, 0.f * speed);
+			shapem7.move(speed * 0.07f, 0.f * speed);
 			shapem7.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem8.move(speed * 0.05f, 0.f * speed);
+			shapem8.move(speed * 0.07f, 0.f * speed);
 			shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem9.move(speed * 0.05f, 0.f * speed);
+			shapem9.move(speed * 0.07f, 0.f * speed);
 			shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem10.move(speed * 0.05f, 0.f * speed);
+			shapem10.move(speed * 0.07f, 0.f * speed);
 			shapem10.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem11.move(speed * 0.05f, 0.f * speed);
+			shapem11.move(speed * 0.07f, 0.f * speed);
 			shapem11.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem12.move(speed * 0.05f, 0.f * speed);
+			shapem12.move(speed * 0.07f, 0.f * speed);
 			shapem12.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem13.move(speed * 0.05f, 0.f * speed);
+			shapem13.move(speed * 0.07f, 0.f * speed);
 			shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem14.move(speed * 0.05f, 0.f * speed);
+			shapem14.move(speed * 0.07f, 0.f * speed);
 			shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem15.move(speed * 0.05f, 0.f * speed);
+			shapem15.move(speed * 0.07f, 0.f * speed);
 			shapem15.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem16.move(speed * 0.05f, 0.f * speed);
+			shapem16.move(speed * 0.07f, 0.f * speed);
 			shapem16.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem17.move(speed * 0.05f, 0.f * speed);
+			shapem17.move(speed * 0.07f, 0.f * speed);
 			shapem17.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem18.move(speed * 0.05f, 0.f * speed);
+			shapem18.move(speed * 0.07f, 0.f * speed);
 			shapem18.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem19.move(speed * 0.05f, 0.f * speed);
+			shapem19.move(speed * 0.07f, 0.f * speed);
 			shapem19.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem20.move(speed * 0.05f, 0.f * speed);
+			shapem20.move(speed * 0.07f, 0.f * speed);
 			shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem21.move(speed * 0.05f, 0.f * speed);
+			shapem21.move(speed * 0.07f, 0.f * speed);
 			shapem21.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem22.move(speed * 0.05f, 0.f * speed);
+			shapem22.move(speed * 0.07f, 0.f * speed);
 			shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem23.move(speed * 0.05f, 0.f * speed);
+			shapem23.move(speed * 0.07f, 0.f * speed);
 			shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem24.move(speed * 0.05f, 0.f * speed);
+			shapem24.move(speed * 0.07f, 0.f * speed);
 			shapem24.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem25.move(speed * 0.05f, 0.f * speed);
+			shapem25.move(speed * 0.07f, 0.f * speed);
 			shapem25.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem26.move(speed * 0.05f, 0.f * speed);
+			shapem26.move(speed * 0.07f, 0.f * speed);
 			shapem26.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 
 
