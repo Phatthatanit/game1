@@ -11,16 +11,20 @@
 #include <sstream> 
 int p = 3, s = 0, sc = 0, rs = 0;
 
-int num = 1, mon=1;
+int num = 1, mon1;
 
 
-void mons()
+void mons1()
 {
 	srand(time(NULL));
-	mon = rand() % 26 + 1;
-	printf("%d", mon);
+	mon1 = rand() % 26 + 1;
+	printf("%d", mon1);
 	for (int nub = 0; nub <= 100000; nub++) {}
+	//Sleep(1000);
 }
+
+
+
 
 int main()
 {
@@ -43,6 +47,13 @@ int main()
 	score1.setString("S c o r e : ");
 	score1.setCharacterSize(30);
 
+
+	sf::Text myname;
+	myname.setFont(myFont);
+	myname.setFillColor(sf::Color::Yellow);
+	myname.setStyle(sf::Text::Regular);
+	myname.setString("63010727 Phattharanit Tesjaroen");
+	myname.setCharacterSize(20);
 
 	sf::Text scoreCurrent;
 	scoreCurrent.setFont(myFont);
@@ -518,6 +529,7 @@ int main()
 		pause1.setPosition(shapeSprite.getPosition().x - 1200.0f, 0.0f);
 		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
 		score1.setPosition(shapeSprite.getPosition().x - 300, 5.0f);
+		myname.setPosition(shapeSprite.getPosition().x - 370, 380.0f);
 		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60, 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
@@ -567,6 +579,7 @@ int main()
 
 		if (p == 3) {
 			menu.draw(window);
+			window.draw(myname);
 		}
 		if (p == 0) {
 			window.draw(bg);
@@ -577,85 +590,86 @@ int main()
 			window.draw(collision);
 			window.draw(line);
 			window.setView(view);
-
+			mons1();
+			
 
 		}
-		if (p == 0 && mon == 1) {
+		if (p == 0 && mon1 == 1 ) {
 			window.draw(shapem1);
 		}
-		if (p == 0 && mon == 2) {
+		if (p == 0 && mon1 == 2 ) {
 			window.draw(shapem2);
 		}
-		if (p == 0 && mon == 3) {
+		if (p == 0 && mon1 == 3 ) {
 			window.draw(shapem3);
 		}
-		if (p == 0 && mon == 4) {
+		if (p == 0 && mon1 == 4 ) {
 			window.draw(shapem4);
 		}
-		if (p == 0 && mon == 5) {
+		if (p == 0 && mon1 == 5) {
 			window.draw(shapem5);
 		}
-		if (p == 0 && mon == 6) {
+		if (p == 0 && mon1 == 6) {
 			window.draw(shapem6);
 		}
-		if (p == 0 && mon == 7) {
+		if (p == 0 && mon1 == 7 ) {
 			window.draw(shapem7);
 		}
-		if (p == 0 && mon == 8) {
+		if (p == 0 && mon1 == 8 ) {
 			window.draw(shapem8);
 		}
-		if (p == 0 && mon == 9) {
+		if (p == 0 && mon1 == 9 ) {
 			window.draw(shapem9);
 		}
-		if (p == 0 && mon == 10) {
+		if (p == 0 && mon1 == 10 ) {
 			window.draw(shapem10);
 		}
-		if (p == 0 && mon == 11) {
+		if (p == 0 && mon1 == 11 ) {
 			window.draw(shapem11);
 		}
-		if (p == 0 && mon == 12) {
+		if (p == 0 && mon1 == 12 ) {
 			window.draw(shapem12);
 		}
-		if (p == 0 && mon == 13) {
-			window.draw(shapem13);
+		if (p == 0 && mon1 == 13) {
+			window.draw(shapem13 );
 		}
-		if (p == 0 && mon == 14) {
+		if (p == 0 && mon1 == 14 ) {
 			window.draw(shapem14);
 		}
-		if (p == 0 && mon == 15) {
+		if (p == 0 && mon1 == 15 ) {
 			window.draw(shapem15);
 		}
-		if (p == 0 && mon == 16) {
+		if (p == 0 && mon1 == 16 ) {
 			window.draw(shapem16);
 		}
-		if (p == 0 && mon == 17) {
+		if (p == 0 && mon1 == 17 ) {
 			window.draw(shapem17);
 		}
-		if (p == 0 && mon == 18) {
+		if (p == 0 && mon1 == 18 ) {
 			window.draw(shapem18);
 		}
-		if (p == 0 && mon == 19) {
+		if (p == 0 && mon1 == 19 ) {
 			window.draw(shapem19);
 		}
-		if (p == 0 && mon == 20) {
+		if (p == 0 && mon1 == 20 ) {
 			window.draw(shapem20);
 		}
-		if (p == 0 && mon == 21) {
+		if (p == 0 && mon1 == 21 ) {
 			window.draw(shapem21);
 		}
-		if (p == 0 && mon == 22) {
+		if (p == 0 && mon1 == 22 ) {
 			window.draw(shapem22);
 		}
-		if (p == 0 && mon == 23) {
+		if (p == 0 && mon1 == 23 ) {
 			window.draw(shapem23);
 		}
-		if (p == 0 && mon == 24) {
+		if (p == 0 && mon1 == 24 ) {
 			window.draw(shapem24);
 		}
-		if (p == 0 && mon == 25) {
+		if (p == 0 && mon1 == 25 ) {
 			window.draw(shapem25);
 		}
-		if (p == 0 && mon == 26) {
+		if (p == 0 && mon1 == 26 ) {
 			window.draw(shapem26);
 		}
 
@@ -738,9 +752,11 @@ int main()
 			if (p == 0) {
 				currentScore += 1;
 				Sleep(20);
+				
 			}
 
 		}
+		
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			if (shapeSprite.getPosition().y > 140 && p == 0) {
