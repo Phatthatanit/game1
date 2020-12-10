@@ -9,7 +9,7 @@
 #include <sstream> 
 #include "Menu.h"
 #include <sstream> 
-int p = 3, s = 0, sc = 0, rs = 0,n = 1;
+int p = 3, s = 0, sc = 0, rs = 0,n = 1,cheak;
 float speedmon;
 
 int num = 1, mon[5];
@@ -517,6 +517,7 @@ int main()
 					case 1:
 						std::cout << "How to has been pressd" << std::endl;
 						p = 4;
+						cheak = 1;
 						break;
 
 					case 2:
@@ -533,7 +534,7 @@ int main()
 				break;
 			}
 		}
-		line.setPosition(shapeSprite.getPosition().x - 120, 139.0f);
+		line.setPosition(shapeSprite.getPosition().x - 220, 139.0f);
 		pause.setPosition(shapeSprite.getPosition().x - 750, 160.0f);
 		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
 		score1.setPosition(shapeSprite.getPosition().x - 300, 5.0f);
@@ -1069,7 +1070,7 @@ int main()
 		}
 
 
-		if (p == 4) {
+		if (p == 4&&cheak==1) {
 			window.draw(howto1);
 
 
@@ -1089,6 +1090,7 @@ int main()
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
+			line.move(speed* deltaTime, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
 			shapem1.move(speed * 0.03f, 0.f * speed);
 			shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1096,15 +1098,15 @@ int main()
 			shapem2.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem3.move(speed * 0.03f, 0.f * speed);
 			shapem3.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem4.move(speed * 0.05f, 0.f * speed);
+			shapem4.move(speed * 0.03f, 0.f * speed);
 			shapem4.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem5.move(speed * 0.04f, 0.f * speed);
 			shapem5.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem6.move(speed * 0.06f, 0.f * speed);
+			shapem6.move(speed * 0.05f, 0.f * speed);
 			shapem6.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem7.move(speed * 0.05f, 0.f * speed);
 			shapem7.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem8.move(speed * 0.06f, 0.f * speed);
+			shapem8.move(speed * 0.02f, 0.f * speed);
 			shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem9.move(speed * 0.05f, 0.f * speed);
 			shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1116,7 +1118,7 @@ int main()
 			shapem12.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem13.move(speed * 0.05f, 0.f * speed);
 			shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem14.move(speed * 0.06f, 0.f * speed);
+			shapem14.move(speed * 0.02f, 0.f * speed);
 			shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem15.move(speed * 0.03f, 0.f * speed);
 			shapem15.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1124,19 +1126,19 @@ int main()
 			shapem16.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem17.move(speed * 0.04f, 0.f * speed);
 			shapem17.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem18.move(speed * 0.06f, 0.f * speed);
+			shapem18.move(speed * 0.05f, 0.f * speed);
 			shapem18.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem19.move(speed * 0.05f, 0.f * speed);
 			shapem19.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem20.move(speed * 0.01f, 0.f * speed);
 			shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem21.move(speed * 0.05f, 0.f * speed);
+			shapem21.move(speed * 0.01f, 0.f * speed);
 			shapem21.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem22.move(speed * 0.02f, 0.f * speed);
 			shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem23.move(speed * 0.03f, 0.f * speed);
 			shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem24.move(speed * 0.06f, 0.f * speed);
+			shapem24.move(speed * 0.03f, 0.f * speed);
 			shapem24.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem25.move(speed * 0.05f, 0.f * speed);
 			shapem25.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1537,12 +1539,13 @@ int main()
 
 
 		}
+
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 			collision.setPosition(sf::Vector2f(xOp, yOp));
-			sound2.play();
-
+				sound2.play();
 
 		}
+		
 
 
 
