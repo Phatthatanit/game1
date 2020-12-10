@@ -69,16 +69,16 @@ int main()
 	//soundstart
 
 	sf::SoundBuffer buffer;
-	if (!buffer.loadFromFile("pic/s3.ogg"))
+	if (!buffer.loadFromFile("pic/play.ogg"))
 	{
 		std::cout << "Load failed" << std::endl;
 	}
 
 	sf::Sound sound;
 
-	sound.setLoop(true);
-	sound.setBuffer(buffer);
-	//sound.play();
+		sound.setLoop(true);
+		sound.setBuffer(buffer);
+		sound.play();
 
 
 
@@ -92,14 +92,22 @@ int main()
 	sf::Sound sound1;
 	sound1.setBuffer(buffer1);
 
+	//sounditem
 
+	sf::SoundBuffer buffer2;
+	if (!buffer2.loadFromFile("pic/getitem.ogg"))
+	{
+		std::cout << "Load failed" << std::endl;
+	}
+	sf::Sound sound2;
+	sound2.setBuffer(buffer2);
 
 
 
 
 	////// Circle
 	sf::CircleShape collision(40.f);
-	collision.setPosition({ 1800.f, 210.f });
+	collision.setPosition({ 1400.f, 210.f });
 	collision.setFillColor(sf::Color::Green);
 
 	///// line
@@ -1526,6 +1534,12 @@ int main()
 				sound.stop();
 				sound1.play();
 			}
+
+
+		}
+		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			collision.setPosition(sf::Vector2f(xOp, yOp));
+			sound2.play();
 
 
 		}
