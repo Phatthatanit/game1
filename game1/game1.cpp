@@ -9,8 +9,8 @@
 #include <sstream> 
 #include "Menu.h"
 #include <sstream> 
-int p = 3, s = 0, sc = 0, rs = 0,n = 1,cheak;
-float speedmon;
+int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak;
+
 
 int num = 1, mon[5];
 
@@ -18,11 +18,11 @@ int num = 1, mon[5];
 void mons1()
 {
 	srand(time(NULL));
-	for (; n <= 5;n++) {
+	for (; n <= 5; n++) {
 		mon[n] = rand() % 26 + 1;
 		printf("%d\t", mon[n]);
 	}
-	
+
 
 }
 
@@ -76,9 +76,9 @@ int main()
 
 	sf::Sound sound;
 
-		sound.setLoop(true);
-		sound.setBuffer(buffer);
-		sound.play();
+	sound.setLoop(true);
+	sound.setBuffer(buffer);
+	sound.play();
 
 
 
@@ -139,8 +139,8 @@ int main()
 	shapem1.setTexture(m1);
 	int spriteSizeX1 = m1.getSize().x / 10;
 	int spriteSizeY1 = m1.getSize().y / 1;
-	shapem1.setTextureRect(sf::IntRect(0,0, spriteSizeX1, spriteSizeY1));
-	shapem1.setOrigin(0.0f, -270.0f );
+	shapem1.setTextureRect(sf::IntRect(0, 0, spriteSizeX1, spriteSizeY1));
+	shapem1.setOrigin(0.0f, -270.0f);
 
 	////// m2
 	sf::Texture m2;
@@ -546,11 +546,11 @@ int main()
 
 
 		if (p == 1) {
-			
+
 			window.setView(view);
 			window.draw(pause);
-			
-			
+
+
 		}
 		if (p == 2) {
 
@@ -594,16 +594,16 @@ int main()
 			window.draw(collision);
 			window.draw(line);
 			window.setView(view);
-			for (int s =0 ;s<=1;s++)
+			for (int s = 0; s <= 1; s++)
 			{
 				mons1();
 				break;
 			}
-			
-			
+
+
 
 		}
-		if (p == 0 && mon[1] == 1 ) {
+		if (p == 0 && mon[1] == 1) {
 			window.draw(shapem1);
 		}
 		if (p == 0 && mon[2] == 1) {
@@ -621,7 +621,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 2 ) {
+		if (p == 0 && mon[1] == 2) {
 			window.draw(shapem2);
 		}
 		if (p == 0 && mon[2] == 2) {
@@ -638,7 +638,7 @@ int main()
 		}
 
 
-		if (p == 0 && mon[1] == 3 ) {
+		if (p == 0 && mon[1] == 3) {
 			window.draw(shapem3);
 		}
 		if (p == 0 && mon[2] == 3) {
@@ -650,14 +650,13 @@ int main()
 		if (p == 0 && mon[4] == 3) {
 			window.draw(shapem3);
 		}
-
 		if (p == 0 && mon[5] == 3) {
 			window.draw(shapem3);
 		}
 
 
 
-		if (p == 0 && mon[1] == 4 ) {
+		if (p == 0 && mon[1] == 4) {
 			window.draw(shapem4);
 		}
 		if (p == 0 && mon[2] == 4) {
@@ -707,7 +706,7 @@ int main()
 		}
 
 
-		if (p == 0 && mon[1] == 7 ) {
+		if (p == 0 && mon[1] == 7) {
 			window.draw(shapem7);
 		}
 		if (p == 0 && mon[2] == 7) {
@@ -719,13 +718,12 @@ int main()
 		if (p == 0 && mon[4] == 7) {
 			window.draw(shapem7);
 		}
-
 		if (p == 0 && mon[5] == 7) {
 			window.draw(shapem7);
 		}
 
 
-		if (p == 0 && mon[1] == 8 ) {
+		if (p == 0 && mon[1] == 8) {
 			window.draw(shapem8);
 		}
 		if (p == 0 && mon[2] == 8) {
@@ -734,18 +732,16 @@ int main()
 		if (p == 0 && mon[3] == 8) {
 			window.draw(shapem8);
 		}
-
 		if (p == 0 && mon[4] == 8) {
 			window.draw(shapem8);
 		}
-
 		if (p == 0 && mon[5] == 8) {
 			window.draw(shapem8);
 		}
 
 
 
-		if (p == 0 && mon[1] == 9 ) {
+		if (p == 0 && mon[1] == 9) {
 			window.draw(shapem9);
 		}
 		if (p == 0 && mon[2] == 9) {
@@ -762,7 +758,7 @@ int main()
 		}
 
 
-		if (p == 0 && mon[1] == 10 ) {
+		if (p == 0 && mon[1] == 10) {
 			window.draw(shapem10);
 		}
 		if (p == 0 && mon[2] == 10) {
@@ -771,18 +767,16 @@ int main()
 		if (p == 0 && mon[3] == 11) {
 			window.draw(shapem11);
 		}
-
 		if (p == 0 && mon[4] == 11) {
 			window.draw(shapem11);
 		}
-
 		if (p == 0 && mon[5] == 11) {
 			window.draw(shapem11);
 		}
 
 
 
-		if (p == 0 && mon[1] == 11 ) {
+		if (p == 0 && mon[1] == 11) {
 			window.draw(shapem11);
 		}
 		if (p == 0 && mon[2] == 11) {
@@ -791,18 +785,16 @@ int main()
 		if (p == 0 && mon[3] == 11) {
 			window.draw(shapem11);
 		}
-
 		if (p == 0 && mon[4] == 11) {
 			window.draw(shapem11);
 		}
-
 		if (p == 0 && mon[5] == 11) {
 			window.draw(shapem11);
 		}
 
 
 
-		if (p == 0 && mon[1] == 12 ) {
+		if (p == 0 && mon[1] == 12) {
 			window.draw(shapem12);
 		}
 		if (p == 0 && mon[2] == 12) {
@@ -811,18 +803,16 @@ int main()
 		if (p == 0 && mon[3] == 12) {
 			window.draw(shapem12);
 		}
-
 		if (p == 0 && mon[4] == 12) {
 			window.draw(shapem12);
 		}
-
 		if (p == 0 && mon[5] == 12) {
 			window.draw(shapem12);
 		}
 
 
 		if (p == 0 && mon[1] == 13) {
-			window.draw(shapem13 );
+			window.draw(shapem13);
 		}
 		if (p == 0 && mon[2] == 13) {
 			window.draw(shapem13);
@@ -838,7 +828,7 @@ int main()
 		}
 
 
-		if (p == 0 && mon[1] == 14 ) {
+		if (p == 0 && mon[1] == 14) {
 			window.draw(shapem14);
 		}
 		if (p == 0 && mon[2] == 14) {
@@ -856,7 +846,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 15 ) {
+		if (p == 0 && mon[1] == 15) {
 			window.draw(shapem15);
 		}
 		if (p == 0 && mon[2] == 15) {
@@ -873,7 +863,7 @@ int main()
 		}
 
 
-		if (p == 0 && mon[1] == 16 ) {
+		if (p == 0 && mon[1] == 16) {
 			window.draw(shapem16);
 		}
 		if (p == 0 && mon[2] == 16) {
@@ -889,7 +879,7 @@ int main()
 			window.draw(shapem16);
 		}
 
-		if (p == 0 && mon[1] == 17 ) {
+		if (p == 0 && mon[1] == 17) {
 			window.draw(shapem17);
 		}
 		if (p == 0 && mon[2] == 17) {
@@ -901,7 +891,6 @@ int main()
 		if (p == 0 && mon[4] == 17) {
 			window.draw(shapem17);
 		}
-
 		if (p == 0 && mon[5] == 17) {
 			window.draw(shapem17);
 		}
@@ -909,7 +898,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 18 ) {
+		if (p == 0 && mon[1] == 18) {
 			window.draw(shapem18);
 		}
 		if (p == 0 && mon[2] == 18) {
@@ -927,7 +916,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 19 ) {
+		if (p == 0 && mon[1] == 19) {
 			window.draw(shapem19);
 		}
 		if (p == 0 && mon[2] == 19) {
@@ -944,7 +933,7 @@ int main()
 		}
 
 
-		if (p == 0 && mon[1] == 20 ) {
+		if (p == 0 && mon[1] == 20) {
 			window.draw(shapem20);
 		}
 		if (p == 0 && mon[2] == 20) {
@@ -962,7 +951,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 21 ) {
+		if (p == 0 && mon[1] == 21) {
 			window.draw(shapem21);
 		}
 		if (p == 0 && mon[2] == 21) {
@@ -980,7 +969,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 22 ) {
+		if (p == 0 && mon[1] == 22) {
 			window.draw(shapem22);
 		}
 		if (p == 0 && mon[2] == 22) {
@@ -998,7 +987,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 23 ) {
+		if (p == 0 && mon[1] == 23) {
 			window.draw(shapem23);
 		}
 		if (p == 0 && mon[2] == 23) {
@@ -1015,7 +1004,7 @@ int main()
 		}
 
 
-		if (p == 0 && mon[1] == 24 ) {
+		if (p == 0 && mon[1] == 24) {
 			window.draw(shapem24);
 		}
 		if (p == 0 && mon[2] == 24) {
@@ -1034,7 +1023,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 25 ) {
+		if (p == 0 && mon[1] == 25) {
 			window.draw(shapem25);
 		}
 		if (p == 0 && mon[2] == 25) {
@@ -1053,7 +1042,7 @@ int main()
 
 
 
-		if (p == 0 && mon[1] == 26 ) {
+		if (p == 0 && mon[1] == 26) {
 			window.draw(shapem26);
 		}
 		if (p == 0 && mon[2] == 26) {
@@ -1070,7 +1059,7 @@ int main()
 		}
 
 
-		if (p == 4&&cheak==1) {
+		if (p == 4 && cheak == 1) {
 			window.draw(howto1);
 
 
@@ -1090,7 +1079,7 @@ int main()
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
-			line.move(speed* deltaTime, 0.f * speed);
+			line.move(speed *0.09, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
 			shapem1.move(speed * 0.03f, 0.f * speed);
 			shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1106,7 +1095,7 @@ int main()
 			shapem6.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem7.move(speed * 0.05f, 0.f * speed);
 			shapem7.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem8.move(speed * 0.02f, 0.f * speed);
+			shapem8.move(speed * 0.03f, 0.f * speed);
 			shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem9.move(speed * 0.05f, 0.f * speed);
 			shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1118,7 +1107,7 @@ int main()
 			shapem12.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem13.move(speed * 0.05f, 0.f * speed);
 			shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem14.move(speed * 0.02f, 0.f * speed);
+			shapem14.move(speed * 0.04f, 0.f * speed);
 			shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem15.move(speed * 0.03f, 0.f * speed);
 			shapem15.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1130,11 +1119,11 @@ int main()
 			shapem18.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem19.move(speed * 0.05f, 0.f * speed);
 			shapem19.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem20.move(speed * 0.01f, 0.f * speed);
+			shapem20.move(speed * 0.04f, 0.f * speed);
 			shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem21.move(speed * 0.01f, 0.f * speed);
+			shapem21.move(speed * 0.05f, 0.f * speed);
 			shapem21.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem22.move(speed * 0.02f, 0.f * speed);
+			shapem22.move(speed * 0.05f, 0.f * speed);
 			shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 			shapem23.move(speed * 0.03f, 0.f * speed);
 			shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1150,11 +1139,11 @@ int main()
 			if (p == 0) {
 				currentScore += 1;
 				Sleep(20);
-				
+
 			}
 
 		}
-		
+
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			if (shapeSprite.getPosition().y > 140 && p == 0) {
@@ -1197,7 +1186,7 @@ int main()
 
 
 		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
 
@@ -1211,7 +1200,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
 
@@ -1225,7 +1214,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem3.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1239,7 +1228,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem4.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+			
 			if (p == 0) {
 				p = 2;
 
@@ -1252,7 +1241,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem5.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+	
 			if (p == 0) {
 				p = 2;
 
@@ -1265,7 +1254,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem6.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+	
 			if (p == 0) {
 				p = 2;
 
@@ -1278,7 +1267,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem7.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1291,7 +1280,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem8.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+			
 			if (p == 0) {
 				p = 2;
 
@@ -1304,7 +1293,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem9.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1317,7 +1306,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem10.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+			
 			if (p == 0) {
 				p = 2;
 
@@ -1330,7 +1319,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem11.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+	
 			if (p == 0) {
 				p = 2;
 
@@ -1343,7 +1332,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem12.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1356,7 +1345,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem13.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1369,7 +1358,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem14.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1382,7 +1371,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem15.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1395,7 +1384,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem16.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+			
 			if (p == 0) {
 				p = 2;
 
@@ -1408,7 +1397,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem17.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1421,7 +1410,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem18.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+			
 			if (p == 0) {
 				p = 2;
 
@@ -1434,7 +1423,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem19.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1447,7 +1436,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem20.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+	
 			if (p == 0) {
 				p = 2;
 
@@ -1460,7 +1449,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem21.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1474,7 +1463,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem22.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1488,7 +1477,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem23.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1501,7 +1490,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem24.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1514,7 +1503,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem25.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0) {
 				p = 2;
 
@@ -1527,7 +1516,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem26.getGlobalBounds())) {
-			line.setPosition(sf::Vector2f(xOp, yOp));
+
 			if (p == 0) {
 				p = 2;
 
@@ -1542,10 +1531,10 @@ int main()
 
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 			collision.setPosition(sf::Vector2f(xOp, yOp));
-				sound2.play();
+			sound2.play();
 
 		}
-		
+
 
 
 
