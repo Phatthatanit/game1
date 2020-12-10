@@ -27,7 +27,7 @@ void mons1()
 		printf("%d\t", mon[n]);
 	}
 	
-
+	
 }
 
 
@@ -82,7 +82,7 @@ int main()
 
 	sound.setLoop(true);
 	sound.setBuffer(buffer);
-	sound.play();
+	//sound.play();
 
 
 
@@ -109,7 +109,7 @@ int main()
 	//soundkill
 
 	sf::SoundBuffer buffer3;
-	if (!buffer3.loadFromFile("pic/kill.ogg"))
+	if (!buffer3.loadFromFile("pic/killcut.ogg"))
 	{
 		std::cout << "Load failed" << std::endl;
 	}
@@ -567,7 +567,7 @@ int main()
 
 
 		}
-		if (p == 2&&cheak==2) {
+		if (p == 2 && cheak==2) {
 
 			window.draw(game);
 			window.draw(score);
@@ -614,8 +614,11 @@ int main()
 				mons1();
 				break;
 			}
+			
 
-			if (mon[1] == 1 || mon[2] == 1 || mon[3] == 1 || mon[4] == 1 || mon[5] == 1) {
+			if ((mon[1] == 1 || mon[2] == 1 || mon[3] == 1 || mon[4] == 1 || mon[5] == 1)&&p==0) {
+				shapem1.move(speed * 0.05f, 0.f * speed);
+				shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 					if (dmon[1].deletesp == 0) {
 						dmon[1].deletesp = 1;
@@ -627,7 +630,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 2 || mon[2] == 2 || mon[3] == 2 || mon[4] == 2 || mon[5] == 2) {
+			if ((mon[1] == 2 || mon[2] == 2 || mon[3] == 2 || mon[4] == 2 || mon[5] == 2)&&p==0) {
+				shapem2.move(speed * 0.03f, 0.f * speed);
+				shapem2.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
 					if (dmon[2].deletesp == 0) {
 						dmon[2].deletesp = 1;
@@ -637,7 +642,9 @@ int main()
 					}
 				}
 			}
-			if (mon[1] == 3 || mon[2] == 3 || mon[3] == 3 || mon[4] == 3 || mon[5] == 3) {
+			if ((mon[1] == 3 || mon[2] == 3 || mon[3] == 3 || mon[4] == 3 || mon[5] == 3)&&p==0) {
+				shapem3.move(speed * 0.05f, 0.f * speed);
+				shapem3.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
 					
 					if (dmon[3].deletesp == 0) {
@@ -649,7 +656,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 4 || mon[2] == 4 || mon[3] == 4 || mon[4] == 4 || mon[5] == 4) {
+			if ((mon[1] == 4 || mon[2] == 4 || mon[3] == 4 || mon[4] == 4 || mon[5] == 4)&&p==0) {
+				shapem4.move(speed * 0.05f, 0.f * speed);
+				shapem4.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 					if (dmon[4].deletesp == 0) {
 						dmon[4].deletesp = 1;
@@ -660,7 +669,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 5 || mon[2] == 5 || mon[3] == 5 || mon[4] == 5 || mon[5] == 5) {
+			if ((mon[1] == 5 || mon[2] == 5 || mon[3] == 5 || mon[4] == 5 || mon[5] == 5)&&p==0) {
+				shapem5.move(speed * 0.05f, 0.f * speed);
+				shapem5.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 					if (dmon[5].deletesp == 0) {
 						dmon[5].deletesp = 1;
@@ -671,7 +682,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 6 || mon[2] == 6 || mon[3] == 6 || mon[4] == 6 || mon[5] == 6) {
+			if ((mon[1] == 6 || mon[2] == 6 || mon[3] == 6 || mon[4] == 6 || mon[5] == 6)&&p==0) {
+				shapem6.move(speed * 0.05f, 0.f * speed);
+				shapem6.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
 					if (dmon[6].deletesp == 0) {
 						dmon[6].deletesp = 1;
@@ -682,7 +695,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 7 || mon[2] == 7 || mon[3] == 7 || mon[4] == 7 || mon[5] == 7) {
+			if ((mon[1] == 7 || mon[2] == 7 || mon[3] == 7 || mon[4] == 7 || mon[5] == 7)&&p==0) {
+				shapem7.move(speed * 0.04f, 0.f * speed);
+				shapem7.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
 					if (dmon[7].deletesp == 0) {
 						dmon[7].deletesp = 1;
@@ -693,7 +708,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 8 || mon[2] == 8 || mon[3] == 8 || mon[4] == 8 || mon[5] == 8) {
+			if ((mon[1] == 8 || mon[2] == 8 || mon[3] == 8 || mon[4] == 8 || mon[5] == 8)&&p==0) {
+				shapem8.move(speed * 0.05f, 0.f * speed);
+				shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
 					if (dmon[8].deletesp == 0) {
 						dmon[8].deletesp = 1;
@@ -704,7 +721,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 9 || mon[2] == 9 || mon[3] == 9 || mon[4] == 9 || mon[5] == 9) {
+			if ((mon[1] == 9 || mon[2] == 9 || mon[3] == 9 || mon[4] == 9 || mon[5] == 9)&&p==0) {
+				shapem9.move(speed * 0.03f, 0.f * speed);
+				shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
 					if (dmon[9].deletesp == 0) {
 						dmon[9].deletesp = 1;
@@ -715,7 +734,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 10 || mon[2] == 10 || mon[3] == 10 || mon[4] == 10 || mon[5] == 10) {
+			if ((mon[1] == 10 || mon[2] == 10 || mon[3] == 10 || mon[4] == 10 || mon[5] == 10)&&p==0) {
+				shapem10.move(speed * 0.03f, 0.f * speed);
+				shapem10.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
 					if (dmon[10].deletesp == 0) {
 						dmon[10].deletesp = 1;
@@ -726,7 +747,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 11 || mon[2] == 11 || mon[3] == 11 || mon[4] == 11 || mon[5] == 11) {
+			if ((mon[1] == 11 || mon[2] == 11 || mon[3] == 11 || mon[4] == 11 || mon[5] == 11)&&p==0) {
+				shapem11.move(speed * 0.04f, 0.f * speed);
+				shapem11.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
 					if (dmon[11].deletesp == 0) {
 						dmon[11].deletesp = 1;
@@ -737,7 +760,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 12 || mon[2] == 12 || mon[3] == 12 || mon[4] == 12 || mon[5] == 12) {
+			if ((mon[1] == 12 || mon[2] == 12 || mon[3] == 12 || mon[4] == 12 || mon[5] == 12)&&p==0) {
+				shapem12.move(speed * 0.03f, 0.f * speed);
+				shapem12.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
 					if (dmon[12].deletesp == 0) {
 						dmon[12].deletesp = 1;
@@ -748,18 +773,23 @@ int main()
 				}
 			}
 
-			if (mon[1] == 13 || mon[2] == 13 || mon[3] == 13 || mon[4] == 13 || mon[5] == 13) {
+			if ((mon[1] == 13 || mon[2] == 13 || mon[3] == 13 || mon[4] == 13 || mon[5] == 13)&&p==0) {
+				shapem13.move(speed * 0.05f, 0.f * speed);
+				shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
 					if (dmon[13].deletesp == 0) {
 						dmon[13].deletesp = 1;
-						//Sleep(300);
-						sound3.play();
-						s = 0;
+							//Sleep(300);
+							sound3.play();
+							s = 0;
+						
 					}
 				}
 			}
 
-			if (mon[1] == 14 || mon[2] == 14 || mon[3] == 14 || mon[4] == 14 || mon[5] == 14) {
+			if ((mon[1] == 14 || mon[2] == 14 || mon[3] == 14 || mon[4] == 14 || mon[5] == 14)&&p==0) {
+				shapem14.move(speed * 0.03f, 0.f * speed);
+				shapem14.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
 					if (dmon[14].deletesp == 0) {
 						dmon[14].deletesp = 1;
@@ -770,7 +800,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 15 || mon[2] == 15 || mon[3] == 15 || mon[4] == 15 || mon[5] == 15) {
+			if ((mon[1] == 15 || mon[2] == 15 || mon[3] == 15 || mon[4] == 15 || mon[5] == 15)&&p==0) {
+				shapem15.move(speed * 0.05f, 0.f * speed);
+				shapem15.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) {
 					if (dmon[15].deletesp == 0) {
 						dmon[15].deletesp = 1;
@@ -781,7 +813,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 16 || mon[2] == 16 || mon[3] == 16 || mon[4] == 16 || mon[5] == 16) {
+			if ((mon[1] == 16 || mon[2] == 16 || mon[3] == 16 || mon[4] == 16 || mon[5] == 16)&&p==0) {
+				shapem16.move(speed * 0.03f, 0.f * speed);
+				shapem16.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
 					if (dmon[16].deletesp == 0) {
 						dmon[16].deletesp = 1;
@@ -792,7 +826,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 17 || mon[2] == 17 || mon[3] == 17 || mon[4] == 17 || mon[5] == 17) {
+			if ((mon[1] == 17 || mon[2] == 17 || mon[3] == 17 || mon[4] == 17 || mon[5] == 17)&&p==0) {
+				shapem17.move(speed * 0.03f, 0.f * speed);
+				shapem17.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
 					if (dmon[17].deletesp == 0) {
 						dmon[17].deletesp = 1;
@@ -803,7 +839,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 18 || mon[2] == 18 || mon[3] == 18 || mon[4] == 18 || mon[5] == 18) {
+			if ((mon[1] == 18 || mon[2] == 18 || mon[3] == 18 || mon[4] == 18 || mon[5] == 18)&&p==0) {
+				shapem18.move(speed * 0.05f, 0.f * speed);
+				shapem18.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
 					if (dmon[18].deletesp == 0) {
 						dmon[18].deletesp = 1;
@@ -814,7 +852,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 19 || mon[2] == 19 || mon[3] == 19 || mon[4] == 19 || mon[5] == 19) {
+			if ((mon[1] == 19 || mon[2] == 19 || mon[3] == 19 || mon[4] == 19 || mon[5] == 19)&&p==0) {
+				shapem19.move(speed * 0.03f, 0.f * speed);
+				shapem19.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 					if (dmon[19].deletesp == 0) {
 						dmon[19].deletesp = 1;
@@ -825,7 +865,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 20 || mon[2] == 20 || mon[3] == 20 || mon[4] == 20 || mon[5] == 20) {
+			if ((mon[1] == 20 || mon[2] == 20 || mon[3] == 20 || mon[4] == 20 || mon[5] == 20)&&p==0) {
+				shapem20.move(speed * 0.05f, 0.f * speed);
+				shapem20.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
 					if (dmon[20].deletesp == 0) {
 						dmon[20].deletesp = 1;
@@ -836,7 +878,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 21 || mon[2] == 21 || mon[3] == 21 || mon[4] == 21 || mon[5] == 21) {
+			if ((mon[1] == 21 || mon[2] == 21 || mon[3] == 21 || mon[4] == 21 || mon[5] == 21)&&p==0) {
+				shapem21.move(speed * 0.03f, 0.f * speed);
+				shapem21.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) {
 					if (dmon[21].deletesp == 0) {
 						dmon[21].deletesp = 1;
@@ -847,7 +891,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 22 || mon[2] == 22 || mon[3] == 22 || mon[4] == 22 || mon[5] == 22) {
+			if ((mon[1] == 22 || mon[2] == 22 || mon[3] == 22 || mon[4] == 22 || mon[5] == 22)&&p==0) {
+				shapem22.move(speed * 0.04f, 0.f * speed);
+				shapem22.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
 					if (dmon[22].deletesp == 0) {
 						dmon[22].deletesp = 1;
@@ -858,7 +904,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 23 || mon[2] == 23 || mon[3] == 23 || mon[4] == 23 || mon[5] == 23) {
+			if ((mon[1] == 23 || mon[2] == 23 || mon[3] == 23 || mon[4] == 23 || mon[5] == 23)&&p==0) {
+				shapem23.move(speed * 0.03f, 0.f * speed);
+				shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 					if (dmon[23].deletesp == 0) {
 						dmon[23].deletesp = 1;
@@ -869,7 +917,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 24 || mon[2] == 24 || mon[3] == 24 || mon[4] == 24 || mon[5] == 24) {
+			if ((mon[1] == 24 || mon[2] == 24 || mon[3] == 24 || mon[4] == 24 || mon[5] == 24)&&p==0) {
+				shapem24.move(speed * 0.03f, 0.f * speed);
+				shapem24.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
 					if (dmon[24].deletesp == 0) {
 						dmon[24].deletesp = 1;
@@ -880,7 +930,9 @@ int main()
 				}
 			}
 
-			if (mon[1] == 25 || mon[2] == 25 || mon[3] == 25 || mon[4] == 25 || mon[5] == 25) {
+			if ((mon[1] == 25 || mon[2] == 25 || mon[3] == 25 || mon[4] == 25 || mon[5] == 25)&&p==0) {
+				shapem25.move(speed * 0.04f, 0.f * speed);
+				shapem25.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
 					if (dmon[25].deletesp == 0) {
 						dmon[25].deletesp = 1;
@@ -891,10 +943,13 @@ int main()
 				}
 			}
 
-			if (mon[1] == 26 || mon[2] == 26 || mon[3] == 26 || mon[4] == 26 || mon[5] == 26) {
+			if ((mon[1] == 26 || mon[2] == 26 || mon[3] == 26 || mon[4] == 26 || mon[5] == 26)&&p==0) {
+				shapem26.move(speed * 0.05f, 0.f * speed);
+				shapem26.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
 					if (dmon[26].deletesp == 0) {
 						dmon[26].deletesp = 1;
+					
 						//Sleep(300);
 						sound3.play();
 						s = 0;
@@ -1403,58 +1458,7 @@ int main()
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
 			//line.move(speed *deltaTime, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
-			shapem1.move(speed * 0.03f, 0.f * speed);
-			shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem2.move(speed * 0.03f, 0.f * speed);
-			shapem2.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem3.move(speed * 0.03f, 0.f * speed);
-			shapem3.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem4.move(speed * 0.03f, 0.f * speed);
-			shapem4.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem5.move(speed * 0.04f, 0.f * speed);
-			shapem5.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem6.move(speed * 0.05f, 0.f * speed);
-			shapem6.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem7.move(speed * 0.05f, 0.f * speed);
-			shapem7.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem8.move(speed * 0.03f, 0.f * speed);
-			shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem9.move(speed * 0.05f, 0.f * speed);
-			shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem10.move(speed * 0.04f, 0.f * speed);
-			shapem10.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem11.move(speed * 0.04f, 0.f * speed);
-			shapem11.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem12.move(speed * 0.03f, 0.f * speed);
-			shapem12.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem13.move(speed * 0.05f, 0.f * speed);
-			shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem14.move(speed * 0.04f, 0.f * speed);
-			shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem15.move(speed * 0.03f, 0.f * speed);
-			shapem15.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem16.move(speed * 0.05f, 0.f * speed);
-			shapem16.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem17.move(speed * 0.04f, 0.f * speed);
-			shapem17.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem18.move(speed * 0.05f, 0.f * speed);
-			shapem18.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem19.move(speed * 0.05f, 0.f * speed);
-			shapem19.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem20.move(speed * 0.04f, 0.f * speed);
-			shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem21.move(speed * 0.05f, 0.f * speed);
-			shapem21.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem22.move(speed * 0.05f, 0.f * speed);
-			shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem23.move(speed * 0.03f, 0.f * speed);
-			shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem24.move(speed * 0.03f, 0.f * speed);
-			shapem24.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem25.move(speed * 0.05f, 0.f * speed);
-			shapem25.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-			shapem26.move(speed * 0.05f, 0.f * speed);
-			shapem26.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+	
 
 
 
@@ -1507,11 +1511,12 @@ int main()
 
      if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
-			if (p == 0) {
+			if (p == 0&& dmon[1].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\na");
 				sound.stop();
 				sound1.play();
 			}
@@ -1519,13 +1524,14 @@ int main()
 
 		}
 
-	 if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds()) ) {
+	if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds()) ) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
-			if (p == 0) {
+			if (p == 0 && dmon[2].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nb");
 				sound.stop();
 				sound1.play();
 			}
@@ -1535,11 +1541,12 @@ int main()
 
 		if (line.getGlobalBounds().intersects(shapem3.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[3].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nc");
 				sound.stop();
 				sound1.play();
 			}
@@ -1549,11 +1556,12 @@ int main()
 
 		if (line.getGlobalBounds().intersects(shapem4.getGlobalBounds())) {
 			
-			if (p == 0) {
+			if (p == 0 && dmon[4].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nd");
 				sound.stop();
 				sound1.play();
 			}
@@ -1562,11 +1570,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem5.getGlobalBounds())) {
 	
-			if (p == 0) {
+			if (p == 0 && dmon[5].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\ne");
 				sound.stop();
 				sound1.play();
 			}
@@ -1575,24 +1584,25 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem6.getGlobalBounds())) {
 	
-			if (p == 0) {
+			if (p == 0 && dmon[6].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nf");
 				sound.stop();
 				sound1.play();
 			}
-
-
 		}
+
 		if (line.getGlobalBounds().intersects(shapem7.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[7].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\ng");
 				sound.stop();
 				sound1.play();
 			}
@@ -1601,11 +1611,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem8.getGlobalBounds())) {
 			
-			if (p == 0) {
+			if (p == 0 && dmon[8].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nh");
 				sound.stop();
 				sound1.play();
 			}
@@ -1614,11 +1625,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem9.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[9].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\ni");
 				sound.stop();
 				sound1.play();
 			}
@@ -1627,11 +1639,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem10.getGlobalBounds())) {
 			
-			if (p == 0) {
+			if (p == 0 && dmon[10].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nj");
 				sound.stop();
 				sound1.play();
 			}
@@ -1640,11 +1653,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem11.getGlobalBounds())) {
 	
-			if (p == 0) {
+			if (p == 0 && dmon[11].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nk");
 				sound.stop();
 				sound1.play();
 			}
@@ -1653,11 +1667,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem12.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[12].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nl");
 				sound.stop();
 				sound1.play();
 			}
@@ -1666,11 +1681,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem13.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[13].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nm");
 				sound.stop();
 				sound1.play();
 			}
@@ -1679,11 +1695,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem14.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[14].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nn");
 				sound.stop();
 				sound1.play();
 			}
@@ -1692,11 +1709,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem15.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[15].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\no");
 				sound.stop();
 				sound1.play();
 			}
@@ -1705,11 +1723,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem16.getGlobalBounds())) {
 			
-			if (p == 0) {
+			if (p == 0 && dmon[16].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\np");
 				sound.stop();
 				sound1.play();
 			}
@@ -1718,11 +1737,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem17.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[17].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nq");
 				sound.stop();
 				sound1.play();
 			}
@@ -1731,11 +1751,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem18.getGlobalBounds())) {
 			
-			if (p == 0) {
+			if (p == 0 && dmon[18].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nr");
 				sound.stop();
 				sound1.play();
 			}
@@ -1744,11 +1765,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem19.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[19].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\ns");
 				sound.stop();
 				sound1.play();
 			}
@@ -1757,11 +1779,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem20.getGlobalBounds())) {
 	
-			if (p == 0) {
+			if (p == 0 && dmon[20].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nt");
 				sound.stop();
 				sound1.play();
 			}
@@ -1770,11 +1793,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem21.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[21].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nu");
 				sound.stop();
 				sound1.play();
 			}
@@ -1784,11 +1808,12 @@ int main()
 
 		if (line.getGlobalBounds().intersects(shapem22.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[22].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nv");
 				sound.stop();
 				sound1.play();
 			}
@@ -1798,11 +1823,12 @@ int main()
 
 		if (line.getGlobalBounds().intersects(shapem23.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[23].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nw");
 				sound.stop();
 				sound1.play();
 			}
@@ -1811,11 +1837,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem24.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[24].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nx");
 				sound.stop();
 				sound1.play();
 			}
@@ -1824,11 +1851,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem25.getGlobalBounds())) {
 		
-			if (p == 0) {
+			if (p == 0 && dmon[25].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\ny");
 				sound.stop();
 				sound1.play();
 			}
@@ -1837,11 +1865,12 @@ int main()
 		}
 		if (line.getGlobalBounds().intersects(shapem26.getGlobalBounds())) {
 
-			if (p == 0) {
+			if (p == 0 && dmon[26].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
 				printf("%d", p);
+				printf("\nz");
 				sound.stop();
 				sound1.play();
 			}
