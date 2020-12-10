@@ -26,6 +26,7 @@ void mons1()
 		mon[n] = rand() % 26 + 1;
 		printf("%d\t", mon[n]);
 	}
+
 }
 
 
@@ -1498,9 +1499,7 @@ int main()
 		}
 
 
-
-
-		/*if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
+     if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
@@ -1842,7 +1841,7 @@ int main()
 			}
 
 
-		}*/
+		}
 
 		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 			collision.setPosition(sf::Vector2f(xOp, yOp));
