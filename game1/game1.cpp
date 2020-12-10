@@ -9,7 +9,7 @@
 #include <sstream> 
 #include "Menu.h"
 #include <sstream> 
-int p = 3, s = 0, sc = 0, rs = 0;
+int p = 3, s = 0, sc = 0, rs = 0,n = 1;
 float speedmon;
 
 int num = 1, mon[5];
@@ -18,10 +18,11 @@ int num = 1, mon[5];
 void mons1()
 {
 	srand(time(NULL));
-	for (int n = 1; n <= 5;n++) {
+	for (; n <= 5;n++) {
 		mon[n] = rand() % 26 + 1;
-		printf("%d", mon[n]);
+		printf("%d\t", mon[n]);
 	}
+	
 
 }
 
@@ -449,14 +450,11 @@ int main()
 
 	////// pause
 	sf::Texture pauseTexture;
-	sf::RectangleShape pause(sf::Vector2f(100.0f, 100.0f));
-	pauseTexture.loadFromFile("pic/pause1.png");
+	sf::RectangleShape pause(sf::Vector2f(700.0f, 100.0f));
+	pauseTexture.loadFromFile("pic/pause2.png");
 	pause.setTexture(&pauseTexture);
 
-	////// pause1
-	sf::Color pauseColor(0, 0, 0, 100);
-	sf::RectangleShape pause1(sf::Vector2f(1575, 420));
-	pause1.setFillColor(pauseColor);
+
 
 	////// gameover
 	sf::Texture gameTexture;
@@ -528,8 +526,7 @@ int main()
 			}
 		}
 		line.setPosition(shapeSprite.getPosition().x - 120, 139.0f);
-		pause.setPosition(shapeSprite.getPosition().x - 450, 160.0f);
-		pause1.setPosition(shapeSprite.getPosition().x - 1200.0f, 0.0f);
+		pause.setPosition(shapeSprite.getPosition().x - 750, 160.0f);
 		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
 		score1.setPosition(shapeSprite.getPosition().x - 300, 5.0f);
 		myname.setPosition(shapeSprite.getPosition().x - 370, 380.0f);
@@ -540,16 +537,11 @@ int main()
 
 
 		if (p == 1) {
-			window.draw(bg);
-			window.draw(shapeSprite);
-			window.draw(score);
-			window.draw(score1);
-			window.draw(scoreCurrent);
-			window.draw(collision);
-			window.draw(line);
+			
 			window.setView(view);
 			window.draw(pause);
-			window.draw(pause1);
+			
+			
 		}
 		if (p == 2) {
 
@@ -593,7 +585,11 @@ int main()
 			window.draw(collision);
 			window.draw(line);
 			window.setView(view);
-			mons1();
+			for (int s =0 ;s<=1;s++)
+			{
+				mons1();
+				break;
+			}
 			
 			
 
@@ -1063,6 +1059,7 @@ int main()
 		if (p == 0 && mon[5] == 26) {
 			window.draw(shapem26);
 		}
+
 
 		if (p == 4) {
 			window.draw(howto1);
