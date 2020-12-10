@@ -26,6 +26,7 @@ void mons1()
 		mon[n] = rand() % 26 + 1;
 		printf("%d\t", mon[n]);
 	}
+	
 
 }
 
@@ -566,7 +567,7 @@ int main()
 
 
 		}
-		if (p == 2) {
+		if (p == 2&&cheak==2) {
 
 			window.draw(game);
 			window.draw(score);
@@ -608,7 +609,7 @@ int main()
 			window.draw(collision);
 			window.draw(line);
 			window.setView(view);
-			for (int s = 0; s <= 1; s++)
+			for (s = 0; s <= 1; s++)
 			{
 				mons1();
 				break;
@@ -620,6 +621,7 @@ int main()
 						dmon[1].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						s = 0;
 
 					}	
 				}
@@ -631,7 +633,7 @@ int main()
 						dmon[2].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -642,7 +644,7 @@ int main()
 						dmon[3].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -653,7 +655,7 @@ int main()
 						dmon[4].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -664,7 +666,7 @@ int main()
 						dmon[5].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -675,7 +677,7 @@ int main()
 						dmon[6].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -686,7 +688,7 @@ int main()
 						dmon[7].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -697,7 +699,7 @@ int main()
 						dmon[8].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -708,7 +710,7 @@ int main()
 						dmon[9].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -719,7 +721,7 @@ int main()
 						dmon[10].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -730,7 +732,7 @@ int main()
 						dmon[11].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -741,7 +743,7 @@ int main()
 						dmon[12].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -752,7 +754,7 @@ int main()
 						dmon[13].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -763,7 +765,7 @@ int main()
 						dmon[14].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -774,7 +776,7 @@ int main()
 						dmon[15].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -785,7 +787,7 @@ int main()
 						dmon[16].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -796,7 +798,7 @@ int main()
 						dmon[17].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -807,7 +809,7 @@ int main()
 						dmon[18].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -818,7 +820,7 @@ int main()
 						dmon[19].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -829,7 +831,7 @@ int main()
 						dmon[20].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -840,7 +842,7 @@ int main()
 						dmon[21].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -851,7 +853,7 @@ int main()
 						dmon[22].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -862,7 +864,7 @@ int main()
 						dmon[23].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -873,7 +875,7 @@ int main()
 						dmon[24].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -884,7 +886,7 @@ int main()
 						dmon[25].deletesp = 1;
 						//(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
@@ -895,11 +897,15 @@ int main()
 						dmon[26].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
-
+						s = 0;
 					}
 				}
 			}
 		}
+
+		
+
+
 		if (dmon[1].deletesp != 1) {
 			if (p == 0 && mon[1] == 1) {
 				window.draw(shapem1);
@@ -1395,7 +1401,7 @@ int main()
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
-			line.move(speed *0.09, 0.f * speed);
+			//line.move(speed *deltaTime, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
 			shapem1.move(speed * 0.03f, 0.f * speed);
 			shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
@@ -1503,7 +1509,7 @@ int main()
 			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1513,11 +1519,11 @@ int main()
 
 		}
 
-		if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds())) {
+	 if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds()) ) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1531,7 +1537,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1545,7 +1551,7 @@ int main()
 			
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1558,7 +1564,7 @@ int main()
 	
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1571,7 +1577,7 @@ int main()
 	
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1584,7 +1590,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1597,7 +1603,7 @@ int main()
 			
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1610,7 +1616,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1623,7 +1629,7 @@ int main()
 			
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1636,7 +1642,7 @@ int main()
 	
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1649,7 +1655,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1662,7 +1668,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1675,7 +1681,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1688,7 +1694,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1701,7 +1707,7 @@ int main()
 			
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1714,7 +1720,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1727,7 +1733,7 @@ int main()
 			
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1740,7 +1746,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1753,7 +1759,7 @@ int main()
 	
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1766,7 +1772,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1780,7 +1786,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1794,7 +1800,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1807,7 +1813,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1820,7 +1826,7 @@ int main()
 		
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
@@ -1833,7 +1839,7 @@ int main()
 
 			if (p == 0) {
 				p = 2;
-
+				cheak = 2;
 
 				printf("%d", p);
 				sound.stop();
