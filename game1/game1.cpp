@@ -10,7 +10,7 @@
 #include "Menu.h"
 #include <sstream> 
 int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak;
-
+float speedmon = 0.03f,plusspeed=0.012f;
 struct input
 {
 	int deletesp = 0;
@@ -99,7 +99,7 @@ int main()
 	//sounditem
 
 	sf::SoundBuffer buffer2;
-	if (!buffer2.loadFromFile("pic/getitem.ogg"))
+	if (!buffer2.loadFromFile("pic/getitemcut.ogg"))
 	{
 		std::cout << "Load failed" << std::endl;
 	}
@@ -600,7 +600,7 @@ int main()
 			menu.draw(window);
 			window.draw(myname);
 		}
-		if (p == 0) {
+		if (p == 0 && num == 0) {
 			window.draw(bg);
 			window.draw(shapeSprite);
 			window.draw(score);
@@ -614,345 +614,401 @@ int main()
 				mons1();
 				break;
 			}
-			
 
-			if ((mon[1] == 1 || mon[2] == 1 || mon[3] == 1 || mon[4] == 1 || mon[5] == 1)&&p==0) {
-				shapem1.move(speed * 0.05f, 0.f * speed);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+			{
+					p = 0;
+			}
+
+			if (mon[1] == 1 || mon[2] == 1 || mon[3] == 1 || mon[4] == 1 || mon[5] == 1) {
+				shapem1.move(speed * (speedmon+0.023f), 0.f * speed);
 				shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 					if (dmon[1].deletesp == 0) {
 						dmon[1].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 
-					}	
+					}
 				}
 			}
 
-			if ((mon[1] == 2 || mon[2] == 2 || mon[3] == 2 || mon[4] == 2 || mon[5] == 2)&&p==0) {
-				shapem2.move(speed * 0.03f, 0.f * speed);
-				shapem2.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 2 || mon[2] == 2 || mon[3] == 2 || mon[4] == 2 || mon[5] == 2) {
+				shapem2.move(speed * (speedmon + 0.012f), 0.f * speed);
+				shapem2.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
 					if (dmon[2].deletesp == 0) {
 						dmon[2].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
-			if ((mon[1] == 3 || mon[2] == 3 || mon[3] == 3 || mon[4] == 3 || mon[5] == 3)&&p==0) {
-				shapem3.move(speed * 0.05f, 0.f * speed);
-				shapem3.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 3 || mon[2] == 3 || mon[3] == 3 || mon[4] == 3 || mon[5] == 3) {
+				shapem3.move(speed * (speedmon + 0.013f), 0.f * speed);
+				shapem3.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
-					
+
 					if (dmon[3].deletesp == 0) {
 						dmon[3].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 4 || mon[2] == 4 || mon[3] == 4 || mon[4] == 4 || mon[5] == 4)&&p==0) {
-				shapem4.move(speed * 0.05f, 0.f * speed);
+			if (mon[1] == 4 || mon[2] == 4 || mon[3] == 4 || mon[4] == 4 || mon[5] == 4) {
+				shapem4.move(speed * (speedmon + 0.017f), 0.f * speed);
 				shapem4.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 					if (dmon[4].deletesp == 0) {
 						dmon[4].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 5 || mon[2] == 5 || mon[3] == 5 || mon[4] == 5 || mon[5] == 5)&&p==0) {
-				shapem5.move(speed * 0.05f, 0.f * speed);
-				shapem5.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 5 || mon[2] == 5 || mon[3] == 5 || mon[4] == 5 || mon[5] == 5) {
+				shapem5.move(speed * (speedmon + 0.019f), 0.f * speed);
+				shapem5.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 					if (dmon[5].deletesp == 0) {
 						dmon[5].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 6 || mon[2] == 6 || mon[3] == 6 || mon[4] == 6 || mon[5] == 6)&&p==0) {
-				shapem6.move(speed * 0.05f, 0.f * speed);
-				shapem6.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 6 || mon[2] == 6 || mon[3] == 6 || mon[4] == 6 || mon[5] == 6) {
+				shapem6.move(speed * (speedmon + 0.029f), 0.f * speed);
+				shapem6.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
 					if (dmon[6].deletesp == 0) {
 						dmon[6].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 7 || mon[2] == 7 || mon[3] == 7 || mon[4] == 7 || mon[5] == 7)&&p==0) {
-				shapem7.move(speed * 0.04f, 0.f * speed);
-				shapem7.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 7 || mon[2] == 7 || mon[3] == 7 || mon[4] == 7 || mon[5] == 7) {
+				shapem7.move(speed * (speedmon + 0.018f), 0.f * speed);
+				shapem7.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
 					if (dmon[7].deletesp == 0) {
 						dmon[7].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 8 || mon[2] == 8 || mon[3] == 8 || mon[4] == 8 || mon[5] == 8)&&p==0) {
-				shapem8.move(speed * 0.05f, 0.f * speed);
+			if (mon[1] == 8 || mon[2] == 8 || mon[3] == 8 || mon[4] == 8 || mon[5] == 8) {
+				shapem8.move(speed * (speedmon + 0.024f), 0.f * speed);
 				shapem8.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
 					if (dmon[8].deletesp == 0) {
 						dmon[8].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 9 || mon[2] == 9 || mon[3] == 9 || mon[4] == 9 || mon[5] == 9)&&p==0) {
-				shapem9.move(speed * 0.03f, 0.f * speed);
+			if (mon[1] == 9 || mon[2] == 9 || mon[3] == 9 || mon[4] == 9 || mon[5] == 9) {
+				shapem9.move(speed * (speedmon + 0.021f), 0.f * speed);
 				shapem9.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
 					if (dmon[9].deletesp == 0) {
 						dmon[9].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 10 || mon[2] == 10 || mon[3] == 10 || mon[4] == 10 || mon[5] == 10)&&p==0) {
-				shapem10.move(speed * 0.03f, 0.f * speed);
-				shapem10.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 10 || mon[2] == 10 || mon[3] == 10 || mon[4] == 10 || mon[5] == 10) {
+				shapem10.move(speed * (speedmon + 0.011f), 0.f * speed);
+				shapem10.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
 					if (dmon[10].deletesp == 0) {
 						dmon[10].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 11 || mon[2] == 11 || mon[3] == 11 || mon[4] == 11 || mon[5] == 11)&&p==0) {
-				shapem11.move(speed * 0.04f, 0.f * speed);
+			if (mon[1] == 11 || mon[2] == 11 || mon[3] == 11 || mon[4] == 11 || mon[5] == 11) {
+				shapem11.move(speed * (speedmon + 0.015f), 0.f * speed);
 				shapem11.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
 					if (dmon[11].deletesp == 0) {
 						dmon[11].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 12 || mon[2] == 12 || mon[3] == 12 || mon[4] == 12 || mon[5] == 12)&&p==0) {
-				shapem12.move(speed * 0.03f, 0.f * speed);
-				shapem12.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if ((mon[1] == 12 || mon[2] == 12 || mon[3] == 12 || mon[4] == 12 || mon[5] == 12)) {
+				shapem12.move(speed * (speedmon + 0.023f), 0.f * speed);
+				shapem12.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
 					if (dmon[12].deletesp == 0) {
 						dmon[12].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 13 || mon[2] == 13 || mon[3] == 13 || mon[4] == 13 || mon[5] == 13)&&p==0) {
-				shapem13.move(speed * 0.05f, 0.f * speed);
+			if (mon[1] == 13 || mon[2] == 13 || mon[3] == 13 || mon[4] == 13 || mon[5] == 13) {
+				shapem13.move(speed * (speedmon + 0.009f), 0.f * speed);
 				shapem13.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
 					if (dmon[13].deletesp == 0) {
 						dmon[13].deletesp = 1;
-							//Sleep(300);
-							sound3.play();
-							s = 0;
-						
+						//Sleep(300);
+						sound3.play();
+						n -= 2;
+						s = 0;
+						speedmon += plusspeed;
+
 					}
 				}
 			}
 
-			if ((mon[1] == 14 || mon[2] == 14 || mon[3] == 14 || mon[4] == 14 || mon[5] == 14)&&p==0) {
-				shapem14.move(speed * 0.03f, 0.f * speed);
-				shapem14.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 14 || mon[2] == 14 || mon[3] == 14 || mon[4] == 14 || mon[5] == 14){
+				shapem14.move(speed * (speedmon + 0.027f), 0.f * speed);
+				shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
 					if (dmon[14].deletesp == 0) {
 						dmon[14].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 15 || mon[2] == 15 || mon[3] == 15 || mon[4] == 15 || mon[5] == 15)&&p==0) {
-				shapem15.move(speed * 0.05f, 0.f * speed);
-				shapem15.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 15 || mon[2] == 15 || mon[3] == 15 || mon[4] == 15 || mon[5] == 15) {
+				shapem15.move(speed * (speedmon + 0.022f), 0.f * speed);
+				shapem15.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) {
 					if (dmon[15].deletesp == 0) {
 						dmon[15].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 16 || mon[2] == 16 || mon[3] == 16 || mon[4] == 16 || mon[5] == 16)&&p==0) {
-				shapem16.move(speed * 0.03f, 0.f * speed);
-				shapem16.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 16 || mon[2] == 16 || mon[3] == 16 || mon[4] == 16 || mon[5] == 16) {
+				shapem16.move(speed * (speedmon + 0.033f), 0.f * speed);
+				shapem16.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
 					if (dmon[16].deletesp == 0) {
 						dmon[16].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 17 || mon[2] == 17 || mon[3] == 17 || mon[4] == 17 || mon[5] == 17)&&p==0) {
-				shapem17.move(speed * 0.03f, 0.f * speed);
-				shapem17.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 17 || mon[2] == 17 || mon[3] == 17 || mon[4] == 17 || mon[5] == 17) {
+				shapem17.move(speed * (speedmon + 0.004f), 0.f * speed);
+				shapem17.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
 					if (dmon[17].deletesp == 0) {
 						dmon[17].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 18 || mon[2] == 18 || mon[3] == 18 || mon[4] == 18 || mon[5] == 18)&&p==0) {
-				shapem18.move(speed * 0.05f, 0.f * speed);
-				shapem18.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 18 || mon[2] == 18 || mon[3] == 18 || mon[4] == 18 || mon[5] == 18) {
+				shapem18.move(speed * (speedmon + 0.008f), 0.f * speed);
+				shapem18.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
 					if (dmon[18].deletesp == 0) {
 						dmon[18].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 19 || mon[2] == 19 || mon[3] == 19 || mon[4] == 19 || mon[5] == 19)&&p==0) {
-				shapem19.move(speed * 0.03f, 0.f * speed);
-				shapem19.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 19 || mon[2] == 19 || mon[3] == 19 || mon[4] == 19 || mon[5] == 19) {
+				shapem19.move(speed * (speedmon + 0.020f), 0.f * speed);
+				shapem19.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 					if (dmon[19].deletesp == 0) {
 						dmon[19].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 20 || mon[2] == 20 || mon[3] == 20 || mon[4] == 20 || mon[5] == 20)&&p==0) {
-				shapem20.move(speed * 0.05f, 0.f * speed);
-				shapem20.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 20 || mon[2] == 20 || mon[3] == 20 || mon[4] == 20 || mon[5] == 20)  {
+				shapem20.move(speed * (speedmon + 0.014f), 0.f * speed);
+				shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
 					if (dmon[20].deletesp == 0) {
 						dmon[20].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 21 || mon[2] == 21 || mon[3] == 21 || mon[4] == 21 || mon[5] == 21)&&p==0) {
-				shapem21.move(speed * 0.03f, 0.f * speed);
-				shapem21.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
+			if (mon[1] == 21 || mon[2] == 21 || mon[3] == 21 || mon[4] == 21 || mon[5] == 21) {
+				shapem21.move(speed * (speedmon + 0.019f), 0.f * speed);
+				shapem21.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) {
 					if (dmon[21].deletesp == 0) {
 						dmon[21].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 22 || mon[2] == 22 || mon[3] == 22 || mon[4] == 22 || mon[5] == 22)&&p==0) {
-				shapem22.move(speed * 0.04f, 0.f * speed);
-				shapem22.setTextureRect(sf::IntRect(spriteSizeX* animationFrame, spriteSizeY * 0, 110, 110));
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
-					if (dmon[22].deletesp == 0) {
-						dmon[22].deletesp = 1;
-						//Sleep(300);
-						sound3.play();
-						s = 0;
+			if (mon[1] == 22 || mon[2] == 22 || mon[3] == 22 || mon[4] == 22 || mon[5] == 22) {
+				shapem22.move(speed * (speedmon + 0.014f), 0.f * speed);
+					shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
+						if (dmon[22].deletesp == 0) {
+							dmon[22].deletesp = 1;
+								//Sleep(300);
+								sound3.play();
+								n -= 2;
+								s = 0;
+								speedmon += plusspeed;
+						}
 					}
-				}
 			}
 
-			if ((mon[1] == 23 || mon[2] == 23 || mon[3] == 23 || mon[4] == 23 || mon[5] == 23)&&p==0) {
-				shapem23.move(speed * 0.03f, 0.f * speed);
+			if (mon[1] == 23 || mon[2] == 23 || mon[3] == 23 || mon[4] == 23 || mon[5] == 23){
+				shapem23.move(speed * (speedmon + 0.004f), 0.f * speed);
 				shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 					if (dmon[23].deletesp == 0) {
 						dmon[23].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 24 || mon[2] == 24 || mon[3] == 24 || mon[4] == 24 || mon[5] == 24)&&p==0) {
-				shapem24.move(speed * 0.03f, 0.f * speed);
+			if (mon[1] == 24 || mon[2] == 24 || mon[3] == 24 || mon[4] == 24 || mon[5] == 24) {
+				shapem24.move(speed * (speedmon + 0.024f), 0.f * speed);
 				shapem24.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
 					if (dmon[24].deletesp == 0) {
 						dmon[24].deletesp = 1;
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 25 || mon[2] == 25 || mon[3] == 25 || mon[4] == 25 || mon[5] == 25)&&p==0) {
-				shapem25.move(speed * 0.04f, 0.f * speed);
+			if (mon[1] == 25 || mon[2] == 25 || mon[3] == 25 || mon[4] == 25 || mon[5] == 25) {
+				shapem25.move(speed * (speedmon + 0.004f), 0.f * speed);
 				shapem25.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
 					if (dmon[25].deletesp == 0) {
 						dmon[25].deletesp = 1;
 						//(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
 
-			if ((mon[1] == 26 || mon[2] == 26 || mon[3] == 26 || mon[4] == 26 || mon[5] == 26)&&p==0) {
-				shapem26.move(speed * 0.05f, 0.f * speed);
+			if (mon[1] == 26 || mon[2] == 26 || mon[3] == 26 || mon[4] == 26 || mon[5] == 26) {
+				shapem26.move(speed * (speedmon + 0.004f), 0.f * speed);
 				shapem26.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
 					if (dmon[26].deletesp == 0) {
 						dmon[26].deletesp = 1;
-					
+
 						//Sleep(300);
 						sound3.play();
+						n -= 2;
 						s = 0;
+						speedmon += plusspeed;
 					}
 				}
 			}
