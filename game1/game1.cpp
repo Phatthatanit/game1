@@ -629,8 +629,141 @@ int main()
 					if (dmon[1].deletesp == 0) {
 						dmon[1].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+				
+						if (mon[1] == 1) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+							
+							/*if (mon[1] == 1) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem1);
 
+							}
+							if (mon[1] == 2) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem2);
+							}
+							if (mon[1] == 3) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem3);
+							}
+							if (mon[1] == 4) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem4);
+							}
+							if (mon[1] == 5) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem5);
+							}
+							if (mon[1] == 6) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem6);
+							}
+							if (mon[1] == 7) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem7);
+							}
+							if (mon[1] == 8) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem8);
+							}
+							if (mon[1] == 9) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem9);
+							}
+							if (mon[1] == 10) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem10);
+							}
+							if (mon[1] == 11) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem11);
+							}
+							if (mon[1] == 12) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem12);
+							}
+							if (mon[1] == 13) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem13);
+							}
+							if (mon[1] == 14) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem14);
+							}
+							if (mon[1] == 15) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem15);
+							}
+							if (mon[1] == 16) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem16);
+							}
+							if (mon[1] == 17) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem17);
+							}
+							if (mon[1] == 18) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem18);
+							}
+							if (mon[1] == 19) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem19);
+							}
+							if (mon[1] == 20) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem20);
+							}
+							if (mon[1] == 21) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem21);
+							}
+							if (mon[1] == 22) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem22);
+							}
+							if (mon[1] == 23) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem23);
+							}
+							if (mon[1] == 24) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem24);
+							}
+							if (mon[1] == 25) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem25);
+							}
+							if (mon[1] == 26) {
+								speedmon += plusspeed * 0.5f;
+								window.draw(shapem26);
+							}
+							*/
+
+						 
+						}
+						if (mon[2] == 1) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 1) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 1) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 1) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -642,7 +775,32 @@ int main()
 					if (dmon[2].deletesp == 0) {
 						dmon[2].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 2) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 2) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed ;
+						}
+						if (mon[3] == 2) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed ;
+						}
+						if (mon[4] == 2) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed ;
+						}
+						if (mon[5] == 2) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
+					
 					}
 				}
 			}
@@ -654,7 +812,31 @@ int main()
 					if (dmon[3].deletesp == 0) {
 						dmon[3].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 3) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 3) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed ;
+						}
+						if (mon[3] == 3) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 3) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed ;
+						}
+						if (mon[5] == 3) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed ;
+						}
 					}
 				}
 			}
@@ -666,7 +848,31 @@ int main()
 					if (dmon[4].deletesp == 0) {
 						dmon[4].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 4) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 4) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed ;
+						}
+						if (mon[3] == 4) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed ;
+						}
+						if (mon[4] == 4) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed ;
+						}
+						if (mon[5] == 4) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed ;
+						}
 					}
 				}
 			}
@@ -678,7 +884,31 @@ int main()
 					if (dmon[5].deletesp == 0) {
 						dmon[5].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 5) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 5) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed ;
+						}
+						if (mon[3] == 5) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed ;
+						}
+						if (mon[4] == 5) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed ;
+						}
+						if (mon[5] == 5) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -690,7 +920,31 @@ int main()
 					if (dmon[6].deletesp == 0) {
 						dmon[6].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 6) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 6) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed ;
+						}
+						if (mon[3] == 6) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed ;
+						}
+						if (mon[4] == 6) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed ;
+						}
+						if (mon[5] == 6) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed ;
+						}
 					}
 				}
 			}
@@ -702,7 +956,31 @@ int main()
 					if (dmon[7].deletesp == 0) {
 						dmon[7].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 7) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 7) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed ;
+						}
+						if (mon[3] == 7) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed ;
+						}
+						if (mon[4] == 7) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed ;
+						}
+						if (mon[5] == 7) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed ;
+						}
 					}
 				}
 			}
@@ -714,7 +992,31 @@ int main()
 					if (dmon[8].deletesp == 0) {
 						dmon[8].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 8) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 8) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed ;
+						}
+						if (mon[3] == 8) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed ;
+						}
+						if (mon[4] == 8) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed ;
+						}
+						if (mon[5] == 8) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed ;
+						}
 					}
 				}
 			}
@@ -726,7 +1028,31 @@ int main()
 					if (dmon[9].deletesp == 0) {
 						dmon[9].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 9) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 9) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 9) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 9) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 9) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -738,7 +1064,31 @@ int main()
 					if (dmon[10].deletesp == 0) {
 						dmon[10].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 10) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 10) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 10) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 10) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 10) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -750,7 +1100,32 @@ int main()
 					if (dmon[11].deletesp == 0) {
 						dmon[11].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 11) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 11) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 11) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 11) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 11) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
+						
 					}
 				}
 			}
@@ -762,7 +1137,31 @@ int main()
 					if (dmon[12].deletesp == 0) {
 						dmon[12].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 12) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 12) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 12) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 12) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 12) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -774,7 +1173,31 @@ int main()
 					if (dmon[13].deletesp == 0) {
 						dmon[13].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 13) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 13) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 13) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 13) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 13) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -786,7 +1209,31 @@ int main()
 					if (dmon[14].deletesp == 0) {
 						dmon[14].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 14) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 14) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 14) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 14) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 14) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -798,7 +1245,31 @@ int main()
 					if (dmon[15].deletesp == 0) {
 						dmon[15].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 15) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 15) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 15) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 15) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 15) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -810,7 +1281,31 @@ int main()
 					if (dmon[16].deletesp == 0) {
 						dmon[16].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 16) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 16) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 16) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 16) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 16) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -822,7 +1317,31 @@ int main()
 					if (dmon[17].deletesp == 0) {
 						dmon[17].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 17) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 17) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 17) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 17) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 17) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -834,7 +1353,31 @@ int main()
 					if (dmon[18].deletesp == 0) {
 						dmon[18].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 18) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 18) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 18) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 18) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 18) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -846,7 +1389,31 @@ int main()
 					if (dmon[19].deletesp == 0) {
 						dmon[19].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 19) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 19) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 19) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 19) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 19) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -858,7 +1425,31 @@ int main()
 					if (dmon[20].deletesp == 0) {
 						dmon[20].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 20) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 20) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 20) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 20) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 20) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -870,7 +1461,31 @@ int main()
 					if (dmon[21].deletesp == 0) {
 						dmon[21].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 21) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 21) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 21) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 21) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 21) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -882,7 +1497,31 @@ int main()
 						if (dmon[22].deletesp == 0) {
 							dmon[22].deletesp = 1;
 							sound3.play();
-							speedmon += plusspeed;
+							if (mon[1] == 22) {
+								mon[1] = rand() % 26 + 1;
+								printf("%d\t", mon[1]);
+								speedmon += plusspeed;
+							}
+							if (mon[2] == 22) {
+								mon[2] = rand() % 26 + 1;
+								printf("%d\t", mon[2]);
+								speedmon += plusspeed;
+							}
+							if (mon[3] == 22) {
+								mon[3] = rand() % 26 + 1;
+								printf("%d\t", mon[3]);
+								speedmon += plusspeed;
+							}
+							if (mon[4] == 22) {
+								mon[4] = rand() % 26 + 1;
+								printf("%d\t", mon[4]);
+								speedmon += plusspeed;
+							}
+							if (mon[5] == 22) {
+								mon[5] = rand() % 26 + 1;
+								printf("%d\t", mon[5]);
+								speedmon += plusspeed;
+							}
 						}
 					}
 			}
@@ -894,7 +1533,31 @@ int main()
 					if (dmon[23].deletesp == 0) {
 						dmon[23].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 23) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 23) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 23) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 23) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 23) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -906,7 +1569,31 @@ int main()
 					if (dmon[24].deletesp == 0) {
 						dmon[24].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 24) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 24) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 24) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 24) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 24) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -918,7 +1605,31 @@ int main()
 					if (dmon[25].deletesp == 0) {
 						dmon[25].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 25) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 25) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 25) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 25) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 25) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 					}
 				}
 			}
@@ -930,7 +1641,31 @@ int main()
 					if (dmon[26].deletesp == 0) {
 						dmon[26].deletesp = 1;
 						sound3.play();
-						speedmon += plusspeed;
+						if (mon[1] == 26) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 26) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 26) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 26) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 26) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
+						}
 						
 					}
 				}
