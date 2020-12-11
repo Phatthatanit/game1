@@ -2644,36 +2644,38 @@ int main()
 		int position_it1Y1 = rand() % 2 + 1;
 		int position_it1Y2 = rand() % 2 + 1;
 		int position_it1Y3 = rand() % 2 + 1;
+		int position_it1Y4 = rand() % 2 + 1;
+		int position_it1Y5 = rand() % 2 + 1;
+		int position_it1Y6 = rand() % 2 + 1;
 
-		
 
 		if (it1.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 			if (it1.getPosition().y > 140 && it1.getPosition().y < 330 && p == 0) {
-				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
-						position_it1Y1 = rand() % 2 + 1;
-					}
-					if (position_it1Y1 == 1) {
-						position_it1Y1 = 50;
-					}
-					if (position_it1Y1 == 2) {
-						;
-						position_it1Y1 = -50;
-
-					}
-				}
-				else {
-					if (position_it1Y1 == 1) {
-						position_it1Y1 = 50;
-					}
-					if (position_it1Y1 == 2) {
-						;
-						position_it1Y1 = -50;
-
-					}
-				}
 				it1.move(sf::Vector2f(position_it1x, position_it1Y1));
+				if (position_it1Y1 == 1) {
+					position_it1Y1 = 50;
+				}
+				if (position_it1Y1 == 2) {
+					
+					position_it1Y1 = -50;
+
+				}
 			}
+				
+			if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+				for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+					position_it1Y1 = rand() % 2 + 1;
+				}
+				if (position_it1Y1 == 1) {
+					position_it1Y1 = 50;
+				}
+				if (position_it1Y1 == 2) {
+					
+					position_it1Y1 = -50;
+
+				}
+			}
+			
 			currentScore += 200;
 			sound2.play();
 
@@ -2681,167 +2683,175 @@ int main()
 
 		if (it2.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 			if (it2.getPosition().y > 140 && it2.getPosition().y < 330 && p == 0) {
-				if (it2.getPosition().y == 140 || it2.getPosition().y == 330) {
-					for (; it2.getPosition().y != 140 || it2.getPosition().y != 330;) {
-						position_it1Y2 = rand() % 2 + 1;
-					}
-					if (position_it1Y2 == 1) {
-						position_it1Y2 = 50;
-					}
-					if (position_it1Y2 == 2) {
-						;
-						position_it1Y2 = -50;
-
-					}
-				}
-				else {
-					if (position_it1Y2 == 1) {
-						position_it1Y2 = 50;
-					}
-					if (position_it1Y2 == 2) {
-						;
-						position_it1Y2 = -50;
-
-					}
-				}
 				it2.move(sf::Vector2f(position_it1x, position_it1Y2));
+				if (position_it1Y2 == 1) {
+					position_it1Y2 = 50;
+				}
+				if (position_it1Y2 == 2) {
+					
+					position_it1Y2 = -50;
+
+				}
 			}
+
+			if (it2.getPosition().y == 140 || it2.getPosition().y == 330) {
+				for (; it2.getPosition().y != 140 || it2.getPosition().y != 330;) {
+					position_it1Y2 = rand() % 2 + 1;
+				}
+				if (position_it1Y2 == 1) {
+					position_it1Y2 = 50;
+				}
+				if (position_it1Y2 == 2) {
+					
+					position_it1Y2 = -50;
+
+				}
+			}
+
 			currentScore += 200;
 			sound2.play();
 
 		}
 
-			if (it3.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-				if (it3.getPosition().y > 140 && it3.getPosition().y < 330 && p == 0) {
-					if (it3.getPosition().y == 140 || it3.getPosition().y == 330) {
-						for (; it3.getPosition().y != 140 || it3.getPosition().y != 330;) {
-							position_it1Y3 = rand() % 2 + 1;
-						}
+		if (it3.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			if (it3.getPosition().y > 140 && it3.getPosition().y < 330 && p == 0) {
+				it3.move(sf::Vector2f(position_it1x, position_it1Y3));
+				if (position_it1Y3 == 1) {
+					position_it1Y3 = 50;
+				}
+				if (position_it1Y3 == 2) {
 					
-						if (position_it1Y3 == 1) {
-							position_it1Y3 = 50;
-						}
-						if (position_it1Y3 == 2) {
-							
-							position_it1Y3 = -50;
+					position_it1Y3 = -50;
 
-						}
-
-					}
-					else {
-						if (position_it1Y3 == 1) {
-							position_it1Y3 = 50;
-						}
-						if (position_it1Y3 == 2) {
-							;
-							position_it1Y3 = -50;
-
-						}
-					}
-					it3.move(sf::Vector2f(position_it1x, position_it1Y3));
 				}
-				currentScore += 200;
-				sound2.play();
-
 			}
 
-
-				if (it4.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-					if (it4.getPosition().y > 140 && it4.getPosition().y < 330 && p == 0) {
-						if (it4.getPosition().y == 140 || it4.getPosition().y == 330) {
-							for (; it4.getPosition().y != 140 || it4.getPosition().y != 330;) {
-								position_it1Y1 = rand() % 2 + 1;
-							}
-							if (position_it1Y1 == 1) {
-								position_it1Y1 = 50;
-							}
-							if (position_it1Y1 == 2) {
-								;
-								position_it1Y1 = -50;
-
-							}
-						}
-						else {
-							if (position_it1Y1 == 1) {
-								position_it1Y1 = 50;
-							}
-							if (position_it1Y1 == 2) {
-								;
-								position_it1Y1 = -50;
-
-							}
-						}
-						it4.move(sf::Vector2f(position_it1x, position_it1Y1));
-					}
-					currentScore -= 200;
-					sound4.play();
+			if (it3.getPosition().y == 140 || it3.getPosition().y == 330) {
+				for (; it3.getPosition().y != 140 || it3.getPosition().y != 330;) {
+					position_it1Y3 = rand() % 2 + 1;
+				}
+				if (position_it1Y3 == 1) {
+					position_it1Y3 = 50;
+				}
+				if (position_it1Y3 == 2) {
+					
+					position_it1Y3 = -50;
 
 				}
-
-				if (it5.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-					if (it5.getPosition().y > 140 && it5.getPosition().y < 330 && p == 0) {
-						if (it5.getPosition().y == 140 || it5.getPosition().y == 330) {
-							for (; it5.getPosition().y != 140 || it5.getPosition().y != 330;) {
-								position_it1Y2 = rand() % 2 + 1;
-							}
-							if (position_it1Y2 == 1) {
-								position_it1Y2 = 50;
-							}
-							if (position_it1Y2 == 2) {
-								;
-								position_it1Y2 = -50;
-
-							}
-						}
-						else {
-							if (position_it1Y2 == 1) {
-								position_it1Y2 = 50;
-							}
-							if (position_it1Y2 == 2) {
-								;
-								position_it1Y2 = -50;
-
-							}
-						}
-						it5.move(sf::Vector2f(position_it1x, position_it1Y2));
-					}
-					currentScore -= 200;
-					sound4.play();
-
-				}
-
-					if (it6.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-						if (it6.getPosition().y > 140 && it6.getPosition().y < 330 && p == 0) {
-							if (it6.getPosition().y == 140 || it6.getPosition().y == 330) {
-								for (; it6.getPosition().y != 140 || it6.getPosition().y != 330;) {
-									position_it1Y3 = rand() % 2 + 1;
-								}
-								if (position_it1Y3 == 1) {
-									position_it1Y3 = 50;
-								}
-								if (position_it1Y3 == 2) {
-									;
-									position_it1Y3 = -50;
-
-								}
-							}
-							else {
-								if (position_it1Y3 == 1) {
-									position_it1Y3 = 50;
-								}
-								if (position_it1Y3 == 2) {
-									;
-									position_it1Y3 = -50;
-
-								}
-							}
-							it6.move(sf::Vector2f(position_it1x, position_it1Y3));
-						}
-				currentScore -= 200;
-				sound4.play();
 			}
-		
 
+			currentScore += 200;
+			sound2.play();
+
+		}
+
+
+
+		if (it4.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			if (it4.getPosition().y > 140 && it4.getPosition().y < 330 && p == 0) {
+				it4.move(sf::Vector2f(position_it1x, position_it1Y4));
+				if (position_it1Y4 == 1) {
+					position_it1Y4 = 50;
+				}
+				if (position_it1Y4 == 2) {
+					
+					position_it1Y4 = -50;
+
+				}
+			}
+
+			if (it4.getPosition().y == 140 || it4.getPosition().y == 330) {
+				for (; it4.getPosition().y != 140 || it4.getPosition().y != 330;) {
+					position_it1Y4 = rand() % 2 + 1;
+				}
+				if (position_it1Y4 == 1) {
+					position_it1Y4 = 50;
+				}
+				if (position_it1Y4 == 2) {
+					
+					position_it1Y4 = -50;
+
+				}
+			}
+
+			currentScore -= 200;
+			sound4.play();
+
+		}
+
+		if (it5.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			if (it5.getPosition().y > 140 && it5.getPosition().y < 330 && p == 0) {
+				it5.move(sf::Vector2f(position_it1x, position_it1Y5));
+				if (position_it1Y5 == 1) {
+					position_it1Y5 = 50;
+				}
+				if (position_it1Y5 == 2) {
+
+					position_it1Y5 = -50;
+
+				}
+			}
+
+			if (it5.getPosition().y == 140 || it5.getPosition().y == 330) {
+				for (; it5.getPosition().y != 140 || it5.getPosition().y != 330;) {
+					position_it1Y5 = rand() % 2 + 1;
+				}
+				if (position_it1Y5 == 1) {
+					position_it1Y5 = 50;
+				}
+				if (position_it1Y5 == 2) {
+
+					position_it1Y5 = -50;
+
+				}
+			}
+
+			currentScore -= 200;
+			sound4.play();
+
+		}
+
+
+		if (it6.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			if (it6.getPosition().y > 140 && it6.getPosition().y < 330 && p == 0) {
+				it6.move(sf::Vector2f(position_it1x, position_it1Y6));
+				if (position_it1Y6 == 1) {
+					position_it1Y6 = 50;
+				}
+				if (position_it1Y6 == 2) {
+
+					position_it1Y6 = -50;
+
+				}
+			}
+
+			if (it6.getPosition().y == 140 || it6.getPosition().y == 330) {
+				for (; it6.getPosition().y != 140 || it6.getPosition().y != 330;) {
+					position_it1Y6 = rand() % 2 + 1;
+				}
+				if (position_it1Y6 == 1) {
+					position_it1Y6 = 50;
+				}
+				if (position_it1Y6 == 2) {
+
+					position_it1Y6 = -50;
+
+				}
+			}
+
+			currentScore -= 200;
+			sound4.play();
+
+		}
+
+		if (p == 0 && currentScore < 0) {
+			if (p == 0 ) {
+				p = 2;
+				cheak = 2;
+				sound.stop();
+				sound1.play();
+			}
+		}
 
 		totalTime += deltaTime;
 		if (totalTime >= 0.1)
