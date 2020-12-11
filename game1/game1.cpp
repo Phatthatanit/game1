@@ -18,7 +18,7 @@
 using namespace std;
 
 int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak;
-float speedmon = 0.03f,plusspeed=0.01f;
+float speedmon = 0.03f, plusspeed = 0.01f;
 struct input
 {
 	int deletesp = 0;
@@ -34,8 +34,8 @@ void mons1()
 		mon[n] = rand() % 26 + 1;
 		printf("%d\t", mon[n]);
 	}
-	
-	
+
+
 }
 
 void showhighscore(int x, int y, string word, sf::RenderWindow& window, sf::Font* font)
@@ -59,7 +59,6 @@ int main()
 
 	int j = 0;
 	int k = false;
-
 	//srand(time(NULL));
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
@@ -528,9 +527,9 @@ int main()
 	sf::Clock clock;
 
 	//textbox
-	Textbox playernametextbox(30, sf::Color::White, true);
+	Textbox playernametextbox(20, sf::Color::White, true);
 	playernametextbox.setFont(myFont);
-	playernametextbox.setPosition({ 0.0f,180.0f });
+	playernametextbox.setPosition({ 0.0f,150.0f });
 	playernametextbox.setlimit(true, 10);
 
 	fp = fopen("./score.txt", "r");
@@ -543,14 +542,14 @@ int main()
 	fclose(fp);
 
 	//high scores func
-	
+
 	while (window.isOpen())
 	{
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			switch (event.type) {
 			case sf::Event::TextEntered:
-					playernametextbox.typeOn(event);
+				playernametextbox.typeOn(event);
 			case sf::Event::KeyReleased:
 				switch (event.key.code) {
 				case sf::Keyboard::Up:
@@ -599,7 +598,7 @@ int main()
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 		deltaTime = clock.restart().asSeconds();
-	
+
 
 		if (p == 1) {
 
@@ -608,7 +607,7 @@ int main()
 
 
 		}
-		if (p == 2 && cheak==2) {
+		if (p == 2 && cheak == 2) {
 
 			window.draw(game);
 			window.draw(score);
@@ -657,21 +656,18 @@ int main()
 		if (p == 3) {
 			menu.draw(window);
 			window.draw(myname);
-
 			playernametextbox.drawTo(window);
-
-			showhighscore(0, 10, to_string(userScore[0].first), window, &myFont);
-			showhighscore(110, 10, userScore[0].second, window, &myFont);
-			showhighscore(0, 30, to_string(userScore[1].first), window, &myFont);
-			showhighscore(110, 30, userScore[1].second, window, &myFont);
-			showhighscore(0, 50, to_string(userScore[2].first), window, &myFont);
-			showhighscore(110,50, userScore[2].second, window, &myFont);
-			showhighscore(0, 70, to_string(userScore[3].first), window, &myFont);
-			showhighscore(110, 70, userScore[3].second, window, &myFont);
-			showhighscore(0, 90, to_string(userScore[4].first), window, &myFont);
-			showhighscore(110, 90, userScore[4].second, window, &myFont);
+			showhighscore(0, 30, to_string(userScore[0].first), window, &myFont);
+			showhighscore(120, 30, userScore[0].second, window, &myFont);
+			showhighscore(0, 50, to_string(userScore[1].first), window, &myFont);
+			showhighscore(120, 50, userScore[1].second, window, &myFont);
+			showhighscore(0, 70, to_string(userScore[2].first), window, &myFont);
+			showhighscore(120, 70, userScore[2].second, window, &myFont);
+			showhighscore(0, 90, to_string(userScore[3].first), window, &myFont);
+			showhighscore(120, 90, userScore[3].second, window, &myFont);
+			showhighscore(0, 110, to_string(userScore[4].first), window, &myFont);
+			showhighscore(120, 110, userScore[4].second, window, &myFont);
 		}
-
 		if (p == 0 && num == 0) {
 			window.draw(bg);
 			window.draw(shapeSprite);
@@ -690,17 +686,17 @@ int main()
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 			{
-					p = 0;
+				p = 0;
 			}
 
 			if (mon[1] == 1 || mon[2] == 1 || mon[3] == 1 || mon[4] == 1 || mon[5] == 1) {
-				shapem1.move(speed * (speedmon+0.023f), 0.f * speed);
+				shapem1.move(speed * (speedmon + 0.023f), 0.f * speed);
 				shapem1.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 					if (dmon[1].deletesp == 0) {
 						dmon[1].deletesp = 1;
 						sound3.play();
-				
+
 						if (mon[1] == 1) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -746,24 +742,24 @@ int main()
 						if (mon[2] == 2) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[3] == 2) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[4] == 2) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[5] == 2) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
 							speedmon += plusspeed;
 						}
-					
+
 					}
 				}
 			}
@@ -783,7 +779,7 @@ int main()
 						if (mon[2] == 3) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[3] == 3) {
 							mon[3] = rand() % 26 + 1;
@@ -793,12 +789,12 @@ int main()
 						if (mon[4] == 3) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[5] == 3) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 					}
 				}
@@ -819,22 +815,22 @@ int main()
 						if (mon[2] == 4) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[3] == 4) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[4] == 4) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[5] == 4) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 					}
 				}
@@ -855,17 +851,17 @@ int main()
 						if (mon[2] == 5) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[3] == 5) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[4] == 5) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[5] == 5) {
 							mon[5] = rand() % 26 + 1;
@@ -891,22 +887,22 @@ int main()
 						if (mon[2] == 6) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[3] == 6) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[4] == 6) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[5] == 6) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 					}
 				}
@@ -927,22 +923,22 @@ int main()
 						if (mon[2] == 7) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[3] == 7) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[4] == 7) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[5] == 7) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 					}
 				}
@@ -963,22 +959,22 @@ int main()
 						if (mon[2] == 8) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[3] == 8) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[4] == 8) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 						if (mon[5] == 8) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed ;
+							speedmon += plusspeed;
 						}
 					}
 				}
@@ -1088,7 +1084,7 @@ int main()
 							printf("%d\t", mon[5]);
 							speedmon += plusspeed;
 						}
-						
+
 					}
 				}
 			}
@@ -1165,7 +1161,7 @@ int main()
 				}
 			}
 
-			if (mon[1] == 14 || mon[2] == 14 || mon[3] == 14 || mon[4] == 14 || mon[5] == 14){
+			if (mon[1] == 14 || mon[2] == 14 || mon[3] == 14 || mon[4] == 14 || mon[5] == 14) {
 				shapem14.move(speed * (speedmon + 0.027f), 0.f * speed);
 				shapem14.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
@@ -1381,7 +1377,7 @@ int main()
 				}
 			}
 
-			if (mon[1] == 20 || mon[2] == 20 || mon[3] == 20 || mon[4] == 20 || mon[5] == 20)  {
+			if (mon[1] == 20 || mon[2] == 20 || mon[3] == 20 || mon[4] == 20 || mon[5] == 20) {
 				shapem20.move(speed * (speedmon + 0.014f), 0.f * speed);
 				shapem20.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
@@ -1455,41 +1451,41 @@ int main()
 
 			if (mon[1] == 22 || mon[2] == 22 || mon[3] == 22 || mon[4] == 22 || mon[5] == 22) {
 				shapem22.move(speed * (speedmon + 0.014f), 0.f * speed);
-					shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
-					if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
-						if (dmon[22].deletesp == 0) {
-							dmon[22].deletesp = 1;
-							sound3.play();
-							if (mon[1] == 22) {
-								mon[1] = rand() % 26 + 1;
-								printf("%d\t", mon[1]);
-								speedmon += plusspeed;
-							}
-							if (mon[2] == 22) {
-								mon[2] = rand() % 26 + 1;
-								printf("%d\t", mon[2]);
-								speedmon += plusspeed;
-							}
-							if (mon[3] == 22) {
-								mon[3] = rand() % 26 + 1;
-								printf("%d\t", mon[3]);
-								speedmon += plusspeed;
-							}
-							if (mon[4] == 22) {
-								mon[4] = rand() % 26 + 1;
-								printf("%d\t", mon[4]);
-								speedmon += plusspeed;
-							}
-							if (mon[5] == 22) {
-								mon[5] = rand() % 26 + 1;
-								printf("%d\t", mon[5]);
-								speedmon += plusspeed;
-							}
+				shapem22.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
+					if (dmon[22].deletesp == 0) {
+						dmon[22].deletesp = 1;
+						sound3.play();
+						if (mon[1] == 22) {
+							mon[1] = rand() % 26 + 1;
+							printf("%d\t", mon[1]);
+							speedmon += plusspeed;
+						}
+						if (mon[2] == 22) {
+							mon[2] = rand() % 26 + 1;
+							printf("%d\t", mon[2]);
+							speedmon += plusspeed;
+						}
+						if (mon[3] == 22) {
+							mon[3] = rand() % 26 + 1;
+							printf("%d\t", mon[3]);
+							speedmon += plusspeed;
+						}
+						if (mon[4] == 22) {
+							mon[4] = rand() % 26 + 1;
+							printf("%d\t", mon[4]);
+							speedmon += plusspeed;
+						}
+						if (mon[5] == 22) {
+							mon[5] = rand() % 26 + 1;
+							printf("%d\t", mon[5]);
+							speedmon += plusspeed;
 						}
 					}
+				}
 			}
 
-			if (mon[1] == 23 || mon[2] == 23 || mon[3] == 23 || mon[4] == 23 || mon[5] == 23){
+			if (mon[1] == 23 || mon[2] == 23 || mon[3] == 23 || mon[4] == 23 || mon[5] == 23) {
 				shapem23.move(speed * (speedmon + 0.004f), 0.f * speed);
 				shapem23.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 110));
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
@@ -1629,13 +1625,13 @@ int main()
 							printf("%d\t", mon[5]);
 							speedmon += plusspeed;
 						}
-						
+
 					}
 				}
 			}
 		}
 
-		
+
 
 
 		if (dmon[1].deletesp != 1) {
@@ -2120,7 +2116,7 @@ int main()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
-			if (p == 4 &&cheak==1) {
+			if (p == 4 && cheak == 1) {
 				rs = 0;
 				p = 0;
 				num = 0;
@@ -2166,7 +2162,7 @@ int main()
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
 			//line.move(speed *deltaTime, 0.f * speed);
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
-	
+
 
 
 
@@ -2177,7 +2173,7 @@ int main()
 			}
 
 		}
-	
+
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			if (shapeSprite.getPosition().y > 140 && p == 0) {
@@ -2217,9 +2213,9 @@ int main()
 		}
 
 
-     if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
+		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
-			if (p == 0&& dmon[1].deletesp != 1) {
+			if (p == 0 && dmon[1].deletesp != 1) {
 				p = 2;
 				cheak = 2;
 
@@ -2232,7 +2228,7 @@ int main()
 
 		}
 
-	if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds()) ) {
+		if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0 && dmon[2].deletesp != 1) {
 				p = 2;
@@ -2248,7 +2244,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem3.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[3].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2263,7 +2259,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem4.getGlobalBounds())) {
-			
+
 			if (p == 0 && dmon[4].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2277,7 +2273,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem5.getGlobalBounds())) {
-	
+
 			if (p == 0 && dmon[5].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2291,7 +2287,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem6.getGlobalBounds())) {
-	
+
 			if (p == 0 && dmon[6].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2304,7 +2300,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem7.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[7].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2318,7 +2314,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem8.getGlobalBounds())) {
-			
+
 			if (p == 0 && dmon[8].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2332,7 +2328,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem9.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[9].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2346,7 +2342,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem10.getGlobalBounds())) {
-			
+
 			if (p == 0 && dmon[10].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2374,7 +2370,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem12.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[12].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2388,7 +2384,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem13.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[13].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2402,7 +2398,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem14.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[14].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2416,7 +2412,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem15.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[15].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2430,7 +2426,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem16.getGlobalBounds())) {
-			
+
 			if (p == 0 && dmon[16].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2444,7 +2440,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem17.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[17].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2458,7 +2454,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem18.getGlobalBounds())) {
-			
+
 			if (p == 0 && dmon[18].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2472,7 +2468,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem19.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[19].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2486,7 +2482,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem20.getGlobalBounds())) {
-	
+
 			if (p == 0 && dmon[20].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2500,7 +2496,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem21.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[21].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2515,7 +2511,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem22.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[22].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2530,7 +2526,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem23.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[23].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2544,7 +2540,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem24.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[24].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2558,7 +2554,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem25.getGlobalBounds())) {
-		
+
 			if (p == 0 && dmon[25].deletesp != 1) {
 				p = 2;
 				cheak = 2;
