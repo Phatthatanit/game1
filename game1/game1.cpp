@@ -28,6 +28,7 @@ void mons1()
 	}
 	
 	
+	
 }
 
 
@@ -82,7 +83,7 @@ int main()
 
 	sound.setLoop(true);
 	sound.setBuffer(buffer);
-	//sound.play();
+	sound.play();
 
 
 
@@ -627,10 +628,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 					if (dmon[1].deletesp == 0) {
 						dmon[1].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 
 					}
@@ -643,10 +641,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
 					if (dmon[2].deletesp == 0) {
 						dmon[2].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -=1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -658,10 +653,7 @@ int main()
 
 					if (dmon[3].deletesp == 0) {
 						dmon[3].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -673,10 +665,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 					if (dmon[4].deletesp == 0) {
 						dmon[4].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -688,10 +677,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 					if (dmon[5].deletesp == 0) {
 						dmon[5].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -703,10 +689,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
 					if (dmon[6].deletesp == 0) {
 						dmon[6].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -718,10 +701,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
 					if (dmon[7].deletesp == 0) {
 						dmon[7].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -=1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -733,10 +713,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
 					if (dmon[8].deletesp == 0) {
 						dmon[8].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -748,10 +725,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
 					if (dmon[9].deletesp == 0) {
 						dmon[9].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -763,10 +737,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
 					if (dmon[10].deletesp == 0) {
 						dmon[10].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -=1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -778,10 +749,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
 					if (dmon[11].deletesp == 0) {
 						dmon[11].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -793,10 +761,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
 					if (dmon[12].deletesp == 0) {
 						dmon[12].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -808,12 +773,8 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
 					if (dmon[13].deletesp == 0) {
 						dmon[13].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -=1;
-						s = 0;
 						speedmon += plusspeed;
-
 					}
 				}
 			}
@@ -824,10 +785,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
 					if (dmon[14].deletesp == 0) {
 						dmon[14].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -839,10 +797,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) {
 					if (dmon[15].deletesp == 0) {
 						dmon[15].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -854,10 +809,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
 					if (dmon[16].deletesp == 0) {
 						dmon[16].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -869,10 +821,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
 					if (dmon[17].deletesp == 0) {
 						dmon[17].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -884,10 +833,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
 					if (dmon[18].deletesp == 0) {
 						dmon[18].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -899,10 +845,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 					if (dmon[19].deletesp == 0) {
 						dmon[19].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -914,10 +857,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
 					if (dmon[20].deletesp == 0) {
 						dmon[20].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -929,10 +869,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) {
 					if (dmon[21].deletesp == 0) {
 						dmon[21].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -944,11 +881,8 @@ int main()
 					if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
 						if (dmon[22].deletesp == 0) {
 							dmon[22].deletesp = 1;
-								//Sleep(300);
-								sound3.play();
-								n -= 1;
-								s = 0;
-								speedmon += plusspeed;
+							sound3.play();
+							speedmon += plusspeed;
 						}
 					}
 			}
@@ -959,10 +893,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 					if (dmon[23].deletesp == 0) {
 						dmon[23].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -974,10 +905,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
 					if (dmon[24].deletesp == 0) {
 						dmon[24].deletesp = 1;
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -989,10 +917,7 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
 					if (dmon[25].deletesp == 0) {
 						dmon[25].deletesp = 1;
-						//(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
 					}
 				}
@@ -1004,12 +929,9 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
 					if (dmon[26].deletesp == 0) {
 						dmon[26].deletesp = 1;
-
-						//Sleep(300);
 						sound3.play();
-						n -= 1;
-						s = 0;
 						speedmon += plusspeed;
+						
 					}
 				}
 			}
@@ -1188,13 +1110,13 @@ int main()
 			if (p == 0 && mon[2] == 10) {
 				window.draw(shapem10);
 			}
-			if (p == 0 && mon[3] == 11) {
+			if (p == 0 && mon[3] == 10) {
 				window.draw(shapem11);
 			}
-			if (p == 0 && mon[4] == 11) {
+			if (p == 0 && mon[4] == 10) {
 				window.draw(shapem11);
 			}
-			if (p == 0 && mon[5] == 11) {
+			if (p == 0 && mon[5] == 10) {
 				window.draw(shapem11);
 			}
 		}
@@ -1709,7 +1631,7 @@ int main()
 
 		}
 		if (line.getGlobalBounds().intersects(shapem11.getGlobalBounds())) {
-	
+
 			if (p == 0 && dmon[11].deletesp != 1) {
 				p = 2;
 				cheak = 2;
