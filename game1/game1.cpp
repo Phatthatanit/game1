@@ -2053,6 +2053,19 @@ int main()
 				p = 0;
 				num = 0;
 				cheak = 3;
+				window.draw(bg);
+				window.draw(shapeSprite);
+				window.draw(score);
+				window.draw(score1);
+				window.draw(scoreCurrent);
+				window.draw(collision);
+				window.draw(line);
+				window.setView(view);
+				for (s = 0; s <= 1; s++)
+				{
+					mons1();
+					break;
+				}
 				printf("%d", rs);
 				Sleep(300);
 
