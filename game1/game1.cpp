@@ -44,7 +44,7 @@ void showhighscore(int x, int y, string word, sf::RenderWindow& window, sf::Font
 	text.setFont(*font);
 	text.setPosition(x, y);
 	text.setString(word);
-	text.setCharacterSize(10);
+	text.setCharacterSize(15);
 	text.setFillColor(sf::Color::White);
 	window.draw(text);
 }
@@ -59,6 +59,7 @@ int main()
 
 	int j = 0;
 	int k = false;
+
 	//srand(time(NULL));
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
@@ -527,9 +528,9 @@ int main()
 	sf::Clock clock;
 
 	//textbox
-	Textbox playernametextbox(100, sf::Color::White, true);
+	Textbox playernametextbox(30, sf::Color::White, true);
 	playernametextbox.setFont(myFont);
-	playernametextbox.setPosition({ 500.f,320.f });
+	playernametextbox.setPosition({ 0.0f,180.0f });
 	playernametextbox.setlimit(true, 10);
 
 	fp = fopen("./score.txt", "r");
@@ -656,18 +657,21 @@ int main()
 		if (p == 3) {
 			menu.draw(window);
 			window.draw(myname);
+
 			playernametextbox.drawTo(window);
+
 			showhighscore(0, 10, to_string(userScore[0].first), window, &myFont);
-			showhighscore(100, 10, userScore[0].second, window, &myFont);
-			showhighscore(0, 20, to_string(userScore[1].first), window, &myFont);
-			showhighscore(100, 20, userScore[1].second, window, &myFont);
-			showhighscore(0, 30, to_string(userScore[2].first), window, &myFont);
-			showhighscore(100, 30, userScore[2].second, window, &myFont);
-			showhighscore(0, 40, to_string(userScore[3].first), window, &myFont);
-			showhighscore(100, 40, userScore[3].second, window, &myFont);
-			showhighscore(0, 50, to_string(userScore[4].first), window, &myFont);
-			showhighscore(100, 50, userScore[4].second, window, &myFont);
+			showhighscore(110, 10, userScore[0].second, window, &myFont);
+			showhighscore(0, 30, to_string(userScore[1].first), window, &myFont);
+			showhighscore(110, 30, userScore[1].second, window, &myFont);
+			showhighscore(0, 50, to_string(userScore[2].first), window, &myFont);
+			showhighscore(110,50, userScore[2].second, window, &myFont);
+			showhighscore(0, 70, to_string(userScore[3].first), window, &myFont);
+			showhighscore(110, 70, userScore[3].second, window, &myFont);
+			showhighscore(0, 90, to_string(userScore[4].first), window, &myFont);
+			showhighscore(110, 90, userScore[4].second, window, &myFont);
 		}
+
 		if (p == 0 && num == 0) {
 			window.draw(bg);
 			window.draw(shapeSprite);
