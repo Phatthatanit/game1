@@ -7,8 +7,16 @@
 #include <stdlib.h>
 #include<conio.h>
 #include <sstream> 
-#include "Menu.h"
-#include <sstream> 
+#include "Menu.h" 
+#include <vector>
+#include <algorithm>
+#include "Textbox.h"
+#include <string>
+#include <utility>
+#include <iostream>
+
+using namespace std;
+
 int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak;
 float speedmon = 0.03f,plusspeed=0.01f;
 struct input
@@ -30,13 +38,27 @@ void mons1()
 	
 }
 
-
-
-
+void showhighscore(int x, int y, string word, sf::RenderWindow& window, sf::Font* font)
+{
+	sf::Text text;
+	text.setFont(*font);
+	text.setPosition(x, y);
+	text.setString(word);
+	text.setCharacterSize(10);
+	text.setFillColor(sf::Color::White);
+	window.draw(text);
+}
 
 int main()
 {
+	FILE* fp;
+	char temp[255];
+	int highscore[6];
+	string name[6];
+	vector<pair<int, string>>userScore;
 
+	int j = 0;
+	int k = false;
 	//srand(time(NULL));
 	sf::RenderWindow window(sf::VideoMode(1475, 420), "Game!");
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(1475.0f, 420.0f));
@@ -478,8 +500,6 @@ int main()
 	pauseTexture.loadFromFile("pic/pause2.png");
 	pause.setTexture(&pauseTexture);
 
-
-
 	////// gameover
 	sf::Texture gameTexture;
 	sf::RectangleShape game(sf::Vector2f(500.0f, 300.0f));
@@ -506,12 +526,30 @@ int main()
 	float speed = 100.0f;
 	sf::Clock clock;
 
+	//textbox
+	Textbox playernametextbox(100, sf::Color::White, true);
+	playernametextbox.setFont(myFont);
+	playernametextbox.setPosition({ 500.f,320.f });
+	playernametextbox.setlimit(true, 10);
 
+	fp = fopen("./score.txt", "r");
+	for (int i = 0; i < 5; i++) {
+		fscanf(fp, "%s", &temp);
+		name[i] = temp;
+		fscanf(fp, "%d", &highscore[i]);
+		userScore.push_back(make_pair(highscore[i], name[i]));
+	}
+	fclose(fp);
+
+	//high scores func
+	
 	while (window.isOpen())
 	{
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			switch (event.type) {
+			case sf::Event::TextEntered:
+					playernametextbox.typeOn(event);
 			case sf::Event::KeyReleased:
 				switch (event.key.code) {
 				case sf::Keyboard::Up:
@@ -526,6 +564,7 @@ int main()
 					switch (menu.GetPressedItem()) {
 					case 0:
 						std::cout << "Play has been pressd" << std::endl;
+						name[5] = playernametextbox.gettext();
 						p = 0;
 						num = 0;
 						printf("num = %d", num);
@@ -559,7 +598,7 @@ int main()
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 		deltaTime = clock.restart().asSeconds();
-
+	
 
 		if (p == 1) {
 
@@ -574,6 +613,23 @@ int main()
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
+			if (k == false) {
+				j++;
+				k = true;
+			}
+
+
+			fp = fopen("./score.txt", "r");
+			highscore[5] = currentScore;
+			userScore.push_back(make_pair(highscore[5], name[5]));
+			sort(userScore.begin(), userScore.end());
+			fclose(fp);
+			fopen("./score.txt", "w");
+			for (int i = 4 + j; i >= 0 + j; i--) {
+				strcpy(temp, userScore[i].second.c_str());
+				fprintf(fp, "%s %d\n", temp, userScore[i].first);
+			}
+			fclose(fp);
 
 		}
 
@@ -600,6 +656,17 @@ int main()
 		if (p == 3) {
 			menu.draw(window);
 			window.draw(myname);
+			playernametextbox.drawTo(window);
+			showhighscore(0, 10, to_string(userScore[0].first), window, &myFont);
+			showhighscore(100, 10, userScore[0].second, window, &myFont);
+			showhighscore(0, 20, to_string(userScore[1].first), window, &myFont);
+			showhighscore(100, 20, userScore[1].second, window, &myFont);
+			showhighscore(0, 30, to_string(userScore[2].first), window, &myFont);
+			showhighscore(100, 30, userScore[2].second, window, &myFont);
+			showhighscore(0, 40, to_string(userScore[3].first), window, &myFont);
+			showhighscore(100, 40, userScore[3].second, window, &myFont);
+			showhighscore(0, 50, to_string(userScore[4].first), window, &myFont);
+			showhighscore(100, 50, userScore[4].second, window, &myFont);
 		}
 		if (p == 0 && num == 0) {
 			window.draw(bg);
@@ -610,6 +677,7 @@ int main()
 			window.draw(collision);
 			window.draw(line);
 			window.setView(view);
+
 			for (s = 0; s <= 1; s++)
 			{
 				mons1();
