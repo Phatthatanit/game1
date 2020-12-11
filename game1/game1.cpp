@@ -18,7 +18,7 @@
 using namespace std;
 
 int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak,ckname=0;
-float speedmon = 0.03f, plusspeed = 0.01f;
+float speedmon = 0.03f, plusspeed = 0.015f;
 struct input
 {
 	int deletesp = 0;
@@ -139,11 +139,7 @@ int main()
 	sound3.setBuffer(buffer3);
 
 
-	/*////// Circle
-	sf::CircleShape collision(40.f);
-	collision.setPosition({ 1400.f, 210.f });
-	collision.setFillColor(sf::Color::Green);
-	*/
+
 	///// line
 
 	sf::RectangleShape line(sf::Vector2f(10, 260));
@@ -155,7 +151,7 @@ int main()
 	item1.loadFromFile("pic/it5.png");
 	it1.setTexture(&item1);
 	it1.setPosition({ 1400.f, 210.f });
-
+	
 
 	////// player
 	sf::Texture playerTexture;
@@ -258,7 +254,7 @@ int main()
 	int spriteSizeX7 = m7.getSize().x / 10;
 	int spriteSizeY7 = m7.getSize().y / 1;
 	shapem7.setTextureRect(sf::IntRect(0, 0, spriteSizeX7, spriteSizeY7));
-	shapem7.setOrigin(shapeSprite.getPosition().x - dt, -70.0f);
+	shapem7.setOrigin(shapeSprite.getPosition().x - dt, -230.0f);
 	////// m8
 	sf::Texture m8;
 	if (!m8.loadFromFile("pic/h.png"))
@@ -282,7 +278,7 @@ int main()
 	int spriteSizeX9 = m9.getSize().x / 10;
 	int spriteSizeY9 = m9.getSize().y / 1;
 	shapem9.setTextureRect(sf::IntRect(0, 0, spriteSizeX9, spriteSizeY9));
-	shapem9.setOrigin(shapeSprite.getPosition().x - dt, -200.0f);
+	shapem9.setOrigin(shapeSprite.getPosition().x - dt, -205.0f);
 	////// m10
 	sf::Texture m10;
 	if (!m10.loadFromFile("pic/j.png"))
@@ -294,7 +290,7 @@ int main()
 	int spriteSizeX10 = m10.getSize().x / 10;
 	int spriteSizeY10 = m10.getSize().y / 1;
 	shapem10.setTextureRect(sf::IntRect(0, 0, spriteSizeX10, spriteSizeY10));
-	shapem10.setOrigin(shapeSprite.getPosition().x - dt, -260.0f);
+	shapem10.setOrigin(shapeSprite.getPosition().x - dt, -245.0f);
 	////// m11
 	sf::Texture m11;
 	if (!m11.loadFromFile("pic/k.png"))
@@ -319,7 +315,7 @@ int main()
 	int spriteSizeX12 = m12.getSize().x / 10;
 	int spriteSizeY12 = m12.getSize().y / 1;
 	shapem12.setTextureRect(sf::IntRect(0, 0, spriteSizeX12, spriteSizeY12));
-	shapem12.setOrigin(shapeSprite.getPosition().x - dt, -200.0f);
+	shapem12.setOrigin(shapeSprite.getPosition().x - dt, -170.0f);
 
 	////// m13
 	sf::Texture m13;
@@ -357,7 +353,7 @@ int main()
 	int spriteSizeX15 = m15.getSize().x / 10;
 	int spriteSizeY15 = m15.getSize().y / 1;
 	shapem15.setTextureRect(sf::IntRect(0, 0, spriteSizeX15, spriteSizeY15));
-	shapem15.setOrigin(shapeSprite.getPosition().x - dt, -170.0f);
+	shapem15.setOrigin(shapeSprite.getPosition().x - dt, -145.0f);
 
 	////// m16
 	sf::Texture m16;
@@ -394,7 +390,7 @@ int main()
 	int spriteSizeX18 = m18.getSize().x / 10;
 	int spriteSizeY18 = m18.getSize().y / 1;
 	shapem18.setTextureRect(sf::IntRect(0, 0, spriteSizeX18, spriteSizeY18));
-	shapem18.setOrigin(shapeSprite.getPosition().x - dt, -240.0f);
+	shapem18.setOrigin(shapeSprite.getPosition().x - dt, -105.0f);
 	////// m19
 	sf::Texture m19;
 	if (!m19.loadFromFile("pic/s.png"))
@@ -418,7 +414,7 @@ int main()
 	int spriteSizeX20 = m20.getSize().x / 10;
 	int spriteSizeY20 = m20.getSize().y / 1;
 	shapem20.setTextureRect(sf::IntRect(0, 0, spriteSizeX20, spriteSizeY20));
-	shapem20.setOrigin(shapeSprite.getPosition().x - dt, -70.0f);
+	shapem20.setOrigin(shapeSprite.getPosition().x - dt, -85.0f);
 	////// m21
 	sf::Texture m21;
 	if (!m21.loadFromFile("pic/u.png"))
@@ -442,7 +438,7 @@ int main()
 	int spriteSizeX22 = m22.getSize().x / 10;
 	int spriteSizeY22 = m22.getSize().y / 1;
 	shapem22.setTextureRect(sf::IntRect(0, 0, spriteSizeX22, spriteSizeY22));
-	shapem22.setOrigin(shapeSprite.getPosition().x - dt, -80.0f);
+	shapem22.setOrigin(shapeSprite.getPosition().x - dt, -260.0f);
 	////// m23
 	sf::Texture m23;
 	if (!m23.loadFromFile("pic/w.png"))
@@ -478,7 +474,7 @@ int main()
 	int spriteSizeX25 = m25.getSize().x / 10;
 	int spriteSizeY25 = m25.getSize().y / 1;
 	shapem25.setTextureRect(sf::IntRect(0, 0, spriteSizeX25, spriteSizeY25));
-	shapem25.setOrigin(shapeSprite.getPosition().x - dt, -100.0f);
+	shapem25.setOrigin(shapeSprite.getPosition().x - dt, -75.0f);
 	////// m26
 	sf::Texture m26;
 	if (!m26.loadFromFile("pic/z.png"))
@@ -576,6 +572,11 @@ int main()
 						p = 0;
 						num = 0;
 						printf("num = %d", num);
+						if (k == false) {
+							j++;
+
+							k = true;
+						}
 						break;
 					case 1:
 						std::cout << "How to has been pressd" << std::endl;
@@ -621,11 +622,7 @@ int main()
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
-			if (k == false) {
-				j++;
-
-				k = true;
-			}
+			
 
 
 			fp = fopen("./score.txt", "r");
@@ -2160,7 +2157,7 @@ int main()
 
 		window.display();
 
-		int xOp = rand() % 30;
+		int xOp = rand() % 1500 ;
 		int yOp = rand() % 1500;
 
 
@@ -2224,7 +2221,7 @@ int main()
 			}
 		}
 
-
+/*
 		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0 && dmon[1].deletesp != 1) {
@@ -2590,12 +2587,41 @@ int main()
 				sound.stop();
 				sound1.play();
 			}
-
-
 		}
+		*/
+
+		int position_it1x =  500 ;
+		int position_it1Y = rand() % 2 + 1;
+		
+		
+
+		
 
 		if (it1.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			//it1.setPosition(sf::Vector2f(xOp, yOp));
+			if (it1.getPosition().y > 140 && it1.getPosition().y < 330 && p == 0) {
+				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+					position_it1Y = rand() % 2 + 1;
+					if (position_it1Y == 1) {
+						position_it1Y = 50;
+					}
+					if (position_it1Y == 2) {
+						;
+						position_it1Y = -50;
+
+					}
+				}
+				else {
+					if (position_it1Y == 1) {
+						position_it1Y = 50;
+					}
+					if (position_it1Y == 2) {
+						;
+						position_it1Y = -50;
+
+					}
+				}
+				it1.move(sf::Vector2f(position_it1x, position_it1Y));
+			}
 			currentScore += 200;
 			sound2.play();
 
