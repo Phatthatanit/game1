@@ -28,7 +28,6 @@ void mons1()
 	}
 	
 	
-	
 }
 
 
@@ -634,115 +633,7 @@ int main()
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
 							speedmon += plusspeed;
-							
-							/*if (mon[1] == 1) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem1);
 
-							}
-							if (mon[1] == 2) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem2);
-							}
-							if (mon[1] == 3) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem3);
-							}
-							if (mon[1] == 4) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem4);
-							}
-							if (mon[1] == 5) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem5);
-							}
-							if (mon[1] == 6) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem6);
-							}
-							if (mon[1] == 7) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem7);
-							}
-							if (mon[1] == 8) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem8);
-							}
-							if (mon[1] == 9) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem9);
-							}
-							if (mon[1] == 10) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem10);
-							}
-							if (mon[1] == 11) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem11);
-							}
-							if (mon[1] == 12) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem12);
-							}
-							if (mon[1] == 13) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem13);
-							}
-							if (mon[1] == 14) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem14);
-							}
-							if (mon[1] == 15) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem15);
-							}
-							if (mon[1] == 16) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem16);
-							}
-							if (mon[1] == 17) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem17);
-							}
-							if (mon[1] == 18) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem18);
-							}
-							if (mon[1] == 19) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem19);
-							}
-							if (mon[1] == 20) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem20);
-							}
-							if (mon[1] == 21) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem21);
-							}
-							if (mon[1] == 22) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem22);
-							}
-							if (mon[1] == 23) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem23);
-							}
-							if (mon[1] == 24) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem24);
-							}
-							if (mon[1] == 25) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem25);
-							}
-							if (mon[1] == 26) {
-								speedmon += plusspeed * 0.5f;
-								window.draw(shapem26);
-							}
-							*/
-
-						 
 						}
 						if (mon[2] == 1) {
 							mon[2] = rand() % 26 + 1;
@@ -2154,6 +2045,24 @@ int main()
 			window.draw(howto1);
 
 
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			if (p == 4 &&cheak==1) {
+				rs = 0;
+				p = 0;
+				num = 0;
+				cheak = 3;
+				printf("%d", rs);
+				Sleep(300);
+
+			}
+			else {
+				p = 4;
+				printf("%d", p);
+				Sleep(300);
+
+			}
 		}
 
 		window.display();
