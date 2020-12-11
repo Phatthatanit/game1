@@ -17,7 +17,7 @@
 
 using namespace std;
 
-int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak;
+int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak,ckname=0;
 float speedmon = 0.03f, plusspeed = 0.01f;
 struct input
 {
@@ -104,7 +104,7 @@ int main()
 
 	sound.setLoop(true);
 	sound.setBuffer(buffer);
-	sound.play();
+	//sound.play();
 
 
 
@@ -139,15 +139,23 @@ int main()
 	sound3.setBuffer(buffer3);
 
 
-	////// Circle
+	/*////// Circle
 	sf::CircleShape collision(40.f);
 	collision.setPosition({ 1400.f, 210.f });
 	collision.setFillColor(sf::Color::Green);
-
+	*/
 	///// line
 
 	sf::RectangleShape line(sf::Vector2f(10, 260));
 	line.setFillColor(sf::Color::Red);
+
+	////// it1
+	sf::Texture item1;
+	sf::RectangleShape it1(sf::Vector2f(60.0f, 60.0f));
+	item1.loadFromFile("pic/it5.png");
+	it1.setTexture(&item1);
+	it1.setPosition({ 1400.f, 210.f });
+
 
 	////// player
 	sf::Texture playerTexture;
@@ -615,6 +623,7 @@ int main()
 			window.draw(scoreCurrent);
 			if (k == false) {
 				j++;
+
 				k = true;
 			}
 
@@ -656,7 +665,9 @@ int main()
 		if (p == 3) {
 			menu.draw(window);
 			window.draw(myname);
+
 			playernametextbox.drawTo(window);
+
 			showhighscore(0, 30, to_string(userScore[0].first), window, &myFont);
 			showhighscore(120, 30, userScore[0].second, window, &myFont);
 			showhighscore(0, 50, to_string(userScore[1].first), window, &myFont);
@@ -674,8 +685,9 @@ int main()
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
-			window.draw(collision);
+			//window.draw(collision);
 			window.draw(line);
+			window.draw(it1);
 			window.setView(view);
 
 			for (s = 0; s <= 1; s++)
@@ -1805,13 +1817,13 @@ int main()
 				window.draw(shapem10);
 			}
 			if (p == 0 && mon[3] == 10) {
-				window.draw(shapem11);
+				window.draw(shapem10);
 			}
 			if (p == 0 && mon[4] == 10) {
-				window.draw(shapem11);
+				window.draw(shapem10);
 			}
 			if (p == 0 && mon[5] == 10) {
-				window.draw(shapem11);
+				window.draw(shapem10);
 			}
 		}
 
@@ -2114,7 +2126,7 @@ int main()
 
 
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			if (p == 4 && cheak == 1) {
 				rs = 0;
@@ -2144,12 +2156,12 @@ int main()
 				Sleep(300);
 
 			}
-		}
+		}*/
 
 		window.display();
 
-		int xOp = rand() % 1000;
-		int yOp = rand() % 500;
+		int xOp = rand() % 30;
+		int yOp = rand() % 1500;
 
 
 		std::stringstream scoreShow;
@@ -2582,9 +2594,9 @@ int main()
 
 		}
 
-		if (collision.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			collision.setPosition(sf::Vector2f(xOp, yOp));
-
+		if (it1.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			//it1.setPosition(sf::Vector2f(xOp, yOp));
+			currentScore += 200;
 			sound2.play();
 
 		}
