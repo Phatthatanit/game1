@@ -2243,7 +2243,7 @@ int main()
 
 			}
 		}
-		/*
+		
 
 		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
@@ -2611,7 +2611,7 @@ int main()
 				sound1.play();
 			}
 		}
-		*/
+		
 
 		int position_it1x = 500;
 		int position_it1Y1 = rand() % 2 + 1;
