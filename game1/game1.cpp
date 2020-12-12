@@ -18,7 +18,7 @@
 using namespace std;
 
 int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak, ckname = 0;
-float speedmon = 0.02f, plusspeed = 0.015f;
+float speedmon = 0.03f, plusspeed = 0.015f;
 struct input
 {
 	int deletesp = 0;
@@ -2254,7 +2254,7 @@ int main()
 			}
 		}
 		
-		/*
+		
 		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
 			if (p == 0 && dmon[1].deletesp != 1) {
@@ -2621,7 +2621,7 @@ int main()
 				sound1.play();
 			}
 		}
-		*/
+		
 
 		int position_it1x = 500;
 		int position_it1Y1 = rand() % 2 + 1;
