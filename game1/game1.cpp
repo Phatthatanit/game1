@@ -707,9 +707,9 @@ int main()
 
 			window.draw(line);
 			window.draw(it1);
-		
+
 			window.draw(it4);
-		
+
 			window.setView(view);
 
 			for (s = 0; s <= 1; s++)
@@ -2243,7 +2243,7 @@ int main()
 
 			}
 		}
-
+		/*
 
 		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			//line.setPosition(sf::Vector2f(xOp, yOp));
@@ -2611,7 +2611,7 @@ int main()
 				sound1.play();
 			}
 		}
-		
+		*/
 
 		int position_it1x = 500;
 		int position_it1Y1 = rand() % 2 + 1;
@@ -2622,8 +2622,8 @@ int main()
 
 			if (position_it1Y1 == 1) {
 				position_it1Y1 = 100;
-				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+				if ((position_it1Y1-it1.getPosition().y )>= 140|| (position_it1Y1 - it1.getPosition().y) >= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
@@ -2639,8 +2639,8 @@ int main()
 			if (position_it1Y1 == 2) {
 
 				position_it1Y1 = -100;
-				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+				if ((position_it1Y1 - it1.getPosition().y) >= 140 || (position_it1Y1 - it1.getPosition().y) >= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
@@ -2655,8 +2655,8 @@ int main()
 
 
 			}
-				it1.move(sf::Vector2f(position_it1x, position_it1Y1));
-				
+			it1.move(sf::Vector2f(position_it1x, position_it1Y1));
+
 			currentScore += 200;
 			sound2.play();
 
@@ -2666,8 +2666,8 @@ int main()
 
 			if (position_it1Y1 == 1) {
 				position_it1Y1 = 100;
-				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+				if ((position_it1Y1 - it1.getPosition().y) >= 140 || (position_it1Y1 - it1.getPosition().y) >= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
@@ -2683,8 +2683,8 @@ int main()
 			if (position_it1Y1 == 2) {
 
 				position_it1Y1 = -100;
-				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+				if ((position_it1Y1 - it1.getPosition().y) >= 140 || (position_it1Y1 - it1.getPosition().y) >= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
@@ -2710,42 +2710,42 @@ int main()
 
 		if (it4.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 
-			if (position_it1Y1 == 1) {
-				position_it1Y1 = 100;
-				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
-						position_it1Y1 = rand() % 2 + 1;
+			if (position_it1Y2 == 1) {
+				position_it1Y2 = 100;
+				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
+						position_it1Y2 = rand() % 2 + 1;
 					}
-					if (position_it1Y1 == 1) {
-						position_it1Y1 = 50;
+					if (position_it1Y2 == 1) {
+						position_it1Y2 = 50;
 					}
-					if (position_it1Y1 == 2) {
+					if (position_it1Y2 == 2) {
 
-						position_it1Y1 = -50;
+						position_it1Y2 = -50;
 
 					}
 				}
 			}
-			if (position_it1Y1 == 2) {
+			if (position_it1Y2 == 2) {
 
-				position_it1Y1 = -100;
-				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
-						position_it1Y1 = rand() % 2 + 1;
+				position_it1Y2 = -100;
+				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
+						position_it1Y2 = rand() % 2 + 1;
 					}
-					if (position_it1Y1 == 1) {
-						position_it1Y1 = 50;
+					if (position_it1Y2 == 1) {
+						position_it1Y2 = 50;
 					}
-					if (position_it1Y1 == 2) {
+					if (position_it1Y2 == 2) {
 
-						position_it1Y1 = -50;
+						position_it1Y2 = -50;
 
 					}
 				}
 
 
 			}
-			it4.move(sf::Vector2f(position_it1x, position_it1Y1));
+			it4.move(sf::Vector2f(position_it1x, position_it1Y2));
 
 			currentScore -= 200;
 			sound4.play();
@@ -2757,8 +2757,8 @@ int main()
 
 			if (position_it1Y2 == 1) {
 				position_it1Y2 = 100;
-				if (it4.getPosition().y == 140 || it4.getPosition().y == 330) {
-					for (; it4.getPosition().y != 140 || it4.getPosition().y != 330;) {
+				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
 						position_it1Y2 = rand() % 2 + 1;
 					}
 					if (position_it1Y2 == 1) {
@@ -2774,8 +2774,8 @@ int main()
 			if (position_it1Y2 == 2) {
 
 				position_it1Y2 = -100;
-				if (it4.getPosition().y == 140 || it4.getPosition().y == 330) {
-					for (; it4.getPosition().y != 140 || it4.getPosition().y != 330;) {
+				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
 						position_it1Y2 = rand() % 2 + 1;
 					}
 					if (position_it1Y2 == 1) {
@@ -2790,11 +2790,11 @@ int main()
 
 
 			}
-			it4.move(sf::Vector2f(position_it1x, position_it1Y1));
+			it4.move(sf::Vector2f(position_it1x, position_it1Y2));
 
 
 		}
-		
+
 
 		if (p == 0 && currentScore < 0) {
 			if (p == 0) {
