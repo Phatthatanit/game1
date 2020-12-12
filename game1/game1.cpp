@@ -17,7 +17,7 @@
 
 using namespace std;
 
-int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak,ckname=0;
+int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak, ckname = 0;
 float speedmon = 0.03f, plusspeed = 0.015f;
 struct input
 {
@@ -160,20 +160,7 @@ int main()
 	it1.setTexture(&item1);
 	it1.setPosition({ 1400.f, 210.f });
 
-	////// it2
-	sf::Texture item2;
-	sf::RectangleShape it2(sf::Vector2f(60.0f, 60.0f));
-	item2.loadFromFile("pic/it5.png");
-	it2.setTexture(&item2);
-	it2.setPosition({ 5000.f, 150.f });
-	
 
-	////// it3
-	sf::Texture item3;
-	sf::RectangleShape it3(sf::Vector2f(60.0f, 60.0f));
-	item3.loadFromFile("pic/it5.png");
-	it3.setTexture(&item3);
-	it3.setPosition({ 8000.f, 280.f });
 
 
 	////// it4
@@ -183,20 +170,9 @@ int main()
 	it4.setTexture(&item4);
 	it4.setPosition({ 2100.f, 240.f });
 
-	////// it5
-	sf::Texture item5;
-	sf::RectangleShape it5(sf::Vector2f(60.0f, 60.0f));
-	item5.loadFromFile("pic/it6.png");
-	it5.setTexture(&item5);
-	it5.setPosition({ 3000.f, 260.f });
 
 
-	////// it6
-	sf::Texture item6;
-	sf::RectangleShape it6(sf::Vector2f(60.0f, 60.0f));
-	item6.loadFromFile("pic/it6.png");
-	it6.setTexture(&item6);
-	it6.setPosition({ 7000.f, 140.f });
+
 
 	////// player
 	sf::Texture playerTexture;
@@ -621,6 +597,7 @@ int main()
 							j++;
 
 							k = true;
+
 						}
 						break;
 					case 1:
@@ -667,7 +644,7 @@ int main()
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
-			
+
 
 
 			fp = fopen("./score.txt", "r");
@@ -727,14 +704,12 @@ int main()
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
-			
+
 			window.draw(line);
 			window.draw(it1);
-			window.draw(it2);
-			window.draw(it3);
+		
 			window.draw(it4);
-			window.draw(it5);
-			window.draw(it6);
+		
 			window.setView(view);
 
 			for (s = 0; s <= 1; s++)
@@ -2195,19 +2170,17 @@ int main()
 				}
 				printf("%d", rs);
 				Sleep(300);
-
 			}
 			else {
 				p = 4;
 				printf("%d", p);
 				Sleep(300);
-
 			}
 		}*/
 
 		window.display();
 
-		int xOp = rand() % 1500 ;
+		int xOp = rand() % 1500;
 		int yOp = rand() % 1500;
 
 
@@ -2640,171 +2613,139 @@ int main()
 		}
 		
 
-		int position_it1x =  500 ;
+		int position_it1x = 500;
 		int position_it1Y1 = rand() % 2 + 1;
 		int position_it1Y2 = rand() % 2 + 1;
-		int position_it1Y3 = rand() % 2 + 1;
-		int position_it1Y4 = rand() % 2 + 1;
-		int position_it1Y5 = rand() % 2 + 1;
-		int position_it1Y6 = rand() % 2 + 1;
 
 
 		if (it1.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			if (it1.getPosition().y > 140 && it1.getPosition().y < 330 && p == 0) {
+
+			if (position_it1Y1 == 1) {
+				position_it1Y1 = 100;
+				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+						position_it1Y1 = rand() % 2 + 1;
+					}
+					if (position_it1Y1 == 1) {
+						position_it1Y1 = 50;
+					}
+					if (position_it1Y1 == 2) {
+
+						position_it1Y1 = -50;
+
+					}
+				}
+			}
+			if (position_it1Y1 == 2) {
+
+				position_it1Y1 = -100;
+				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+						position_it1Y1 = rand() % 2 + 1;
+					}
+					if (position_it1Y1 == 1) {
+						position_it1Y1 = 50;
+					}
+					if (position_it1Y1 == 2) {
+
+						position_it1Y1 = -50;
+
+					}
+				}
+
+
+			}
 				it1.move(sf::Vector2f(position_it1x, position_it1Y1));
-				if (position_it1Y1 == 1) {
-					position_it1Y1 = 50;
-				}
-				if (position_it1Y1 == 2) {
-					
-					position_it1Y1 = -50;
-
-				}
-			}
 				
-			if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
-				for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
-					position_it1Y1 = rand() % 2 + 1;
-				}
-				if (position_it1Y1 == 1) {
-					position_it1Y1 = 50;
-				}
-				if (position_it1Y1 == 2) {
-					
-					position_it1Y1 = -50;
-
-				}
-			}
-			
 			currentScore += 200;
 			sound2.play();
 
 		}
 
-		if (it2.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			if (it2.getPosition().y > 140 && it2.getPosition().y < 330 && p == 0) {
-				it2.move(sf::Vector2f(position_it1x, position_it1Y2));
-				if (position_it1Y2 == 1) {
-					position_it1Y2 = 50;
-				}
-				if (position_it1Y2 == 2) {
-					
-					position_it1Y2 = -50;
+		if (it1.getGlobalBounds().intersects(line.getGlobalBounds())) {
 
+			if (position_it1Y1 == 1) {
+				position_it1Y1 = 100;
+				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+						position_it1Y1 = rand() % 2 + 1;
+					}
+					if (position_it1Y1 == 1) {
+						position_it1Y1 = 50;
+					}
+					if (position_it1Y1 == 2) {
+
+						position_it1Y1 = -50;
+
+					}
 				}
 			}
+			if (position_it1Y1 == 2) {
 
-			if (it2.getPosition().y == 140 || it2.getPosition().y == 330) {
-				for (; it2.getPosition().y != 140 || it2.getPosition().y != 330;) {
-					position_it1Y2 = rand() % 2 + 1;
-				}
-				if (position_it1Y2 == 1) {
-					position_it1Y2 = 50;
-				}
-				if (position_it1Y2 == 2) {
-					
-					position_it1Y2 = -50;
+				position_it1Y1 = -100;
+				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+						position_it1Y1 = rand() % 2 + 1;
+					}
+					if (position_it1Y1 == 1) {
+						position_it1Y1 = 50;
+					}
+					if (position_it1Y1 == 2) {
 
+						position_it1Y1 = -50;
+
+					}
 				}
+
+
 			}
+			it1.move(sf::Vector2f(position_it1x, position_it1Y1));
 
-			currentScore += 200;
-			sound2.play();
 
 		}
 
-		if (it3.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			if (it3.getPosition().y > 140 && it3.getPosition().y < 330 && p == 0) {
-				it3.move(sf::Vector2f(position_it1x, position_it1Y3));
-				if (position_it1Y3 == 1) {
-					position_it1Y3 = 50;
-				}
-				if (position_it1Y3 == 2) {
-					
-					position_it1Y3 = -50;
 
-				}
-			}
-
-			if (it3.getPosition().y == 140 || it3.getPosition().y == 330) {
-				for (; it3.getPosition().y != 140 || it3.getPosition().y != 330;) {
-					position_it1Y3 = rand() % 2 + 1;
-				}
-				if (position_it1Y3 == 1) {
-					position_it1Y3 = 50;
-				}
-				if (position_it1Y3 == 2) {
-					
-					position_it1Y3 = -50;
-
-				}
-			}
-
-			currentScore += 200;
-			sound2.play();
-
-		}
 
 
 
 		if (it4.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			if (it4.getPosition().y > 140 && it4.getPosition().y < 330 && p == 0) {
-				it4.move(sf::Vector2f(position_it1x, position_it1Y4));
-				if (position_it1Y4 == 1) {
-					position_it1Y4 = 50;
-				}
-				if (position_it1Y4 == 2) {
-					
-					position_it1Y4 = -50;
 
-				}
-			}
+			if (position_it1Y1 == 1) {
+				position_it1Y1 = 100;
+				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+						position_it1Y1 = rand() % 2 + 1;
+					}
+					if (position_it1Y1 == 1) {
+						position_it1Y1 = 50;
+					}
+					if (position_it1Y1 == 2) {
 
-			if (it4.getPosition().y == 140 || it4.getPosition().y == 330) {
-				for (; it4.getPosition().y != 140 || it4.getPosition().y != 330;) {
-					position_it1Y4 = rand() % 2 + 1;
-				}
-				if (position_it1Y4 == 1) {
-					position_it1Y4 = 50;
-				}
-				if (position_it1Y4 == 2) {
-					
-					position_it1Y4 = -50;
+						position_it1Y1 = -50;
 
+					}
 				}
 			}
+			if (position_it1Y1 == 2) {
 
-			currentScore -= 200;
-			sound4.play();
+				position_it1Y1 = -100;
+				if (it1.getPosition().y == 140 || it1.getPosition().y == 330) {
+					for (; it1.getPosition().y != 140 || it1.getPosition().y != 330;) {
+						position_it1Y1 = rand() % 2 + 1;
+					}
+					if (position_it1Y1 == 1) {
+						position_it1Y1 = 50;
+					}
+					if (position_it1Y1 == 2) {
 
-		}
+						position_it1Y1 = -50;
 
-		if (it5.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			if (it5.getPosition().y > 140 && it5.getPosition().y < 330 && p == 0) {
-				it5.move(sf::Vector2f(position_it1x, position_it1Y5));
-				if (position_it1Y5 == 1) {
-					position_it1Y5 = 50;
+					}
 				}
-				if (position_it1Y5 == 2) {
 
-					position_it1Y5 = -50;
 
-				}
 			}
-
-			if (it5.getPosition().y == 140 || it5.getPosition().y == 330) {
-				for (; it5.getPosition().y != 140 || it5.getPosition().y != 330;) {
-					position_it1Y5 = rand() % 2 + 1;
-				}
-				if (position_it1Y5 == 1) {
-					position_it1Y5 = 50;
-				}
-				if (position_it1Y5 == 2) {
-
-					position_it1Y5 = -50;
-
-				}
-			}
+			it4.move(sf::Vector2f(position_it1x, position_it1Y1));
 
 			currentScore -= 200;
 			sound4.play();
@@ -2812,40 +2753,51 @@ int main()
 		}
 
 
-		if (it6.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-			if (it6.getPosition().y > 140 && it6.getPosition().y < 330 && p == 0) {
-				it6.move(sf::Vector2f(position_it1x, position_it1Y6));
-				if (position_it1Y6 == 1) {
-					position_it1Y6 = 50;
-				}
-				if (position_it1Y6 == 2) {
+		if (it4.getGlobalBounds().intersects(line.getGlobalBounds())) {
 
-					position_it1Y6 = -50;
+			if (position_it1Y2 == 1) {
+				position_it1Y2 = 100;
+				if (it4.getPosition().y == 140 || it4.getPosition().y == 330) {
+					for (; it4.getPosition().y != 140 || it4.getPosition().y != 330;) {
+						position_it1Y2 = rand() % 2 + 1;
+					}
+					if (position_it1Y2 == 1) {
+						position_it1Y2 = 100;
+					}
+					if (position_it1Y2 == 2) {
 
-				}
-			}
+						position_it1Y2 = -100;
 
-			if (it6.getPosition().y == 140 || it6.getPosition().y == 330) {
-				for (; it6.getPosition().y != 140 || it6.getPosition().y != 330;) {
-					position_it1Y6 = rand() % 2 + 1;
-				}
-				if (position_it1Y6 == 1) {
-					position_it1Y6 = 50;
-				}
-				if (position_it1Y6 == 2) {
-
-					position_it1Y6 = -50;
-
+					}
 				}
 			}
+			if (position_it1Y2 == 2) {
 
-			currentScore -= 200;
-			sound4.play();
+				position_it1Y2 = -100;
+				if (it4.getPosition().y == 140 || it4.getPosition().y == 330) {
+					for (; it4.getPosition().y != 140 || it4.getPosition().y != 330;) {
+						position_it1Y2 = rand() % 2 + 1;
+					}
+					if (position_it1Y2 == 1) {
+						position_it1Y2 = 100;
+					}
+					if (position_it1Y2 == 2) {
+
+						position_it1Y2 = -100;
+
+					}
+				}
+
+
+			}
+			it4.move(sf::Vector2f(position_it1x, position_it1Y1));
+
 
 		}
+		
 
 		if (p == 0 && currentScore < 0) {
-			if (p == 0 ) {
+			if (p == 0) {
 				p = 2;
 				cheak = 2;
 				sound.stop();
