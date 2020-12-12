@@ -51,6 +51,7 @@ void showhighscore(int x, int y, string word, sf::RenderWindow& window, sf::Font
 
 int main()
 {
+	bool endgames = false;
 	FILE* fp;
 	char temp[255];
 	int highscore[6];
@@ -157,7 +158,7 @@ int main()
 
 	///// line
 
-	sf::RectangleShape line(sf::Vector2f(10, 260));
+	sf::RectangleShape line(sf::Vector2f(10,10000));
 	line.setFillColor(sf::Color::Red);
 
 	////// it1
@@ -167,7 +168,19 @@ int main()
 	it1.setTexture(&item1);
 	it1.setPosition({ 1400.f, 210.f });
 
+	////// it2
+	sf::Texture item2;
+	sf::RectangleShape it2(sf::Vector2f(60.0f, 60.0f));
+	item2.loadFromFile("pic/it5.png");
+	it2.setTexture(&item2);
+	it2.setPosition({ 5400.f, 250.f });
 
+	////// it3
+	sf::Texture item3;
+	sf::RectangleShape it3(sf::Vector2f(60.0f, 60.0f));
+	item3.loadFromFile("pic/it5.png");
+	it3.setTexture(&item3);
+	it3.setPosition({ 7400.f, 210.f });
 
 
 	////// it4
@@ -175,9 +188,35 @@ int main()
 	sf::RectangleShape it4(sf::Vector2f(60.0f, 60.0f));
 	item4.loadFromFile("pic/it6.png");
 	it4.setTexture(&item4);
-	it4.setPosition({ 2100.f, 240.f });
+	it4.setPosition({ 2100.f, 170.f });
 
+	////// it5
+	sf::Texture item5;
+	sf::RectangleShape it5(sf::Vector2f(60.0f, 60.0f));
+	item5.loadFromFile("pic/it6.png");
+	it5.setTexture(&item5);
+	it5.setPosition({ 3100.f, 200.f });
 
+	////// it6
+	sf::Texture item6;
+	sf::RectangleShape it6(sf::Vector2f(60.0f, 60.0f));
+	item6.loadFromFile("pic/it6.png");
+	it6.setTexture(&item4);
+	it6.setPosition({ 5100.f, 240.f });
+
+	////// it7
+	sf::Texture item7;
+	sf::RectangleShape it7(sf::Vector2f(60.0f, 60.0f));
+	item7.loadFromFile("pic/it6.png");
+	it7.setTexture(&item7);
+	it7.setPosition({ 1900.f, 140.f });
+
+	////// it8
+	sf::Texture item8;
+	sf::RectangleShape it8(sf::Vector2f(60.0f, 60.0f));
+	item8.loadFromFile("pic/it6.png");
+	it8.setTexture(&item8);
+	it8.setPosition({ 4100.f, 270.f });
 
 
 
@@ -194,7 +233,7 @@ int main()
 	shapeSprite.setTextureRect(sf::IntRect(0, 0, spriteSizeX, spriteSizeY));
 
 	shapeSprite.setOrigin(120.0f / 2.0f, 125.0f / 2.0f);
-	int dt = -120;
+	int dt = -100;
 	int dtnew = currentScore/20;
 
 	////// m1
@@ -573,7 +612,6 @@ int main()
 		fscanf(fp, "%d", &highscore[i]);
 		userScore.push_back(make_pair(highscore[i], name[i]));
 	}
-	fclose(fp);
 
 	//high scores func
 
@@ -597,17 +635,12 @@ int main()
 				case sf::Keyboard::Return:
 					switch (menu.GetPressedItem()) {
 					case 0:
-						std::cout << "Play has been pressd" << std::endl;
 						name[5] = playernametextbox.gettext();
+						std::cout << name[5] << "\n";
 						p = 0;
 						num = 0;
 						printf("num = %d", num);
-						if (k == false) {
-							j++;
 
-							//k = true;
-
-						}
 						break;
 					case 1:
 						std::cout << "How to has been pressd" << std::endl;
@@ -629,7 +662,7 @@ int main()
 				break;
 			}
 		}
-		line.setPosition(shapeSprite.getPosition().x - 220, 139.0f);
+		line.setPosition(shapeSprite.getPosition().x - 220, -500.0f);
 		pause.setPosition(shapeSprite.getPosition().x - 750, 160.0f);
 		score.setPosition(shapeSprite.getPosition().x - 1500, 0.0f);
 		score1.setPosition(shapeSprite.getPosition().x - 300, 5.0f);
@@ -656,18 +689,20 @@ int main()
 			window.draw(scoreCurrent);
 
 
-
-			fp = fopen("./score.txt", "r");
-			highscore[5] = currentScore;
-			userScore.push_back(make_pair(highscore[5], name[5]));
-			sort(userScore.begin(), userScore.end());
-			fclose(fp);
-			fopen("./score.txt", "w");
-			for (int i = 4 + j; i >= 0 + j; i--) {
-				strcpy(temp, userScore[i].second.c_str());
-				fprintf(fp, "%s %d\n", temp, userScore[i].first);
+			if (endgames == false) {
+				fp = fopen("./score.txt", "r");
+				highscore[5] = currentScore;
+				userScore.push_back(make_pair(highscore[5], name[5]));
+				sort(userScore.begin(), userScore.end());
+				fclose(fp);
+				fopen("./score.txt", "w");
+				for (int i = 5 ; i >= 1; i--) {
+					strcpy(temp, userScore[i].second.c_str());
+					fprintf(fp, "%s %d\n", temp, userScore[i].first);
+				}
+				fclose(fp);
+				endgames = true;
 			}
-			fclose(fp);
 
 		}
 
@@ -711,22 +746,23 @@ int main()
 		if (p == 0 && num == 0) {
 			window.draw(bg);
 			window.draw(shapeSprite);
+			window.draw(line);
 			window.draw(score);
 			window.draw(score1);
 			window.draw(scoreCurrent);
-
-			window.draw(line);
 			window.draw(it1);
-
+			window.draw(it2);
+			window.draw(it3);
 			window.draw(it4);
-
+			window.draw(it5);
+			window.draw(it6);
+			window.draw(it7);
+			window.draw(it8);
 			window.setView(view);
 
-			for (s = 0; s <= 10; s++)
-			{
+			
 				mons1();
-				break;
-			}
+			
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 			{
@@ -740,7 +776,6 @@ int main()
 					if (dmon[1].deletesp == 0) {
 						dmon[1].deletesp = 1;
 						sound3.play();
-
 						if (mon[1] == 1) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1536,6 +1571,7 @@ int main()
 					if (dmon[23].deletesp == 0) {
 						dmon[23].deletesp = 1;
 						sound3.play();
+					
 						if (mon[1] == 23) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -2190,10 +2226,6 @@ int main()
 
 		window.display();
 
-		int xOp = rand() % 1500;
-		int yOp = rand() % 1500;
-
-
 		std::stringstream scoreShow;
 		scoreShow << currentScore;
 		scoreCurrent.setString(scoreShow.str().c_str());
@@ -2254,9 +2286,8 @@ int main()
 			}
 		}
 		
-		
 		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
-			//line.setPosition(sf::Vector2f(xOp, yOp));
+			
 			if (p == 0 && dmon[1].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2271,7 +2302,7 @@ int main()
 		}
 
 		if (line.getGlobalBounds().intersects(shapem2.getGlobalBounds())) {
-			//line.setPosition(sf::Vector2f(xOp, yOp));
+		
 			if (p == 0 && dmon[2].deletesp != 1) {
 				p = 2;
 				cheak = 2;
@@ -2622,18 +2653,26 @@ int main()
 			}
 		}
 		
+		
+		
 
-		int position_it1x = 500;
+		int position_it1x = 900;
 		int position_it1Y1 = rand() % 2 + 1;
 		int position_it1Y2 = rand() % 2 + 1;
+		int position_it1Y3 = rand() % 2 + 1;
+		int position_it1Y4 = rand() % 2 + 1;
+		int position_it1Y5 = rand() % 2 + 1;
+		int position_it1Y6 = rand() % 2 + 1;
+		int position_it1Y7 = rand() % 2 + 1;
+		int position_it1Y8 = rand() % 2 + 1;
 
-
+		////////////////////////////////////////////////////////
 		if (it1.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
-
+			position_it1Y1 = rand() % 2 + 1;
 			if (position_it1Y1 == 1) {
 				position_it1Y1 = 100;
-				if ((position_it1Y1-it1.getPosition().y )>= 140|| (position_it1Y1 - it1.getPosition().y) >= 330) {
-					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
+				if ((position_it1Y1-it1.getPosition().y )>= 140&& (position_it1Y1 - it1.getPosition().y) <= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) >= 140 && (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
@@ -2649,8 +2688,8 @@ int main()
 			if (position_it1Y1 == 2) {
 
 				position_it1Y1 = -100;
-				if ((position_it1Y1 - it1.getPosition().y) >= 140 || (position_it1Y1 - it1.getPosition().y) >= 330) {
-					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
+				if ((position_it1Y1 - it1.getPosition().y) >= 140 && (position_it1Y1 - it1.getPosition().y) <= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) >= 140 && (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
@@ -2675,34 +2714,34 @@ int main()
 		if (it1.getGlobalBounds().intersects(line.getGlobalBounds())) {
 
 			if (position_it1Y1 == 1) {
-				position_it1Y1 = 100;
-				if ((position_it1Y1 - it1.getPosition().y) >= 140 || (position_it1Y1 - it1.getPosition().y) >= 330) {
-					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
+				position_it1Y1 += 100;
+				if ((position_it1Y1 - it1.getPosition().y) >= 140 && (position_it1Y1 - it1.getPosition().y) <= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) >= 140 && (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
-						position_it1Y1 = 50;
+						position_it1Y1 += 50;
 					}
 					if (position_it1Y1 == 2) {
 
-						position_it1Y1 = -50;
+						position_it1Y1 -=50;
 
 					}
 				}
 			}
 			if (position_it1Y1 == 2) {
 
-				position_it1Y1 = -100;
-				if ((position_it1Y1 - it1.getPosition().y) >= 140 || (position_it1Y1 - it1.getPosition().y) >= 330) {
-					for (; (position_it1Y1 - it1.getPosition().y) <= 140 || (position_it1Y1 - it1.getPosition().y) <= 330;) {
+				position_it1Y1 -=  100;
+				if ((position_it1Y1 - it1.getPosition().y) >= 140 && (position_it1Y1 - it1.getPosition().y) <= 330) {
+					for (; (position_it1Y1 - it1.getPosition().y) >= 140 && (position_it1Y1 - it1.getPosition().y) <= 330;) {
 						position_it1Y1 = rand() % 2 + 1;
 					}
 					if (position_it1Y1 == 1) {
-						position_it1Y1 = 50;
+						position_it1Y1 += 100;
 					}
 					if (position_it1Y1 == 2) {
 
-						position_it1Y1 = -50;
+						position_it1Y1 -= 50;
 
 					}
 				}
@@ -2713,42 +2752,214 @@ int main()
 
 
 		}
+		//////////////////////////////////////////////////////////////////
+
+		if (it2.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			position_it1Y3 = rand() % 2 + 1;
+			if (position_it1Y3 == 1) {
+				position_it1Y3 = 100;
+				if ((position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330) {
+					for (; (position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330;) {
+						position_it1Y3 = rand() % 2 + 1;
+					}
+					if (position_it1Y3 == 1) {
+						position_it1Y3 = 50;
+					}
+					if (position_it1Y3 == 2) {
+
+						position_it1Y3 = -50;
+
+					}
+				}
+			}
+			if (position_it1Y3 == 2) {
+
+				position_it1Y3 = -100;
+				if ((position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330) {
+					for (; (position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330;) {
+						position_it1Y3 = rand() % 2 + 1;
+					}
+					if (position_it1Y3 == 1) {
+						position_it1Y3 = 50;
+					}
+					if (position_it1Y3 == 2) {
+
+						position_it1Y3 = -50;
+
+					}
+				}
 
 
+			}
+			it2.move(sf::Vector2f(position_it1x, position_it1Y3));
 
+			currentScore += 200;
+			sound2.play();
+
+		}
+
+		if (it2.getGlobalBounds().intersects(line.getGlobalBounds())) {
+
+			if (position_it1Y3 == 1) {
+				position_it1Y3 += 100;
+				if ((position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330) {
+					for (; (position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330;) {
+						position_it1Y3 = rand() % 2 + 1;
+					}
+					if (position_it1Y3 == 1) {
+						position_it1Y3 += 50;
+					}
+					if (position_it1Y3 == 2) {
+
+						position_it1Y3 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y3 == 2) {
+
+				position_it1Y3 -= 100;
+				if ((position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330) {
+					for (; (position_it1Y3 - it2.getPosition().y) >= 140 && (position_it1Y3 - it2.getPosition().y) <= 330;) {
+						position_it1Y3 = rand() % 2 + 1;
+					}
+					if (position_it1Y3 == 1) {
+						position_it1Y3 += 100;
+					}
+					if (position_it1Y3 == 2) {
+
+						position_it1Y3 -= 50;
+
+					}
+				}
+
+
+			}
+			it2.move(sf::Vector2f(position_it1x, position_it1Y3));
+
+
+		}
+		/////////////////////////////////////////////////////////////////////
+
+		if (it3.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+			position_it1Y4 = rand() % 2 + 1;
+			if (position_it1Y4 == 1) {
+				position_it1Y4 = 100;
+				if ((position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it2.getPosition().y) <= 330) {
+					for (; (position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it3.getPosition().y) <= 330;) {
+						position_it1Y4 = rand() % 2 + 1;
+					}
+					if (position_it1Y4 == 1) {
+						position_it1Y4 = 50;
+					}
+					if (position_it1Y4 == 2) {
+
+						position_it1Y4 = -50;
+
+					}
+				}
+			}
+			if (position_it1Y4 == 2) {
+
+				position_it1Y4 = -100;
+				if ((position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it3.getPosition().y) <= 330) {
+					for (; (position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it3.getPosition().y) <= 330;) {
+						position_it1Y4 = rand() % 2 + 1;
+					}
+					if (position_it1Y4 == 1) {
+						position_it1Y4 = 50;
+					}
+					if (position_it1Y4 == 2) {
+
+						position_it1Y4 = -50;
+
+					}
+				}
+
+
+			}
+			it3.move(sf::Vector2f(position_it1x, position_it1Y4));
+
+			currentScore += 200;
+			sound2.play();
+
+		}
+
+		if (it3.getGlobalBounds().intersects(line.getGlobalBounds())) {
+
+			if (position_it1Y4 == 1) {
+				position_it1Y4 += 100;
+				if ((position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it3.getPosition().y) <= 330) {
+					for (; (position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it3.getPosition().y) <= 330;) {
+						position_it1Y4 = rand() % 2 + 1;
+					}
+					if (position_it1Y4 == 1) {
+						position_it1Y4 += 50;
+					}
+					if (position_it1Y4 == 2) {
+
+						position_it1Y4 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y4 == 2) {
+
+				position_it1Y4 -= 100;
+				if ((position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it3.getPosition().y) <= 330) {
+					for (; (position_it1Y4 - it3.getPosition().y) >= 140 && (position_it1Y4 - it3.getPosition().y) <= 330;) {
+						position_it1Y4 = rand() % 2 + 1;
+					}
+					if (position_it1Y4 == 1) {
+						position_it1Y4 += 100;
+					}
+					if (position_it1Y4 == 2) {
+
+						position_it1Y4 -= 50;
+
+					}
+				}
+
+
+			}
+			it3.move(sf::Vector2f(position_it1x, position_it1Y4));
+
+
+		}
+		/////////////////////////////////////////////////////////////////////
 
 
 		if (it4.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
 
 			if (position_it1Y2 == 1) {
-				position_it1Y2 = 100;
-				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
-					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
+				position_it1Y2 += 100;
+				if ((position_it1Y2 - it4.getPosition().y) >= 140 && (position_it1Y2 - it4.getPosition().y) <= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) >= 140 && (position_it1Y2 - it4.getPosition().y) <= 330;) {
 						position_it1Y2 = rand() % 2 + 1;
 					}
 					if (position_it1Y2 == 1) {
-						position_it1Y2 = 50;
+						position_it1Y2 += 50;
 					}
 					if (position_it1Y2 == 2) {
 
-						position_it1Y2 = -50;
+						position_it1Y2 -= 50;
 
 					}
 				}
 			}
 			if (position_it1Y2 == 2) {
 
-				position_it1Y2 = -100;
-				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
-					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
+				position_it1Y2 -= 100;
+				if ((position_it1Y2 - it4.getPosition().y) >= 140&& (position_it1Y2 - it4.getPosition().y) <= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) >= 140 && (position_it1Y2 - it4.getPosition().y) <= 330;) {
 						position_it1Y2 = rand() % 2 + 1;
 					}
 					if (position_it1Y2 == 1) {
-						position_it1Y2 = 50;
+						position_it1Y2 += 50;
 					}
 					if (position_it1Y2 == 2) {
 
-						position_it1Y2 = -50;
+						position_it1Y2 -= 50;
 
 					}
 				}
@@ -2757,7 +2968,7 @@ int main()
 			}
 			it4.move(sf::Vector2f(position_it1x, position_it1Y2));
 
-			currentScore -= 200;
+			currentScore -= 300;
 			sound4.play();
 
 		}
@@ -2766,34 +2977,34 @@ int main()
 		if (it4.getGlobalBounds().intersects(line.getGlobalBounds())) {
 
 			if (position_it1Y2 == 1) {
-				position_it1Y2 = 100;
-				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
-					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
+				position_it1Y2 += 100;
+				if ((position_it1Y2 - it4.getPosition().y) >= 140 && (position_it1Y2 - it4.getPosition().y) <= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) >= 140 && (position_it1Y2 - it4.getPosition().y) <= 330;) {
 						position_it1Y2 = rand() % 2 + 1;
 					}
 					if (position_it1Y2 == 1) {
-						position_it1Y2 = 100;
+						position_it1Y2 += 50;
 					}
 					if (position_it1Y2 == 2) {
 
-						position_it1Y2 = -100;
+						position_it1Y2 -= 50;
 
 					}
 				}
 			}
 			if (position_it1Y2 == 2) {
 
-				position_it1Y2 = -100;
-				if ((position_it1Y2 - it4.getPosition().y) >= 140 || (position_it1Y2 - it4.getPosition().y) >= 330) {
-					for (; (position_it1Y2 - it4.getPosition().y) <= 140 || (position_it1Y2 - it4.getPosition().y) <= 330;) {
+				position_it1Y2 -= 100;
+				if ((position_it1Y2 - it4.getPosition().y) >= 140 && (position_it1Y2 - it4.getPosition().y) <= 330) {
+					for (; (position_it1Y2 - it4.getPosition().y) >= 140 && (position_it1Y2 - it4.getPosition().y) <= 330;) {
 						position_it1Y2 = rand() % 2 + 1;
 					}
 					if (position_it1Y2 == 1) {
-						position_it1Y2 = 100;
+						position_it1Y2 += 50;
 					}
 					if (position_it1Y2 == 2) {
 
-						position_it1Y2 = -100;
+						position_it1Y2 -= 50;
 
 					}
 				}
@@ -2804,6 +3015,359 @@ int main()
 
 
 		}
+		///////////////////////////////////
+		if (it5.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+
+			if (position_it1Y5 == 1) {
+				position_it1Y5 += 100;
+				if ((position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330) {
+					for (; (position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330;) {
+						position_it1Y5 = rand() % 2 + 1;
+					}
+					if (position_it1Y5 == 1) {
+						position_it1Y5 += 50;
+					}
+					if (position_it1Y5 == 2) {
+
+						position_it1Y5 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y5 == 2) {
+
+				position_it1Y5 -= 100;
+				if ((position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330) {
+					for (; (position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330;) {
+						position_it1Y5 = rand() % 2 + 1;
+					}
+					if (position_it1Y5 == 1) {
+						position_it1Y5 += 50;
+					}
+					if (position_it1Y5 == 2) {
+
+						position_it1Y5 -= 50;
+
+					}
+				}
+
+
+			}
+			it5.move(sf::Vector2f(position_it1x, position_it1Y5));
+
+			currentScore -= 300;
+			sound4.play();
+
+		}
+
+
+		if (it5.getGlobalBounds().intersects(line.getGlobalBounds())) {
+
+			if (position_it1Y5 == 1) {
+				position_it1Y5 += 100;
+				if ((position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330) {
+					for (; (position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330;) {
+						position_it1Y5 = rand() % 2 + 1;
+					}
+					if (position_it1Y5 == 1) {
+						position_it1Y5 += 50;
+					}
+					if (position_it1Y5 == 2) {
+
+						position_it1Y5 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y5 == 2) {
+
+				position_it1Y5 -= 100;
+				if ((position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330) {
+					for (; (position_it1Y5 - it5.getPosition().y) >= 140 && (position_it1Y5 - it5.getPosition().y) <= 330;) {
+						position_it1Y5 = rand() % 2 + 1;
+					}
+					if (position_it1Y5 == 1) {
+						position_it1Y5 += 50;
+					}
+					if (position_it1Y5 == 2) {
+
+						position_it1Y5 -= 50;
+
+					}
+				}
+
+
+			}
+			it5.move(sf::Vector2f(position_it1x, position_it1Y5));
+
+
+		}
+
+		///////////////////////////////////////
+		if (it6.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+
+			if (position_it1Y6 == 1) {
+				position_it1Y6 += 100;
+				if ((position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330) {
+					for (; (position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330;) {
+						position_it1Y6 = rand() % 2 + 1;
+					}
+					if (position_it1Y6 == 1) {
+						position_it1Y6 += 50;
+					}
+					if (position_it1Y6 == 2) {
+
+						position_it1Y6 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y6 == 2) {
+
+				position_it1Y6 -= 100;
+				if ((position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330) {
+					for (; (position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330;) {
+						position_it1Y6 = rand() % 2 + 1;
+					}
+					if (position_it1Y6 == 1) {
+						position_it1Y6 += 50;
+					}
+					if (position_it1Y6 == 2) {
+
+						position_it1Y6 -= 50;
+
+					}
+				}
+
+
+			}
+			it6.move(sf::Vector2f(position_it1x, position_it1Y6));
+
+			currentScore -= 300;
+			sound4.play();
+
+		}
+
+
+		if (it6.getGlobalBounds().intersects(line.getGlobalBounds())) {
+
+			if (position_it1Y6 == 1) {
+				position_it1Y6 += 100;
+				if ((position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330) {
+					for (; (position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330;) {
+						position_it1Y6 = rand() % 2 + 1;
+					}
+					if (position_it1Y6 == 1) {
+						position_it1Y6 += 50;
+					}
+					if (position_it1Y6 == 2) {
+
+						position_it1Y6 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y6 == 2) {
+
+				position_it1Y6 -= 100;
+				if ((position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330) {
+					for (; (position_it1Y6 - it6.getPosition().y) >= 140 && (position_it1Y6 - it6.getPosition().y) <= 330;) {
+						position_it1Y6 = rand() % 2 + 1;
+					}
+					if (position_it1Y6 == 1) {
+						position_it1Y6 += 50;
+					}
+					if (position_it1Y6 == 2) {
+
+						position_it1Y6 -= 50;
+
+					}
+				}
+
+
+			}
+			it6.move(sf::Vector2f(position_it1x, position_it1Y6));
+
+
+		}
+
+		///////////////////////////////////////
+		if (it7.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+
+			if (position_it1Y7 == 1) {
+				position_it1Y7 += 100;
+				if ((position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330) {
+					for (; (position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330;) {
+						position_it1Y7 = rand() % 2 + 1;
+					}
+					if (position_it1Y7 == 1) {
+						position_it1Y7 += 50;
+					}
+					if (position_it1Y7 == 2) {
+
+						position_it1Y7 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y7 == 2) {
+
+				position_it1Y7 -= 100;
+				if ((position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330) {
+					for (; (position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330;) {
+						position_it1Y7 = rand() % 2 + 1;
+					}
+					if (position_it1Y7 == 1) {
+						position_it1Y7 += 50;
+					}
+					if (position_it1Y7 == 2) {
+
+						position_it1Y7 -= 50;
+
+					}
+				}
+
+
+			}
+			it7.move(sf::Vector2f(position_it1x, position_it1Y7));
+
+			currentScore -= 300;
+			sound4.play();
+
+		}
+
+
+		if (it7.getGlobalBounds().intersects(line.getGlobalBounds())) {
+
+			if (position_it1Y7 == 1) {
+				position_it1Y7 += 100;
+				if ((position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330) {
+					for (; (position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330;) {
+						position_it1Y7 = rand() % 2 + 1;
+					}
+					if (position_it1Y7 == 1) {
+						position_it1Y7 += 50;
+					}
+					if (position_it1Y7 == 2) {
+
+						position_it1Y7 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y7 == 2) {
+
+				position_it1Y7 -= 100;
+				if ((position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330) {
+					for (; (position_it1Y7 - it7.getPosition().y) >= 140 && (position_it1Y7 - it7.getPosition().y) <= 330;) {
+						position_it1Y7 = rand() % 2 + 1;
+					}
+					if (position_it1Y7 == 1) {
+						position_it1Y7 += 50;
+					}
+					if (position_it1Y7 == 2) {
+
+						position_it1Y7 -= 50;
+
+					}
+				}
+
+
+			}
+			it7.move(sf::Vector2f(position_it1x, position_it1Y7));
+
+
+		}
+
+		///////////////////////////////////////
+		if (it8.getGlobalBounds().intersects(shapeSprite.getGlobalBounds())) {
+
+			if (position_it1Y8 == 1) {
+				position_it1Y8 += 100;
+				if ((position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330) {
+					for (; (position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330;) {
+						position_it1Y8 = rand() % 2 + 1;
+					}
+					if (position_it1Y8 == 1) {
+						position_it1Y8 += 50;
+					}
+					if (position_it1Y8 == 2) {
+
+						position_it1Y8 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y8 == 2) {
+
+				position_it1Y8 -= 100;
+				if ((position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330) {
+					for (; (position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330;) {
+						position_it1Y8 = rand() % 2 + 1;
+					}
+					if (position_it1Y8 == 1) {
+						position_it1Y8 += 50;
+					}
+					if (position_it1Y8 == 2) {
+
+						position_it1Y8 -= 50;
+
+					}
+				}
+
+
+			}
+			it8.move(sf::Vector2f(position_it1x, position_it1Y8));
+
+			currentScore -= 300;
+			sound4.play();
+
+		}
+
+
+		if (it8.getGlobalBounds().intersects(line.getGlobalBounds())) {
+
+			if (position_it1Y8 == 1) {
+				position_it1Y8 += 100;
+				if ((position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330) {
+					for (; (position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330;) {
+						position_it1Y8 = rand() % 2 + 1;
+					}
+					if (position_it1Y8 == 1) {
+						position_it1Y8 += 50;
+					}
+					if (position_it1Y8 == 2) {
+
+						position_it1Y8 -= 50;
+
+					}
+				}
+			}
+			if (position_it1Y8 == 2) {
+
+				position_it1Y8 -= 100;
+				if ((position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330) {
+					for (; (position_it1Y8 - it8.getPosition().y) >= 140 && (position_it1Y8 - it8.getPosition().y) <= 330;) {
+						position_it1Y8 = rand() % 2 + 1;
+					}
+					if (position_it1Y8 == 1) {
+						position_it1Y8 += 50;
+					}
+					if (position_it1Y8 == 2) {
+
+						position_it1Y8 -= 50;
+
+					}
+				}
+
+
+			}
+			it8.move(sf::Vector2f(position_it1x, position_it1Y8));
+
+
+		}
+
+
 
 
 		if (p == 0 && currentScore < 0) {
