@@ -86,6 +86,44 @@ int main()
 	entername.setCharacterSize(15);
 
 
+	sf::Text one;
+	one.setFont(myFont);
+	one.setFillColor(sf::Color::Yellow);
+	one.setStyle(sf::Text::Regular);
+	one.setString("1. ");
+	one.setCharacterSize(15);
+
+	sf::Text two;
+	two.setFont(myFont);
+	two.setFillColor(sf::Color::Yellow);
+	two.setStyle(sf::Text::Regular);
+	two.setString("2. ");
+	two.setCharacterSize(15);
+
+	sf::Text three;
+	three.setFont(myFont);
+	three.setFillColor(sf::Color::Yellow);
+	three.setStyle(sf::Text::Regular);
+	three.setString("3. ");
+	three.setCharacterSize(15);
+
+
+	sf::Text four;
+	four.setFont(myFont);
+	four.setFillColor(sf::Color::Yellow);
+	four.setStyle(sf::Text::Regular);
+	four.setString("4. ");
+	four.setCharacterSize(15);
+
+	
+	sf::Text five;
+	five.setFont(myFont);
+	five.setFillColor(sf::Color::Yellow);
+	five.setStyle(sf::Text::Regular);
+	five.setString("5. ");
+	five.setCharacterSize(15);
+
+
 	sf::Text myname;
 	myname.setFont(myFont);
 	myname.setFillColor(sf::Color::Yellow);
@@ -668,6 +706,11 @@ int main()
 		score1.setPosition(shapeSprite.getPosition().x - 300, 5.0f);
 		myname.setPosition(shapeSprite.getPosition().x - 370, 380.0f);
 		entername.setPosition(0.0f , 180.0f);
+		one.setPosition(0.0f , 30.0f);
+		two.setPosition(0.0f, 50.0f);
+		three.setPosition(0.0f, 70.0f);
+		four.setPosition(0.0f, 90.0f);
+		five.setPosition(0.0f, 110.0f);
 		scoreCurrent.setPosition(shapeSprite.getPosition().x + 60, 5.0f);
 		view.setCenter(shapeSprite.getPosition().x - 400.0f, 210.0f);
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
@@ -730,18 +773,23 @@ int main()
 			menu.draw(window);
 			window.draw(myname);
 			window.draw(entername);
+			window.draw(one);
+			window.draw(two);
+			window.draw(three);
+			window.draw(four);
+			window.draw(five);
 			playernametextbox.drawTo(window);
 
-			showhighscore(0, 30, to_string(userScore[0].first), window, &myFont);
-			showhighscore(120, 30, userScore[0].second, window, &myFont);
-			showhighscore(0, 50, to_string(userScore[1].first), window, &myFont);
-			showhighscore(120, 50, userScore[1].second, window, &myFont);
-			showhighscore(0, 70, to_string(userScore[2].first), window, &myFont);
-			showhighscore(120, 70, userScore[2].second, window, &myFont);
-			showhighscore(0, 90, to_string(userScore[3].first), window, &myFont);
-			showhighscore(120, 90, userScore[3].second, window, &myFont);
-			showhighscore(0, 110, to_string(userScore[4].first), window, &myFont);
-			showhighscore(120, 110, userScore[4].second, window, &myFont);
+			showhighscore(50, 30, to_string(userScore[0].first), window, &myFont);
+			showhighscore(170, 30, userScore[0].second, window, &myFont);
+			showhighscore(50, 50, to_string(userScore[1].first), window, &myFont);
+			showhighscore(170, 50, userScore[1].second, window, &myFont);
+			showhighscore(50, 70, to_string(userScore[2].first), window, &myFont);
+			showhighscore(170, 70, userScore[2].second, window, &myFont);
+			showhighscore(50, 90, to_string(userScore[3].first), window, &myFont);
+			showhighscore(170, 90, userScore[3].second, window, &myFont);
+			showhighscore(50, 110, to_string(userScore[4].first), window, &myFont);
+			showhighscore(170, 110, userScore[4].second, window, &myFont);
 		}
 		if (p == 0 && num == 0) {
 			window.draw(bg);
@@ -2219,7 +2267,7 @@ int main()
 
 		if (shapeSprite.getPosition().x < 10000 && p == 0) {
 			shapeSprite.move(speed * deltaTime, 0.f * speed);
-			//line.move(speed *deltaTime, 0.f * speed);
+			
 			shapeSprite.setTextureRect(sf::IntRect(spriteSizeX * animationFrame, spriteSizeY * 0, 110, 91));
 
 
@@ -2271,7 +2319,7 @@ int main()
 			}
 		}
 		
-		/*if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
+		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			
 			if (p == 0 && dmon[1].deletesp != 1) {
 				p = 2;
@@ -2637,7 +2685,7 @@ int main()
 				sound1.play();
 			}
 		}
-		*/
+		
 		
 		
 
