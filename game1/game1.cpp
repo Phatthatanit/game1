@@ -2191,30 +2191,11 @@ int main()
 
 		if (p == 4 && cheak == 1) {
 			window.draw(howto1);
-
-
-		}
-		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			if (p == 4 && cheak == 1) {
-				rs = 0;
-				p = 0;
-				num = 0;
-				cheak = 3;
-				window.draw(bg);
-				window.draw(shapeSprite);
-				window.draw(score);
-				window.draw(score1);
-				window.draw(scoreCurrent);
-				window.draw(collision);
-				window.draw(line);
-				window.setView(view);
-				for (s = 0; s <= 1; s++)
-				{
-					mons1();
-					break;
-				}
-				printf("%d", rs);
+				p = 3;
+				cheak == 0;
 				Sleep(300);
 			}
 			else {
@@ -2222,7 +2203,10 @@ int main()
 				printf("%d", p);
 				Sleep(300);
 			}
-		}*/
+		}
+
+		}
+		
 
 		window.display();
 
