@@ -35,7 +35,7 @@ void mons1()
 		printf("%d\t", mon[n]);
 	}
 
-
+	mon[1] = 1;
 }
 
 void showhighscore(int x, int y, string word, sf::RenderWindow& window, sf::Font* font)
@@ -716,6 +716,7 @@ int main()
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 		deltaTime = clock.restart().asSeconds();
 
+
 		
 
 		if (p == 1) {
@@ -812,11 +813,9 @@ int main()
 			window.setView(view);
 
 			
-				mons1();
 			
+					mons1();
 
-
-	
 
 			if (mon[1] == 1 || mon[2] == 1 || mon[3] == 1 || mon[4] == 1 || mon[5] == 1) {
 				shapem1.move(speed * (speedmon + 0.023f), 0.f * speed);
@@ -829,29 +828,30 @@ int main()
 						if (mon[1] == 1) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 
 						}
 						if (mon[2] == 1) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 1) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[4] == 1) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[5] == 1) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -867,29 +867,29 @@ int main()
 						if (mon[1] == 2) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 2) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 2) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 2) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 2) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
-
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -905,28 +905,29 @@ int main()
 						if (mon[1] == 3) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 3) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 3) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 3) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 3) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -942,28 +943,29 @@ int main()
 						if (mon[1] == 4) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 4) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 4) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[4] == 4) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[5] == 4) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						dmon[4].deletesp = 2;
 					}
 				}
 			}
@@ -979,7 +981,7 @@ int main()
 						if (mon[1] == 5) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 5) {
 							mon[2] = rand() % 26 + 1;
@@ -989,7 +991,7 @@ int main()
 						if (mon[3] == 5) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 5) {
 							mon[4] = rand() % 26 + 1;
@@ -999,8 +1001,9 @@ int main()
 						if (mon[5] == 5) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+					
 					}
 				}
 			}
@@ -1016,28 +1019,29 @@ int main()
 						if (mon[1] == 6) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 6) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 6) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 6) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 6) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1053,28 +1057,29 @@ int main()
 						if (mon[1] == 7) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 7) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 7) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+
 						}
 						if (mon[4] == 7) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[5] == 7) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1090,28 +1095,30 @@ int main()
 						if (mon[1] == 8) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[2] == 8) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 8) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[4] == 8) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[5] == 8) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+					
 						}
+
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1127,28 +1134,29 @@ int main()
 						if (mon[1] == 9) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 9) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 9) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 9) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[5] == 9) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1164,28 +1172,29 @@ int main()
 						if (mon[1] == 10) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 10) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 10) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 10) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 10) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1201,29 +1210,29 @@ int main()
 						if (mon[1] == 11) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 11) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[3] == 11) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 11) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 11) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
-
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1239,28 +1248,29 @@ int main()
 						if (mon[1] == 12) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 12) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 12) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 12) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 12) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1276,28 +1286,29 @@ int main()
 						if (mon[1] == 13) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 13) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 13) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 13) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[5] == 13) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1313,28 +1324,29 @@ int main()
 						if (mon[1] == 14) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 14) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 14) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 14) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 14) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1350,28 +1362,29 @@ int main()
 						if (mon[1] == 15) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 15) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 15) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[4] == 15) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 15) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+					
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1387,28 +1400,29 @@ int main()
 						if (mon[1] == 16) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 16) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 16) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 16) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 16) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1424,29 +1438,31 @@ int main()
 						if (mon[1] == 17) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 17) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 17) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[4] == 17) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 17) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
+
 				}
 			}
 
@@ -1461,28 +1477,29 @@ int main()
 						if (mon[1] == 18) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 18) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 18) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 18) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[5] == 18) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1498,28 +1515,29 @@ int main()
 						if (mon[1] == 19) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[2] == 19) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 19) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[4] == 19) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[5] == 19) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1535,7 +1553,7 @@ int main()
 						if (mon[1] == 20) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+					
 						}
 						if (mon[2] == 20) {
 							mon[2] = rand() % 26 + 1;
@@ -1545,18 +1563,19 @@ int main()
 						if (mon[3] == 20) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 20) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 20) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1572,28 +1591,29 @@ int main()
 						if (mon[1] == 21) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 21) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 21) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[4] == 21) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 21) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1609,28 +1629,29 @@ int main()
 						if (mon[1] == 22) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 22) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 22) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[4] == 22) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[5] == 22) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1647,28 +1668,29 @@ int main()
 						if (mon[1] == 23) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 23) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 23) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 23) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 23) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1684,28 +1706,29 @@ int main()
 						if (mon[1] == 24) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[2] == 24) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[3] == 24) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 24) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 24) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+							
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1721,28 +1744,29 @@ int main()
 						if (mon[1] == 25) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 25) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 25) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[4] == 25) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 25) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
+						speedmon += plusspeed;
 					}
 				}
 			}
@@ -1758,29 +1782,30 @@ int main()
 						if (mon[1] == 26) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[2] == 26) {
 							mon[2] = rand() % 26 + 1;
 							printf("%d\t", mon[2]);
-							speedmon += plusspeed;
+							
 						}
 						if (mon[3] == 26) {
 							mon[3] = rand() % 26 + 1;
 							printf("%d\t", mon[3]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[4] == 26) {
 							mon[4] = rand() % 26 + 1;
 							printf("%d\t", mon[4]);
-							speedmon += plusspeed;
+						
 						}
 						if (mon[5] == 26) {
 							mon[5] = rand() % 26 + 1;
 							printf("%d\t", mon[5]);
-							speedmon += plusspeed;
+						
 						}
 
+						speedmon += plusspeed;
 					}
 				}
 			}
