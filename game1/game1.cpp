@@ -747,9 +747,7 @@ int main()
 			window.draw(bg);
 			window.draw(shapeSprite);
 			window.draw(line);
-			window.draw(score);
-			window.draw(score1);
-			window.draw(scoreCurrent);
+			
 			window.draw(it1);
 			window.draw(it2);
 			window.draw(it3);
@@ -758,6 +756,9 @@ int main()
 			window.draw(it6);
 			window.draw(it7);
 			window.draw(it8);
+			window.draw(score);
+			window.draw(score1);
+			window.draw(scoreCurrent);
 			window.setView(view);
 
 			
@@ -2191,7 +2192,7 @@ int main()
 
 		if (p == 4 && cheak == 1) {
 			window.draw(howto1);
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
 			if (p == 4 && cheak == 1) {
 				p = 3;
@@ -2270,7 +2271,7 @@ int main()
 			}
 		}
 		
-		if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
+		/*if (line.getGlobalBounds().intersects(shapem1.getGlobalBounds())) {
 			
 			if (p == 0 && dmon[1].deletesp != 1) {
 				p = 2;
@@ -2636,7 +2637,7 @@ int main()
 				sound1.play();
 			}
 		}
-		
+		*/
 		
 		
 
