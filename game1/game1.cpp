@@ -716,6 +716,7 @@ int main()
 		game.setPosition(shapeSprite.getPosition().x - 650, 60.0f);
 		deltaTime = clock.restart().asSeconds();
 
+		
 
 		if (p == 1) {
 
@@ -748,6 +749,7 @@ int main()
 			}
 
 		}
+
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 		{
@@ -813,10 +815,8 @@ int main()
 				mons1();
 			
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
-			{
-				p = 0;
-			}
+
+	
 
 			if (mon[1] == 1 || mon[2] == 1 || mon[3] == 1 || mon[4] == 1 || mon[5] == 1) {
 				shapem1.move(speed * (speedmon + 0.023f), 0.f * speed);
@@ -825,6 +825,7 @@ int main()
 					if (dmon[1].deletesp == 0) {
 						dmon[1].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 1) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -862,6 +863,7 @@ int main()
 					if (dmon[2].deletesp == 0) {
 						dmon[2].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 2) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -899,6 +901,7 @@ int main()
 					if (dmon[3].deletesp == 0) {
 						dmon[3].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 3) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -935,6 +938,7 @@ int main()
 					if (dmon[4].deletesp == 0) {
 						dmon[4].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 4) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -971,6 +975,7 @@ int main()
 					if (dmon[5].deletesp == 0) {
 						dmon[5].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 5) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1007,6 +1012,7 @@ int main()
 					if (dmon[6].deletesp == 0) {
 						dmon[6].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 6) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1043,6 +1049,7 @@ int main()
 					if (dmon[7].deletesp == 0) {
 						dmon[7].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 7) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1079,6 +1086,7 @@ int main()
 					if (dmon[8].deletesp == 0) {
 						dmon[8].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 8) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1115,6 +1123,7 @@ int main()
 					if (dmon[9].deletesp == 0) {
 						dmon[9].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 9) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1151,6 +1160,7 @@ int main()
 					if (dmon[10].deletesp == 0) {
 						dmon[10].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 10) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1187,6 +1197,7 @@ int main()
 					if (dmon[11].deletesp == 0) {
 						dmon[11].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 11) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1224,6 +1235,7 @@ int main()
 					if (dmon[12].deletesp == 0) {
 						dmon[12].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 12) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1260,6 +1272,7 @@ int main()
 					if (dmon[13].deletesp == 0) {
 						dmon[13].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 13) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1296,6 +1309,7 @@ int main()
 					if (dmon[14].deletesp == 0) {
 						dmon[14].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 14) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1332,6 +1346,7 @@ int main()
 					if (dmon[15].deletesp == 0) {
 						dmon[15].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 15) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1368,6 +1383,7 @@ int main()
 					if (dmon[16].deletesp == 0) {
 						dmon[16].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 16) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1404,6 +1420,7 @@ int main()
 					if (dmon[17].deletesp == 0) {
 						dmon[17].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 17) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1440,6 +1457,7 @@ int main()
 					if (dmon[18].deletesp == 0) {
 						dmon[18].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 18) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1476,6 +1494,7 @@ int main()
 					if (dmon[19].deletesp == 0) {
 						dmon[19].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 19) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1512,6 +1531,7 @@ int main()
 					if (dmon[20].deletesp == 0) {
 						dmon[20].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 20) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1548,6 +1568,7 @@ int main()
 					if (dmon[21].deletesp == 0) {
 						dmon[21].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 21) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1584,6 +1605,7 @@ int main()
 					if (dmon[22].deletesp == 0) {
 						dmon[22].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 22) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1620,6 +1642,7 @@ int main()
 					if (dmon[23].deletesp == 0) {
 						dmon[23].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 					
 						if (mon[1] == 23) {
 							mon[1] = rand() % 26 + 1;
@@ -1657,6 +1680,7 @@ int main()
 					if (dmon[24].deletesp == 0) {
 						dmon[24].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 24) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1693,6 +1717,7 @@ int main()
 					if (dmon[25].deletesp == 0) {
 						dmon[25].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 25) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
@@ -1729,6 +1754,7 @@ int main()
 					if (dmon[26].deletesp == 0) {
 						dmon[26].deletesp = 1;
 						sound3.play();
+						currentScore += 100;
 						if (mon[1] == 26) {
 							mon[1] = rand() % 26 + 1;
 							printf("%d\t", mon[1]);
