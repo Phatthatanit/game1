@@ -35,7 +35,6 @@ void mons1()
 		printf("%d\t", mon[n]);
 	}
 
-	mon[1] = 1;
 }
 
 void showhighscore(int x, int y, string word, sf::RenderWindow& window, sf::Font* font)
