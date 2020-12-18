@@ -17,6 +17,7 @@
 
 using namespace std;
 
+
 int p = 3, s = 0, sc = 0, rs = 0, n = 1, cheak, ckname = 0;
 float speedmon = 0.05f, plusspeed = 0.017f;
 struct input
